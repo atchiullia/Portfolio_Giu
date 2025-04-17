@@ -32,7 +32,7 @@ jobs:
           if [[ -s trivy-docker-results.txt ]]; then
             cat trivy-docker-results.txt >> $GITHUB_STEP_SUMMARY
           else
-            "No vulnerabilities found or the summary is empty" >> $GITHUB_STEP_SUMMARY
+            echo "No vulnerabilities found or the summary is empty" >> $GITHUB_STEP_SUMMARY
           fi
           echo "</details>"
       
