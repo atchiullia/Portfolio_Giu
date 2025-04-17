@@ -24,13 +24,5 @@ jobs:
         severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
     - name: Trivy Summary
-      run: |
-        if [[ -s trivy-portfolio-results.txt ]]; then
-          {
-            echo "###Vulnerability Report"
-            echo ""
-            cat trivy-portfolio-results.txt
-            echo "</details>"
-          } >> $GITHUB-STEP_SUMMARY
-        fi
+      run: echo "### Hello do Sumário" >> $GITHUB_STEP_SUMMARY
     
