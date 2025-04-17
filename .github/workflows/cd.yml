@@ -1,26 +1,33 @@
 name: CD - Deploy Static Site to S3
 
 on:
-  push:
-    branches: [ main ] 
+  workflow_run:
+    workflows: ["CI - Code Check & Security Scan"]
+    types:
+      - completed
 
 jobs:
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
+    - name: AWS Credentials Config
+      uses: aws-actions/configure-aws-credentials@v4.1.0
+      with:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }} 
+        
     - name: Sync to S3
       uses: jakejarvis/s3-sync-action@v0.5.1
       with: 
         args: --delete
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: ${{ secrets.AWS_REGION }} 
         SOURCE_DIR: ./portfolio
 
     - name: Invalidate CloudFront Cache
