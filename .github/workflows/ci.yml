@@ -24,5 +24,16 @@ jobs:
         severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
     - name: Trivy Summary
-      run: echo "### Hello do Sumário" >> $GITHUB_STEP_SUMMARY
+      run: |
+          echo "### Vulnerability Report" >> $GITHUB_STEP_SUMMARY
+          echo "<details><summary>Expand</summary>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [[ -s trivy-docker-results.txt ]]; then
+            cat trivy-docker-results.txt >> $GITHUB_STEP_SUMMARY
+          else
+            "No vulnerabilities found or the summary is empty" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "</details>"
+      
     
