@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+<body>
+  <header class="header">
+    <a href="index.html" class="home-button" title="Voltar para Home">
+      <i class="fas fa-home"></i>
+    </a>
+   <div class="buttons">
+    <button id="toggle-dark" class="toggle-dark">🌙</button>
+    <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
+  </div>
+  </header>
+
+  <div class="intro">
+    <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
+    <p 
+      data-pt="Apaixonada por automação, infraestrutura e eficiência. Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana." 
+      data-en="Passionate about automation, infrastructure, and efficiency. Exploring CI/CD, Kubernetes, Docker, and monitoring with Prometheus and Grafana.">
+      Apaixonada por automação, infraestrutura e eficiência.  Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana.
+    </p>
+    <div class="intro-links">
+      <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+      <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
+    </div>
+  </div>  
+
+  <div class="wrapper">
+    <div class="portfolio-container">
+
+      <!-- Primeiro Projeto -->
+      <div class="instance-card">
+        <a href="projeto1.html" class="card-link" target="_blank"></a>
+        <div class="instance-card__cnt">
+          <div class="instance-card__name" 
+               data-pt="Monitoramento em Kubernetes com Prometheus e Grafana" 
+               data-en="Monitoring in Kubernetes with Prometheus and Grafana">
+               Monitoramento em Kubernetes com Prometheus e Grafana
+          </div>
+          <div class="instance-card-inf">
+            <div class="instance-card-inf__item">
+              <div class="instance-card-inf__txt" 
+                   data-pt="Tecnologias" 
+                   data-en="Technologies">
+                   Tecnologias
+              </div>
+              <div class="tech-stack">
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>GitHub Actions</span>
+                <span>Prometheus</span>
+                <span>Grafana</span>
+                <span>Helm</span>
+                <span>Java</span>
+              </div>
+            </div>     
+            <div class="instance-card-inf__item">
+              <div class="instance-card-inf__txt" 
+                   data-pt="Descrição" 
+                   data-en="Description">
+                   Descrição
+              </div>
+              <div class="instance-card-inf__title"
+                   data-pt="Projeto DevOps que configura uma aplicação em Java no Kubernetes com pipelines de CI/CD, monitoramento via Prometheus e dashboards com Grafana. Solução completa para observabilidade e automação de deploy." 
+                   data-en="DevOps project that configures a Java application in Kubernetes with CI/CD pipelines, monitoring via Prometheus, and dashboards with Grafana. A complete solution for observability and deployment automation.">
+                Projeto DevOps que configura uma aplicação em Java no Kubernetes com pipelines de CI/CD, monitoramento via Prometheus e dashboards com Grafana. Solução completa para observabilidade e automação de deploy.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segundo Projeto -->
+      <div class="instance-card">
+        <a href="projeto2.html" class="card-link" target="_blank"></a>
+        <div class="instance-card__cnt">
+          <div class="instance-card__name" 
+               data-pt="Portfólio com Docker + Nginx" 
+               data-en="Portfolio with Docker + Nginx">
+               Portfólio com Docker + Nginx
+          </div>
+          <div class="instance-card-inf">
+            <div class="instance-card-inf__item">
+              <div class="instance-card-inf__txt" 
+                   data-pt="Tecnologias" 
+                   data-en="Technologies">
+                   Tecnologias
+              </div>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>GitHub</span>
+                <span>Docker</span>
+                <span>Nginx</span>
+              </div>
+            </div>     
+            <div class="instance-card-inf__item">
+              <div class="instance-card-inf__txt" 
+                   data-pt="Descrição" 
+                   data-en="Description">
+                   Descrição
+              </div>
+              <div class="instance-card-inf__title"
+                   data-pt="Projeto DevOps que empacota um portfólio web com HTML e CSS em um container Docker, configurado com Nginx como servidor web. A aplicação é executada localmente com um simples docker run, demonstrando na prática como criar, executar e gerenciar containers de forma eficiente." 
+                   data-en="DevOps project that packages a web portfolio using HTML and CSS into a Docker container, configured with Nginx as the web server. The application runs locally with a simple docker run, demonstrating how to build, run and manage containers efficiently.">
+                Projeto DevOps que empacota um portfólio web com HTML e CSS em um container Docker, configurado com Nginx como servidor web. A aplicação é executada localmente com um simples docker run, demonstrando na prática como criar, executar e gerenciar containers de forma eficiente.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-dark');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode')
+        ? '☀️'
+        : '🌙';
+    });
+
+    const langBtn = document.getElementById('toggle-lang');
+    let currentLang = 'pt';
+
+    langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'pt' ? 'en' : 'pt';
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${currentLang}`); 
+  });
+  langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
+});
+  </script>
+</body>
+</html>
