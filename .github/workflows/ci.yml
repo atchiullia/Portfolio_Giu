@@ -19,6 +19,18 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: '.'
-        severity: 'CRITICAL,HIGH'
+        format: table
+        output: 'trivy-portfolio-results.txt'
+        severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 
+    - name: Trivy Summary
+      run: |
+        if [[ -s trivy-portfolio-results.txt ]]; then
+          {
+            echo "###Vulnerability Report"
+            echo ""
+            cat trivy-portfolio-results.txt
+            echo "</details>"
+          } >> $GITHUB-STEP_SUMMARY
+        fi
     
