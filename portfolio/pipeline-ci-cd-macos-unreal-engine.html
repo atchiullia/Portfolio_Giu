@@ -37,17 +37,17 @@
       <div class="portfolio-container">
         <div class="projeto-container">
           <div class="instance-card__cnt">
-            <div class="instance-card__name" data-pt="Automação de Configuração de Chave SSH no Windows" data-en="SSH Key Configuration Automation on Windows">
-              Automação de Configuração de Chave SSH no Windows
-            </div>
+            <div class="instance-card__name" data-pt="UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine" 
+            data-en="UltiMage – CI/CD Build Pipeline on macOS with Unreal Engine">
+              UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine            </div>
             <div class="instance-card-inf">
               <div class="instance-card-inf__item"></div>
               <div class="instance-card-inf__item">
                 <div class="instance-card-inf__txt" data-pt="🧩 Descrição do Projeto" data-en="🧩 Project Description">🧩 Descrição do Projeto</div>
                 <div class="instance-card-inf__title">
-                  <p data-pt="Projeto DevOps que automatiza todo o processo de configuração de chave SSH no Windows utilizando PowerShell. O script cria chaves SSH, configura o OpenSSH, e adiciona as chaves ao agente SSH, simplificando o processo de autenticação segura para repositórios Git e servidores remotos." 
+                  <p data-pt="Automatização do processo de build no macOS para o jogo UltiMage, desenvolvido pela Crystal Realms Entertainment. A pipeline CI/CD foi configurada com GitHub Actions e um runner auto-hospedado, garantindo maior estabilidade e redução de erros manuais no desenvolvimento do jogo." 
                   data-en="DevOps project that automates the entire SSH key configuration process on Windows using PowerShell. The script creates SSH keys, configures OpenSSH, and adds the keys to the SSH agent, simplifying the secure authentication process for Git repositories and remote servers.">
-                    Projeto DevOps que automatiza todo o processo de configuração de chave SSH no Windows utilizando PowerShell. O script cria chaves SSH, configura o OpenSSH, e adiciona as chaves ao agente SSH, simplificando o processo de autenticação segura para repositórios Git e servidores remotos.
+                  Automatização do processo de build no macOS para o jogo UltiMage, desenvolvido pela Crystal Realms Entertainment. A pipeline CI/CD foi configurada com GitHub Actions e um runner auto-hospedado, garantindo maior estabilidade e redução de erros manuais no desenvolvimento do jogo.        </div>
                   </p>
                 </div>
                 <div class="instance-card-inf__txt" data-pt="🎯 Objetivo do Projeto" data-en="🎯 Project Goal">🎯 Objetivo do Projeto</div>
@@ -55,30 +55,28 @@
                   <p data-pt="O objetivo foi agilizar o processo de onboarding de desenvolvedores na Crystal Realms Entertainment, automatizando a configuração de chaves SSH no Windows. Isso reduziu etapas manuais, minimizou erros de configuração e acelerou o acesso aos repositórios do GitHub." 
                   data-en="The goal was to streamline the onboarding process for developers at Crystal Realms Entertainment by automating the SSH key configuration on Windows. This reduced manual steps, minimized configuration errors, and sped up access to GitHub repositories.">
                     O objetivo foi agilizar o processo de onboarding de desenvolvedores na Crystal Realms Entertainment, automatizando a configuração de chaves SSH no Windows. Isso reduziu etapas manuais, minimizou erros de configuração e acelerou o acesso aos repositórios do GitHub.                  </p>
-                </div>
-                <div class="instance-card-inf__github">
-                  <a href="https://github.com/atchiullia/SSH_automation" target="_blank" class="intro-btn">GitHub Repo</a></div>                   
-                
+                </div>                
                 <div class="tech-stack">
                   <div class="instance-card-inf__txt" data-pt="🚀 Tecnologias Utilizadas" data-en="🚀 Tech Stack">🚀 Tecnologias Utilizadas</div>
-                  <span>Powershell</span>
-                  <span>Windows</span>
-                  <span>OpenSSH</span>
-                  <span>GitHub</span>
-                  <span>Git</span>
+                  <span>Unreal Engine 5</span>
+                  <span>GitHub Actions</span>
+                  <span>CI/CD</span>
+                  <span>macOS</span>
+                  <span>RunUAT</span>
+                  <span>Self-hosted Runners</span>
 
                   <div class="cards-container">
 
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Criação do Script" 
-                          data-en="Script Creation">Criação do Script</h3>
+                          <h3 data-pt="Configuração da Pipeline" 
+                          data-en=" Pipeline Configuration">Configuração da Pipeline</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Criei um script de automação em PowerShell para padronizar e acelerar a configuração de chaves SSH no Windows"
-                          data-en="I created an automation script in PowerShell to standardize and speed up the SSH key configuration on Windows">
-                          Criei um script de automação em PowerShell para padronizar e acelerar a configuração de chaves SSH no Windows
+                          <p data-pt="Configurei uma pipeline de integração contínua utilizando GitHub Actions e um runner auto-hospedado para automatizar o processo de build no macOS do jogo UltiMage, desenvolvido em Unreal Engine 5.""
+                          data-en="Configured a continuous integration pipeline using GitHub Actions and a self-hosted runner to automate the build process on macOS for the game UltiMage, developed in Unreal Engine 5.">
+                          Configurei uma pipeline de integração contínua utilizando GitHub Actions e um runner auto-hospedado para automatizar o processo de build no macOS do jogo UltiMage, desenvolvido em Unreal Engine 5.
                         </p>
                         </div>
                       </div>
@@ -88,13 +86,12 @@
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Detecção de Privilégios" data-en="Privilege Detection">Detecção de Privilégios</h3>
+                          <h3 data-pt="Pipeline" data-en="Pipeline">Pipeline</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Implementei detecção de privilégios de administrador com autoelevação, facilitando a execução do script." 
-                          data-en="Implemented admin privilege detection and automatic elevation to streamline execution">
-                          Implementei detecção de privilégios de administrador com autoelevação, facilitando a execução do script
-                        </p>
+                          <p data-pt="A pipeline executa o comando local RunUAT.sh BuildCookRun, gerencia dependências e referências de módulos (como StructUtils) e arquiva automaticamente os artefatos de build." 
+                          data-en="The pipeline executes the local command RunUAT.sh BuildCookRun, manages dependencies and module references (like StructUtils), and automatically archives build artifacts.">
+                          A pipeline executa o comando local RunUAT.sh BuildCookRun, gerencia dependências e referências de módulos (como StructUtils) e arquiva automaticamente os artefatos de build.</p>
                         </div>
                       </div>
                     </div>
@@ -102,38 +99,14 @@
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Automação" data-en="Automation">Automação</h3>
+                          <h3 data-pt="Runner Auto-hospedado" 
+                          data-en="Self-hosted Runner">
+                          Runner Auto-hospedado</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Automatizei a instalação e configuração do OpenSSH Client e do ssh-agent, eliminando etapas manuais" 
-                          data-en="Installed and configured OpenSSH Client and ssh-agent, reducing manual setup steps">
-                          Automatizei a instalação e configuração do OpenSSH Client e do ssh-agent, eliminando etapas manuais
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Geração de Chaves" data-en="Keys Generation">Geração de Chaves</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Gerei chaves SSH seguras do tipo ed25519 e as adicionei automaticamente ao ssh-agent, reduzindo o tempo de configuração em mais de 80%" 
-                          data-en="Generated secure ed25519 SSH keys and added them automatically to the ssh-agent, reducing setup time by over 80%">
-                          Gerei chaves SSH seguras do tipo ed25519 e as adicionei automaticamente ao ssh-agent, reduzindo o tempo de configuração em mais de 80%                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Cópia de Chaves" data-en="Keys Copy">Cópia de Chaves</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Copiei a chave pública para a área de transferência automaticamente, otimizando a integração com o GitHub" 
-                          data-en="Copied the public key to the clipboard automatically, optimizing integration with GitHub">
-                          Copiei a chave pública para a área de transferência automaticamente, otimizando a integração com o GitHub </p>  
+                          <p data-pt="O runner auto-hospedado foi configurado como um serviço com o script svc.sh para garantir sua disponibilidade constante." 
+                          data-en="The self-hosted runner was configured as a service with the svc.sh script to ensure its constant availability.">
+                          O runner auto-hospedado foi configurado como um serviço com o script svc.sh para garantir sua disponibilidade constante.                        </p>
                         </div>
                       </div>
                     </div>
@@ -144,10 +117,12 @@
                           <h3 data-pt="Resultado" data-en="Result">Resultado</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Onboardings mais rápidos e consistentes para múltiplos ambientes de desenvolvimento" 
-                          data-en="Faster and more consistent onboardings for multiple development environments">
-                          Onboardings mais rápidos e consistentes para múltiplos ambientes de desenvolvimento                        </div>
+                          <p data-pt="Essa automação estabilizou o processo de build e minimizou a intervenção manual durante o desenvolvimento. Além disso, auxiliou no pinpointing de problemas e na resolução de bugs."
+                          data-en="This automation stabilized the build process and minimized manual intervention during development. Additionally, it helped in pinpointing issues and resolving bugs.">
+                          Essa automação estabilizou o processo de build e minimizou a intervenção manual durante o desenvolvimento. Além disso, auxiliou no pinpointing de problemas e na resolução de bugs.                        </p> 
                       </div>
+                    </div>
+
                     </div>                
                   </div> <!-- cards-container -->
                 </div> <!-- tech-stack -->

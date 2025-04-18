@@ -293,7 +293,7 @@ margin-top: 2rem;
 
 .passos, h3{
   font-size: 16px; 
-  color: b6a4ff;
+  color: #1a1a1a;
   margin-top: 20px;
 }
 .instance-card-inf__title a {
@@ -550,7 +550,7 @@ body.dark-mode .instance-card-inf__title p {
 
 
 body.dark-mode .instance-card-inf__txt {
-  color: #aaa;
+  color: #f2f2f2;
 }
 
 body.dark-mode .instance-card__icon {
