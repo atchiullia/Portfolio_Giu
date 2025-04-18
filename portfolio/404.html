@@ -22,12 +22,16 @@
   <div class="intro">
     <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
     <p 
-      data-pt="Apaixonada por automação, infraestrutura e eficiência. Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana." 
-      data-en="Passionate about automation, infrastructure, and efficiency. Exploring CI/CD, Kubernetes, Docker, and monitoring with Prometheus and Grafana.">
-      Apaixonada por automação, infraestrutura e eficiência.  Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana.
-    </p>
+    data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
+    data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
+    Engenheira DevOps apaixonada por automação e performance em pipelines. 
+    Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. 
+    Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. 
+    Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas.    
+  </p>
     <div class="intro-links">
       <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+      <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
       <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
     </div>
   </div>  
@@ -70,5 +74,48 @@
   langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
 });
   </script>
-</body>
+  <footer class="footer">
+    <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+
+      <!-- Column 1: Playlist -->
+      <div class="playlist" style="flex: 1;">
+        <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+        <!-- Column 2: About -->
+        <div class="about" style="flex: 1;">
+          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
+          <p class="translatable"
+            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
+            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
+            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
+          </p>
+        </div>
+
+      <!-- Column 3: Contact -->
+      <div class="contact" style="flex: 1;">
+        <h3>Reach me</h3>
+      <div class="social-media">  
+        <p style="display: flex; gap: 50px;"></p>
+            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn"></a>
+            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
+            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
+            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
+            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="mailto:giullialazaro@gmail.com" title="Email">
+            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a></a>
+        </p>
+      </div>
+      </div>
+    </div>
+  </footer>
+  </body>
 </html>

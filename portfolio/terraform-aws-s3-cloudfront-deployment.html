@@ -31,68 +31,80 @@
     </p>
         <div class="intro-links">
         <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
         <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
       </div>
     </div>
 
-    <div class="carousel">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="images/dockerfile_portfolio.png" alt="dockerfile_portfolio" />
-          <img src="images/docker_desktop.png" alt="docker_desktop" />
-        </div>
-      </div>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
 
     <div class="wrapper">
       <div class="portfolio-container">
         <div class="projeto-container">
           <div class="instance-card__cnt">
-            <div class="instance-card__name" data-pt="Portfolio com Docker + Nginx" data-en="Portfolio with Docker + Nginx">
-              Portfolio com Docker + Nginx
+            <div class="instance-card__name" data-pt="Publicação de Site Estático com Terraform, AWS e GitHub Actions" 
+            data-en="Static Website Deployment with Terraform, AWS, and GitHub Actions">
+              Publicação de Site Estático com Terraform, AWS e GitHub Actions
             </div>
             <div class="instance-card-inf">
               <div class="instance-card-inf__item"></div>
               <div class="instance-card-inf__item">
                 <div class="instance-card-inf__txt" data-pt="🧩 Descrição do Projeto" data-en="🧩 Project Description">🧩 Descrição do Projeto</div>
                 <div class="instance-card-inf__title">
-                  <p data-pt="Projeto com foco em introdução prática ao Docker, no qual empacotei meu portfólio web (HTML e CSS) em um container Docker utilizando Nginx como servidor web. A aplicação é executada em um ambiente isolado, podendo ser distribuída ou implantada em qualquer máquina com Docker instalado." data-en="Project focused on a practical introduction to Docker, where I packaged my web portfolio (HTML and CSS) into a Docker container using Nginx as a web server. The application runs in an isolated environment and can be deployed on any machine with Docker installed.">
-                    Projeto com foco em introdução prática ao Docker, no qual empacotei meu portfólio web (HTML e CSS) em um container Docker utilizando Nginx como servidor web. A aplicação é executada em um ambiente isolado, podendo ser distribuída ou implantada em qualquer máquina com Docker instalado.
+                  <p data-pt="Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets." 
+                  data-en="I implemented the deployment of a static website with a custom domain (giullialazaro.com) using AWS, Terraform, and GitHub Actions, focusing on automation, security, and infrastructure as code. The entire process was automated via a CI/CD pipeline, ensuring continuous delivery with security validation via Trivy and secret management via GitHub Secrets.">
+                    Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets.                 
                   </p>
                 </div>
                 <div class="instance-card-inf__txt" data-pt="🎯 Objetivo do Projeto" data-en="🎯 Project Goal">🎯 Objetivo do Projeto</div>
                 <div class="instance-card-inf__title">
-                  <p data-pt="Demonstrar conhecimento em containers, imagens customizadas e execução de aplicações estáticas com Docker." data-en="Demonstrate knowledge in containers, custom images, and running static applications with Docker.">
-                    Demonstrar conhecimento em containers, imagens customizadas e execução de aplicações estáticas com Docker.
+                  <p data-pt="aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado." 
+                  data-en="apply DevOps and IaC (Infrastructure as Code) practices to create a scalable, secure, and monitored deployment process.">
+                  aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado.
                   </p>
-                </div>
-                <div class="instance-card-inf__github">
-                  <a href="https://hub.docker.com/r/atchiullia/giullialazaro" target="_blank" class="intro-btn">DockerHub Repo</a></div> 
-                  <div class="instance-card-inf__github">
-                    <a href="https://hub.docker.com/r/atchiullia/crystal-landing" target="_blank" class="intro-btn">DockerHub Repo 2</a></div>             
-  
-                  
+                </div>                
                 <div class="tech-stack">
                   <div class="instance-card-inf__txt" data-pt="🚀 Tecnologias Utilizadas" data-en="🚀 Tech Stack">🚀 Tecnologias Utilizadas</div>
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>GitHub</span>
-                  <span>Docker</span>
-                  <span>Nginx</span>
+                  <span>Terraform</span> 
+                  <span>Amazon S3</span> 
+                  <span>CloudFront</span> 
+                  <span>AWS ACM</span> 
+                  <span>Route 53 + Squarespace</span> 
+                  <span>AWS CloudWatch</span> 
+                  <span>GitHub Actions</span> 
+                  <span>CI/CD</span> 
+                  <span>Trivy</span> 
+                  <span>GitHub Secrets</span>
 
                   <div class="cards-container">
+
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Criação do Dockerfile" data-en="Creating the Dockerfile">Criação do <div class="code-block">Dockerfile</div></h3>
+                          <h3 data-pt="IaC" 
+                          data-en="IaC">IaC</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Usando" data-en="Using"></p><div class="code-block">nginx:latest</div><p data-pt="como imagem base." data-en="as base image."></p><br />
-                          <p data-pt="Copiando os arquivos do portfólio para" data-en="Copying portfolio files to"></p>
-                          <div class="code-block">/usr/share/nginx/html</div><br />
-                          <div class="code-block">FROM nginx:latest <br /> COPY . /usr/share/nginx/html</div>
+                          <p 
+                          data-pt="Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch."
+                          data-en="Infrastructure as Code with Terraform: automated creation of S3, CloudFront, Route 53, ACM, and monitoring via CloudWatch.">
+                          Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch.
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box">
+                          <h3 data-pt="Pipeline CI/CD" data-en="Pipeline CI/CD">Pipeline CI/CD</h3>
+                        </div>
+                        <div class="instance-card-inf">
+                          <p 
+                          data-pt="Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets."
+                          data-en="CI/CD pipeline with GitHub Actions: automatic build and deployment on each push, with security validation via Trivy and secret management via GitHub Secrets.">
+                          Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets. 
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -100,42 +112,73 @@
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Build da imagem Docker" data-en="Docker Image Build">Build da imagem Docker</h3>
+                          <h3 data-pt="Segurança" 
+                          data-en="Segurança">
+                          Segurança</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <div class="code-block">docker build -t portfolio .</div>
-                          <p data-pt="Execução do container:" data-en="Container execution:"></p>
-                          <div class="code-block">docker run -d -p 8080:80 --name meu-portfolio portfolio</div>
+                          <p data-pt="Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy."
+                          data-en="Automated scan with Trivy + sensitive secret management with GitHub Secrets to protect credentials and sensitive data during the build and deployment process.">
+                          Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy.
+                        </p>
                         </div>
                       </div>
                     </div>
-
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Resultado" data-en="Result">Resultado</h3>
+                          <h3 data-pt="Domínio Personalizado" 
+                          data-en="Custom Domain">Domínio Personalizado</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="O portfólio é acessado via" data-en="The portfolio is accessed via">O portfólio é acessado via</p>
-                          <div class="code-block">http://localhost:8080</div>
-                          <p data-pt="sendo servido por um servidor Nginx dentro de um container Docker." data-en="being served by an Nginx server inside a Docker container.">sendo servido por um servidor Nginx dentro de um container Docker.</p>
+                          <p data-pt="Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace."
+                          data-en="Custom domain (giullialazaro.com) with management via Route 53 and Squarespace. SSL via AWS ACM and DNS mapping with CNAME validation on Squarespace.">
+                          Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace.
+                          </p>
                         </div>
                       </div>
                     </div>
-
                     <div class="instance-card-small">
                       <div class="instance-card__cnt">
                         <div class="instance-card__box">
-                          <h3 data-pt="Aprendizados" data-en="Outcome">Aprendizados</h3>
+                          <h3 data-pt="Monitoramento" 
+                          data-en="Monitoring">Monitoramento</h3>
                         </div>
                         <div class="instance-card-inf">
-                          <p data-pt="Criação e execução de containers Docker" data-en="Creating and running Docker containers">Criação e execução de containers Docker</p><br />
-                          <p data-pt="Uso do Nginx para servir aplicações estáticas" data-en="Using Nginx to serve static applications">Uso do Nginx para servir aplicações estáticas</p><br />
-                          <p data-pt="Mapeamento de portas e gerenciamento de containers via terminal" data-en="Port mapping and container management via terminal">Mapeamento de portas e gerenciamento de containers via terminal</p><br />
-                          <p data-pt="Boas práticas para estruturar e versionar projetos com Docker" data-en="Best practices for structuring and versioning projects with Docker">Boas práticas para estruturar e versionar projetos com Docker</p><br />
+                          <p data-pt="Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos."
+                          data-en="Monitoring via AWS CloudWatch to ensure the availability and performance of the site, with alerts configured for critical events.">
+                          Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos.
+                        </p>
                         </div>
                       </div>
                     </div>
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box">
+                          <h3 data-pt="Resultado" data-en="Outcome">Resultado</h3>
+                        </div>
+                        <div class="instance-card-inf">
+                          <p 
+                          data-pt="Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado."
+                          data-en="Secure and fully automated deployment of a static website with replicable infrastructure, SSL, global CDN, and custom domain.">
+                          Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado.
+                          </p>
+                      </div>
+                    </div>
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box">
+                          <h3 data-pt="Aprendizados" data-en="Lessons Learned">Aprendizados</h3>
+                        </div>
+                        <div class="instance-card-inf">
+                          <p 
+                          data-pt="Integração prática de DevOps com IaC, segurança e deploy web"
+                          data-en="Practical integration of DevOps with IaC, security, and web deployment">
+                          Integração prática de DevOps com IaC, segurança e deploy web
+                          </p>
+                      </div>
+                    </div>
+                    </div>                
                   </div> <!-- cards-container -->
                 </div> <!-- tech-stack -->
               </div>
@@ -162,22 +205,6 @@
         });
         langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
       });
-
-      let slideIndex = 0;
-      function moveSlide(n) {
-        const slides = document.querySelector('.carousel-slide');
-        const totalSlides = slides.children.length;
-        slideIndex += n;
-        if (slideIndex >= totalSlides) slideIndex = 0;
-        else if (slideIndex < 0) slideIndex = totalSlides - 1;
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-      }
-
-      function autoSlide() {
-        moveSlide(1);
-        setTimeout(autoSlide, 10000);
-      }
-      setTimeout(autoSlide, 10000);
     </script>
   <footer class="footer">
     <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
@@ -220,6 +247,6 @@
       </div>
       </div>
     </div>
-  </footer>
+  </footer> 
   </body>
 </html>

@@ -18,11 +18,6 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-
 /* WRAPPER */
 .wrapper {
   width: 100%;
@@ -38,7 +33,7 @@ body.dark-mode {
   padding: 80px 20px 60px;
   color: #fff;
   animation: fadeIn 1s ease-out;
-  background: linear-gradient(-45deg, #6944ff, #9c83ff, #00c9ff, #6944ff);
+  background: linear-gradient(-45deg, #6944ff, #9c83ff, #6944ff);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -53,11 +48,12 @@ body.dark-mode {
 }
 
 .intro p {
-  font-size: 18px;
+  font-size: 16px;
   color: #f1f1f1;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* BOTÕES BRANCOS */
@@ -226,6 +222,7 @@ margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 50px;
 }
 
 
@@ -283,6 +280,7 @@ margin-top: 2rem;
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .instance-card-inf__txt, .passos, h2  {
@@ -291,14 +289,20 @@ margin-top: 2rem;
   font-size: 20px;
 }
 
-.passos, h3{
+.passos, h3 {
   font-size: 16px; 
   color: #1a1a1a;
   margin-top: 20px;
 }
+
+body.dark-mode .passos, body.dark-mode h3 {
+  color: #dcdcdc;
+}
+
+
+
 .instance-card-inf__title a {
   color: #6944ff;
-  text-decoration: underline;
   transition: color 0.3s ease;
 }
 
@@ -417,7 +421,7 @@ margin-top: 2rem;
 }
 
 .dark-mode .instance-card__box{
-  font-color: #aaa;
+  color: #aaa;
 }
 
 .header {
@@ -438,11 +442,54 @@ margin-top: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: inherit;
+  color: #fff;
   margin-top: 8px;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #eeeeee;
+  font-size: 14px;
+  position: relative;
+  margin-top: 50px;
+}
 
+.footer-column {
+  flex: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.footer-column:first-child {
+  text-align: left;
+}
+
+.footer-column:last-child {
+  text-align: right;
+}
+
+.footer .playlist {
+  margin-left: auto;
+  text-align: right;
+}
+
+.about h3,
+.contact h3{
+  font-size: 16px;
+  color: #eeeeee;
+  text-decoration: none;
+  margin-top: 125px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top:15px;
+}
 
 pre {
   padding: 1rem;
@@ -556,6 +603,16 @@ body.dark-mode .instance-card-inf__txt {
 body.dark-mode .instance-card__icon {
   color: #bfa3ff;
 }
+
+footer {
+  background: linear-gradient(-45deg, #6944ff, #8668ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;  color: #dcdcdc;
+  padding: 20px;
+  text-align: center;
+}
+
+
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
