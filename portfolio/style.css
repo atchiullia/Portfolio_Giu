@@ -558,8 +558,6 @@ body.dark-mode .instance-card__icon {
 }
 
 /* RESPONSIVO */
-
-
 @media (max-width: 768px) {
   .portfolio-container {
     display: flex;
