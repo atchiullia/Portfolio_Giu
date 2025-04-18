@@ -1,0 +1,3 @@
+.terraform
+.DS_Store
+portfolio_infra/Terraform/src/.terraform/

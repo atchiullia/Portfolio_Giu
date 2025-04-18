@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+<body>
+  <header class="header">
+    <a href="index.html" class="home-button" title="Voltar para Home">
+      <i class="fas fa-home"></i>
+    </a>
+   <div class="buttons">
+    <button id="toggle-dark" class="toggle-dark">🌙</button>
+    <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
+  </div>
+  </header>
+
+  <div class="intro">
+    <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
+    <p 
+      data-pt="Apaixonada por automação, infraestrutura e eficiência. Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana." 
+      data-en="Passionate about automation, infrastructure, and efficiency. Exploring CI/CD, Kubernetes, Docker, and monitoring with Prometheus and Grafana.">
+      Apaixonada por automação, infraestrutura e eficiência.  Explorando CI/CD, Kubernetes, Docker e monitoramento com Prometheus e Grafana.
+    </p>
+    <div class="intro-links">
+      <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+      <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
+    </div>
+  </div>  
+
+  <div class="wrapper">
+    <div class="portfolio-container">
+
+      <!-- Primeiro Projeto -->
+      <div class="instance-card">
+        <div class="instance-card__cnt">
+          <div class="instance-card__name" 
+               data-pt="404. Página não encontrada." 
+               data-en="404. Page not found.">
+               404. Página não encontrada.
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-dark');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode')
+        ? '☀️'
+        : '🌙';
+    });
+
+    const langBtn = document.getElementById('toggle-lang');
+    let currentLang = 'pt';
+
+    langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'pt' ? 'en' : 'pt';
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${currentLang}`); 
+  });
+  langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
+});
+  </script>
+</body>
+</html>
