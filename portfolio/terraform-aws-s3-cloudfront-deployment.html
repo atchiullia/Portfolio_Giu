@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">  
   </head>
   <body>
     <header class="header">
@@ -41,29 +43,29 @@
       <div class="portfolio-container">
         <div class="projeto-container">
           <div class="instance-card__cnt">
-            <div class="instance-card__name" data-pt="Publicação de Site Estático com Terraform, AWS e GitHub Actions" 
+            <h3 class="instance-card__name" data-pt="Publicação de Site Estático com Terraform, AWS e GitHub Actions" 
             data-en="Static Website Deployment with Terraform, AWS, and GitHub Actions">
               Publicação de Site Estático com Terraform, AWS e GitHub Actions
-            </div>
+          </h3>
             <div class="instance-card-inf">
               <div class="instance-card-inf__item"></div>
               <div class="instance-card-inf__item">
-                <div class="instance-card-inf__txt" data-pt="🧩 Descrição do Projeto" data-en="🧩 Project Description">🧩 Descrição do Projeto</div>
+                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
                 <div class="instance-card-inf__title">
                   <p data-pt="Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets." 
                   data-en="I implemented the deployment of a static website with a custom domain (giullialazaro.com) using AWS, Terraform, and GitHub Actions, focusing on automation, security, and infrastructure as code. The entire process was automated via a CI/CD pipeline, ensuring continuous delivery with security validation via Trivy and secret management via GitHub Secrets.">
                     Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets.                 
                   </p>
                 </div>
-                <div class="instance-card-inf__txt" data-pt="🎯 Objetivo do Projeto" data-en="🎯 Project Goal">🎯 Objetivo do Projeto</div>
+                <h3 class="instance-card-inf__txt" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</h3>
                 <div class="instance-card-inf__title">
-                  <p data-pt="aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado." 
-                  data-en="apply DevOps and IaC (Infrastructure as Code) practices to create a scalable, secure, and monitored deployment process.">
-                  aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado.
+                  <p data-pt="Aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado." 
+                  data-en="Apply DevOps and IaC (Infrastructure as Code) practices to create a scalable, secure, and monitored deployment process.">
+                  Aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado.
                   </p>
                 </div>                
                 <div class="tech-stack">
-                  <div class="instance-card-inf__txt" data-pt="🚀 Tecnologias Utilizadas" data-en="🚀 Tech Stack">🚀 Tecnologias Utilizadas</div>
+                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</h3>
                   <span>Terraform</span> 
                   <span>Amazon S3</span> 
                   <span>CloudFront</span> 
@@ -191,24 +193,8 @@
       </div>
     </div>
 
-    <script>
-      const toggleButton = document.getElementById('toggle-dark');
-      const langBtn = document.getElementById('toggle-lang');
-      let currentLang = 'pt';
+    <script src="js/main.js"></script>
 
-      toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-      });
-
-      langBtn.addEventListener('click', () => {
-        currentLang = currentLang === 'pt' ? 'en' : 'pt';
-        document.querySelectorAll('[data-pt][data-en]').forEach(el => {
-          el.innerHTML = el.getAttribute(`data-${currentLang}`);
-        });
-        langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
-      });
-    </script>
   <footer class="footer">
     <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 

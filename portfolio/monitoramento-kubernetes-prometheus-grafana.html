@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
+  
   </head>
-
   <body>
     <header class="header">
       <a href="index.html" class="home-button" title="Voltar para Home">
@@ -52,27 +54,20 @@
 
           <!-- Primeiro Projeto -->
           <div class="instance-card__cnt">
-            <div class="instance-card__name" 
-                 data-pt="Monitoramento em Kubernetes com Prometheus e Grafana"
-                 data-en="Monitoring in Kubernetes with Prometheus and Grafana">
-              Monitoramento em Kubernetes com Prometheus e Grafana
-            </div>
+            <h2 class="instance-card__name" 
+                data-pt="Monitoramento em Kubernetes com Prometheus e Grafana"
+                data-en="Monitoring in Kubernetes with Prometheus and Grafana">
+                Monitoramento em Kubernetes com Prometheus e Grafana
+            </h2>
 
             <div class="instance-card-inf">
               <div class="instance-card-inf__item"></div>
-
-              <div class="instance-card-inf__title"
-                   data-pt="Este projeto configura uma aplicação em Kubernetes com monitoramento utilizando Prometheus e visualização das métricas no Grafana."
-                   data-en="This project sets up a Kubernetes application with monitoring using Prometheus and visualization of metrics in Grafana.">
-                Este projeto configura uma aplicação em Kubernetes com monitoramento utilizando Prometheus e visualização das métricas no Grafana.
-              </div>
-
               <div class="instance-card-inf__item">
-                <div class="instance-card-inf__txt"
-                     data-pt="🧩 Descrição do Projeto"
-                     data-en="🧩 Project Description">
-                  🧩 Descrição do Projeto
-                </div>
+                <h3 class="instance-card-inf__txt"
+                    data-pt="Descrição do Projeto"
+                    data-en="Project Description">
+                    Descrição do Projeto
+                </h3>
                 <div class="instance-card-inf__title"
                      data-pt="Este projeto configura e monitora uma aplicação Java em um cluster Kubernetes. Utiliza Prometheus para coleta de métricas e Grafana para visualização dos dados em tempo real. Integra pipelines CI/CD com GitHub Actions para automação de build, testes e deploy."
                      data-en="This project configures and monitors a Java application in a Kubernetes cluster. It uses Prometheus for metric collection and Grafana for real-time data visualization. It integrates CI/CD pipelines with GitHub Actions for build, test, and deployment automation.">
@@ -85,11 +80,11 @@
               </div>
 
               <div class="tech-stack">
-                <div class="instance-card-inf__txt"
-                     data-pt="🚀 Tecnologias Utilizadas"
-                     data-en="🚀 Tech Stack">
-                  🚀 Tecnologias Utilizadas
-                </div>
+                <h3 class="instance-card-inf__txt"
+                     data-pt="Tecnologias Utilizadas"
+                     data-en="Tech Stack">
+                  Tecnologias Utilizadas
+                </h3>
                 <span>Docker</span>
                 <span>Kubernetes</span>
                 <span>GitHub Actions</span>
@@ -104,123 +99,106 @@
             <div class="cards-container">
 
 
-<!-- Card 2 -->
-<div class="instance-card-small">
-  <div class="instance-card__cnt">
-    <div class="instance-card__box" data-pt="📦 Containerização com Docker" 
-    data-en=" 📦 Containerization with Docker">
-      📦 Containerização com Docker
-    </div>
-    <div class="instance-card-inf">
-      <div class="translatable"
-      data-pt='Criação do <span class="code-block">Dockerfile</span> para empacotar a aplicação Java.'
-      data-en='Created the <span class="code-block">Dockerfile</span> to package the Java application.'>
-   Criação do <span class="code-block">Dockerfile</span> para empacotar a aplicação Java.
-   </div>
-      <div class="translatable"
-           data-pt="Deployment da aplicação no cluster Kubernetes."
-           data-en="Deployed the application to the Kubernetes cluster.">
-        Deployment da aplicação no cluster Kubernetes.
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Card 2 -->
+            <div class="instance-card-small">
+              <div class="instance-card__cnt">
+                <div class="instance-card__box" 
+                data-pt="Containerização com Docker" 
+                data-en="Containerization with Docker">
+                  Containerização com Docker
+                </div>
+                <div class="instance-card-inf">
+                  <div class="instance-card-inf__title"
+                  data-pt='Criação do Dockerfile para empacotar a aplicação Java.'
+                  data-en='Created the Dockerfile to package the Java application.'>
+                  Criação do Dockerfile para empacotar a aplicação Java.
+                </div>
+                  <div class="instance-card-inf__title"
+                      data-pt="Deployment da aplicação no cluster Kubernetes."
+                      data-en="Deployed the application to the Kubernetes cluster.">
+                    Deployment da aplicação no cluster Kubernetes.
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-<!-- Card 2 -->
-<div class="instance-card-small">
-  <div class="instance-card__cnt">
-    <div class="instance-card__box" data-pt="☁️ Implantação com Kubernetes" data-en="☁️ Deployment with Kubernetes">
-      ☁️ Implantação com Kubernetes
-    </div>
-    <div class="instance-card-inf">
-      <div class="translatable"
-           data-pt='Criação do <span class="code-block">deployment.yaml</span> para configurar pods e serviços.'
-           data-en='Created the <span class="code-block">deployment.yaml</span> to configure pods and services.'>
-        Criação do <span class="code-block">deployment.yaml</span> para configurar pods e serviços.
-      </div>
-      <div class="translatable"
-           data-pt="Deployment da aplicação no cluster Kubernetes."
-           data-en="Deployed the application to the Kubernetes cluster.">
-        Deployment da aplicação no cluster Kubernetes.
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Card 2 -->
+            <div class="instance-card-small">
+              <div class="instance-card__cnt">
+                <div class="instance-card__box" data-pt="Implantação com Kubernetes" data-en="Deployment with Kubernetes">
+                  Implantação com Kubernetes
+                </div>
+                <div class="instance-card-inf">
+                  <div class="instance-card-inf__title"
+                      data-pt='Criação do deployment.yaml para configurar pods e serviços.'
+                      data-en='Created the deployment.yaml to configure pods and services.'>
+                    Criação do deployment.yaml para configurar pods e serviços.
+                  </div>
+                  <div class="instance-card-inf__title"
+                      data-pt="Deployment da aplicação no cluster Kubernetes."
+                      data-en="Deployed the application to the Kubernetes cluster.">
+                    Deployment da aplicação no cluster Kubernetes.
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 3 -->
-<div class="instance-card-small">
-  <div class="instance-card__cnt">
-    <div class="instance-card__box" data-pt="🔁 CI/CD com GitHub Actions" data-en="🔁 CI/CD with GitHub Actions">
-      🔁 CI/CD com GitHub Actions
-    </div>
-    <div class="instance-card-inf">
-      <div class="translatable" data-pt="Pipeline em YAML automatizada para:" data-en="Automated YAML pipeline for:">
-        Pipeline em YAML automatizada para:
-      </div>
-      <div class="translatable" data-pt="Clonar repositório" data-en="Clone repository">Clonar repositório</div>
-      <div class="translatable" data-pt="Configurar Docker Buildx" data-en="Set up Docker Buildx">Configurar Docker Buildx</div>
-      <div class="translatable" data-pt="Gerar imagem Docker" data-en="Generate Docker image">Gerar imagem Docker</div>
-      <div class="translatable" data-pt="Rodar testes automatizados" data-en="Run automated tests">Rodar testes automatizados</div>
-      <div class="translatable" data-pt="Fazer push da imagem para o registry" data-en="Push image to registry">Fazer push da imagem para o registry</div>
-    </div>
-  </div>
-</div>
+            <!-- Card 3 -->
+            <div class="instance-card-small">
+              <div class="instance-card__cnt">
+                <div class="instance-card__box" data-pt="CI/CD com GitHub Actions" data-en="CI/CD with GitHub Actions">
+                  CI/CD com GitHub Actions
+                </div>
+                <div class="instance-card-inf">
+                  <div class="instance-card-inf__title" data-pt="Pipeline em YAML automatizada para:" data-en="Automated YAML pipeline for:">
+                    Pipeline em YAML automatizada para:
+                  </div>
+                  <div class="instance-card-inf__title" data-pt="Clonar repositório" data-en="Clone repository">Clonar repositório</div>
+                  <div class="instance-card-inf__title" data-pt="Configurar Docker Buildx" data-en="Set up Docker Buildx">Configurar Docker Buildx</div>
+                  <div class="instance-card-inf__title" data-pt="Gerar imagem Docker" data-en="Generate Docker image">Gerar imagem Docker</div>
+                  <div class="instance-card-inf__title" data-pt="Rodar testes automatizados" data-en="Run automated tests">Rodar testes automatizados</div>
+                  <div class="instance-card-inf__title" data-pt="Fazer push da imagem para o registry" data-en="Push image to registry">Fazer push da imagem para o registry</div>
+                </div>
+              </div>
+            </div>
 
-<!-- Card 4 -->
-<div class="instance-card-small">
-  <div class="instance-card__cnt">
-    <div class="instance-card__box"
-         data-pt="📊 Monitoramento com Prometheus e Grafana"
-         data-en="📊 Monitoring with Prometheus and Grafana">
-      📊 Monitoramento com Prometheus e Grafana
-    </div>
-    <div class="instance-card-inf">
-      <div class="translatable"
-           data-pt="Instalação do Prometheus e Grafana via Helm"
-           data-en="Installation of Prometheus and Grafana via Helm">
-        Instalação do Prometheus e Grafana via Helm
-      </div>
-      <div class="translatable"
-           data-pt="Coleta de métricas em tempo real da aplicação"
-           data-en="Real-time metrics collection from the application">
-        Coleta de métricas em tempo real da aplicação
-      </div>
-      <div class="translatable"
-           data-pt="Visualização das métricas em dashboards no Grafana"
-           data-en="Metrics visualization in Grafana dashboards">
-        Visualização das métricas em dashboards no Grafana
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+            <!-- Card 4 -->
+            <div class="instance-card-small">
+              <div class="instance-card__cnt">
+                <div class="instance-card__box"
+                    data-pt="Monitoramento com Prometheus e Grafana"
+                    data-en="Monitoring with Prometheus and Grafana">
+                    Monitoramento com Prometheus e Grafana
+                </div>
+                <div class="instance-card-inf">
+                  <div class="instance-card-inf__title"
+                      data-pt="Instalação do Prometheus e Grafana via Helm"
+                      data-en="Installation of Prometheus and Grafana via Helm">
+                    Instalação do Prometheus e Grafana via Helm
+                  </div>
+                  <div class="instance-card-inf__title"
+                      data-pt="Coleta de métricas em tempo real da aplicação"
+                      data-en="Real-time metrics collection from the application">
+                    Coleta de métricas em tempo real da aplicação
+                  </div>
+                  <div class="instance-card-inf__title"
+                      data-pt="Visualização das métricas em dashboards no Grafana"
+                      data-en="Metrics visualization in Grafana dashboards">
+                    Visualização das métricas em dashboards no Grafana
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
             <!-- FIM DOS CARDS -->
           </div>
         </div>
       </div>
     </div>
 
-    <script>
-      const toggleButton = document.getElementById('toggle-dark');
-      toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        toggleButton.textContent = document.body.classList.contains('dark-mode')
-          ? '☀️'
-          : '🌙';
-      });
-  
-      const langBtn = document.getElementById('toggle-lang');
-      let currentLang = 'pt';
-  
-      langBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'pt' ? 'en' : 'pt';
-    document.querySelectorAll('[data-pt][data-en]').forEach(el => {
-      el.innerHTML = el.getAttribute(`data-${currentLang}`); 
-    });
-    langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
-  });
-    </script>
+    <script src="js/main.js"></script>
+
   
     <footer class="footer">
       <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">

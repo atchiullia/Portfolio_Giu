@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
+ 
   </head>
 <body>
   <header class="header">
@@ -54,26 +57,7 @@
     </div>
   </div>
 
-  <script>
-    const toggleButton = document.getElementById('toggle-dark');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleButton.textContent = document.body.classList.contains('dark-mode')
-        ? '☀️'
-        : '🌙';
-    });
-
-    const langBtn = document.getElementById('toggle-lang');
-    let currentLang = 'pt';
-
-    langBtn.addEventListener('click', () => {
-  currentLang = currentLang === 'pt' ? 'en' : 'pt';
-  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
-    el.innerHTML = el.getAttribute(`data-${currentLang}`); 
-  });
-  langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
-});
-  </script>
+  <script scr="js/main.js"></script>
   <footer class="footer">
     <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 

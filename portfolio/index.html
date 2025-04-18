@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
   </head>
 <body>
   <header class="header">
@@ -43,11 +45,11 @@
       <div class="instance-card">
         <a href="monitoramento-kubernetes-prometheus-grafana.html" class="card-link"></a>
         <div class="instance-card__cnt">
-          <div class="instance-card__name" 
-               data-pt="Monitoramento em Kubernetes com Prometheus e Grafana" 
-               data-en="Monitoring in Kubernetes with Prometheus and Grafana">
-               Monitoramento em Kubernetes com Prometheus e Grafana
-          </div>
+          <h3 class="instance-card__name" 
+              data-pt="Monitoramento em Kubernetes com Prometheus e Grafana" 
+              data-en="Monitoring in Kubernetes with Prometheus and Grafana">
+              Monitoramento em Kubernetes com Prometheus e Grafana
+          </h3>
           <div class="instance-card-inf">
             <div class="instance-card-inf__item">
               <div class="instance-card-inf__txt" 
@@ -85,11 +87,11 @@
       <div class="instance-card">
         <a href="portfolio-docker-nginx-html-css-javascript.html" class="card-link"></a>
         <div class="instance-card__cnt">
-          <div class="instance-card__name" 
+          <h3 class="instance-card__name" 
                data-pt="Portfólio com Docker + Nginx" 
                data-en="Portfolio with Docker + Nginx">
                Portfólio com Docker + Nginx
-          </div>
+        </h3>
           <div class="instance-card-inf">
             <div class="instance-card-inf__item">
               <div class="instance-card-inf__txt" 
@@ -125,11 +127,11 @@
       <div class="instance-card">
         <a href="automacao-openssh.html" class="card-link"></a>
         <div class="instance-card__cnt">
-          <div class="instance-card__name" 
+          <h3 class="instance-card__name" 
                data-pt="Automação de Configuração de Chave SSH no Windows" 
                data-en="SSH Key Configuration Automation on Windows">
                Automação de Configuração de Chave SSH no Windows
-          </div>
+        </h3>
           <div class="instance-card-inf">
             <div class="instance-card-inf__item">
               <div class="instance-card-inf__txt" 
@@ -165,11 +167,11 @@
       <div class="instance-card">
         <a href="pipeline-ci-cd-macos-unreal-engine.html" class="card-link"></a>
         <div class="instance-card__cnt">
-          <div class="instance-card__name" 
+          <h3 class="instance-card__name" 
               data-pt="UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine" 
               data-en="UltiMage – CI/CD Build Pipeline on macOS with Unreal Engine">
               UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine
-          </div>
+        </h3>
           <div class="instance-card-inf">
             <div class="instance-card-inf__item">
               <div class="instance-card-inf__txt" 
@@ -205,11 +207,11 @@
       <div class="instance-card">
         <a href="terraform-aws-s3-cloudfront-deployment.html" class="card-link"></a>
         <div class="instance-card__cnt">
-          <div class="instance-card__name" 
+          <h3 class="instance-card__name" 
               data-pt="Publicação de Site Estático com AWS, Terraform e GitHub Actions"
               data-en="Static Site Deployment with AWS, Terraform and GitHub Actions">
               Publicação de Site Estático com AWS, Terraform e GitHub Actions 
-          </div>
+          </h3>
           <div class="instance-card-inf">
             <div class="instance-card-inf__item">
               <div class="instance-card-inf__txt" 
@@ -248,26 +250,7 @@
     </div>
   </div>
 
-  <script>
-    const toggleButton = document.getElementById('toggle-dark');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleButton.textContent = document.body.classList.contains('dark-mode')
-        ? '☀️'
-        : '🌙';
-    });
-
-    const langBtn = document.getElementById('toggle-lang');
-    let currentLang = 'pt';
-
-    langBtn.addEventListener('click', () => {
-  currentLang = currentLang === 'pt' ? 'en' : 'pt';
-  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
-    el.innerHTML = el.getAttribute(`data-${currentLang}`); 
-  });
-  langBtn.textContent = currentLang === 'pt' ? '🇺🇸' : '🇧🇷';
-});
-  </script>
+  <script src="js/main.js"></script>
 
   <footer class="footer">
     <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
