@@ -462,6 +462,8 @@ footer {
   animation: gradientBG 10s ease infinite;  color: #fff;
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* FOOTER */
@@ -482,6 +484,12 @@ footer {
 .footer .playlist {
   margin-left: auto;
   text-align: right;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .about h3,
@@ -505,6 +513,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 70px;
   }
 
@@ -521,6 +530,31 @@ footer {
   .intro p {
     font-size: 16px;
   }
+
+  .playlist,
+  .about,
+  .contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about h3,
+  .contact h3 {
+    margin-top: 0;
+  }
+
+  .social-media {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-content{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
 }
 
 /* ANIMAÇÕES */
