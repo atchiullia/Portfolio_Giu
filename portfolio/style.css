@@ -462,7 +462,6 @@ footer {
   animation: gradientBG 10s ease infinite;  color: #fff;
   padding: 20px;
   text-align: center;
-  display: flex;
   flex-wrap: wrap;
 }
 
