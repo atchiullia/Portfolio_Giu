@@ -1,0 +1,14 @@
+# Example configuration file for Terraform variables
+# Copy this file to terraform.tfvars and update with your actual values
+
+# Your domain name (e.g., yourportfolio.com)
+domain_name = "yourportfolio.com"
+
+# Optional: AWS region (defaults to us-east-1 for CloudFront compatibility)
+# region = "us-east-1"
+
+# Optional: Environment tag for resource organization
+# environment = "production"
+
+# Optional: Project name for resource tagging
+# project = "portfolio-website"

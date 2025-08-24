@@ -1,5 +1,0 @@
-.terraform
-.DS_Store
-portfolio_infra/Terraform/src/.terraform/
-blog_setup
-blog_setup/variables.py
