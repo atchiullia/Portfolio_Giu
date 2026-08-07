@@ -12,10 +12,17 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio</title>
+    <title data-pt="Automação de Chave SSH no Windows com PowerShell | Giullia Lazaro" data-en="SSH Key Automation on Windows with PowerShell | Giullia Lazaro">Automação de Chave SSH no Windows com PowerShell | Giullia Lazaro</title>
+    <meta name="description" content="Script PowerShell que automatiza a geração de chaves SSH ed25519 e o onboarding de desenvolvedores, reduzindo o tempo de setup em mais de 80%." />
+    <link rel="canonical" href="https://giullialazaro.com/automacao-openssh.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Automação de Chave SSH no Windows com PowerShell - Giullia Lazaro" />
+    <meta property="og:description" content="Script PowerShell que automatiza a geração de chaves SSH e a configuração do OpenSSH, reduzindo o tempo de onboarding em mais de 80%." />
+    <meta property="og:url" content="https://giullialazaro.com/automacao-openssh.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
  
@@ -26,13 +33,12 @@
         <i class="fas fa-home"></i>
       </a>
       <div class="buttons">
-        <button id="toggle-dark" class="toggle-dark">🌙</button>
         <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
       </div>
     </header>
 
     <div class="intro">
-      <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
+      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
       <p 
       data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
       data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
@@ -55,9 +61,9 @@
       <div class="portfolio-container">
         <div class="projeto-container">
           <div class="instance-card__cnt">
-            <h3 class="instance-card__name" data-pt="Automação de Configuração de Chave SSH no Windows" data-en="SSH Key Configuration Automation on Windows">
+            <h1 class="instance-card__name" data-pt="Automação de Configuração de Chave SSH no Windows" data-en="SSH Key Configuration Automation on Windows">
               Automação de Configuração de Chave SSH no Windows
-            </h3>
+            </h1>
             <div class="instance-card-inf">
               <div class="instance-card-inf__item"></div>
               <div class="instance-card-inf__item">
@@ -198,7 +204,7 @@
       <div class="contact" style="flex: 1;">
         <h3>Reach me</h3>
       <div class="social-media">  
-            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn"></a>
+            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
             </a>
             <a href="https://github.com/atchiullia" target="_blank" title="GitHub">

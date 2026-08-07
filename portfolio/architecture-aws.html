@@ -12,10 +12,17 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-pt="Arquitetura AWS Enterprise-Grade - Portfólio" data-en="Enterprise-Grade AWS Architecture - Portfolio">Arquitetura AWS Enterprise-Grade - Portfólio</title>
+    <title data-pt="Arquitetura AWS Enterprise-Grade com Segurança em Camadas | Giullia Lazaro" data-en="Enterprise-Grade AWS Architecture with Layered Security | Giullia Lazaro">Arquitetura AWS Enterprise-Grade com Segurança em Camadas | Giullia Lazaro</title>
+    <meta name="description" content="Arquitetura AWS enterprise-grade com segurança em camadas: WAF, Application Load Balancer, subnets isoladas, NAT Gateway e Auto Scaling para alta disponibilidade." />
+    <link rel="canonical" href="https://giullialazaro.com/architecture-aws.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Arquitetura AWS Enterprise-Grade com Segurança em Camadas - Giullia Lazaro" />
+    <meta property="og:description" content="Design de arquitetura AWS enterprise-grade com segurança em camadas: WAF, ALB, subnets isoladas, NAT Gateway e Auto Scaling." />
+    <meta property="og:url" content="https://giullialazaro.com/architecture-aws.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">  
   </head>
@@ -25,13 +32,12 @@
         <i class="fas fa-home"></i>
       </a>
       <div class="buttons">
-        <button id="toggle-dark" class="toggle-dark">🌙</button>
         <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
       </div>
     </header>
 
     <div class="intro">
-      <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
+      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
       <p 
       data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
       data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
@@ -52,10 +58,10 @@
       <div class="portfolio-container">
         <div class="projeto-container">
           <div class="instance-card__cnt">
-            <h3 class="instance-card__name" data-pt="Arquitetura AWS Enterprise-Grade com Segurança em Camadas" 
+            <h1 class="instance-card__name" data-pt="Arquitetura AWS Enterprise-Grade com Segurança em Camadas"
             data-en="Enterprise-Grade AWS Architecture with Layered Security">
               Arquitetura AWS Enterprise-Grade com Segurança em Camadas
-            </h3>
+            </h1>
             
             <div class="video-section">
               <div class="video-container">
@@ -220,11 +226,11 @@
                 <h3 class="instance-card-inf__txt" data-pt="Benefícios da Arquitetura" data-en="Architecture Benefits">Benefícios da Arquitetura</h3>
                 <div class="instance-card-inf__title">
                   <ul style="text-align: left; margin: 20px 0;">
-                    <li>✅ <strong data-pt="Alta disponibilidade:" data-en="High availability:">Alta disponibilidade:</strong> <span data-pt="Múltiplas AZs para redundância" data-en="Multiple AZs for redundancy">Múltiplas AZs para redundância</span></li>
-                    <li>✅ <strong data-pt="Segurança enterprise-grade:" data-en="Enterprise-grade security:">Segurança enterprise-grade:</strong> <span data-pt="Múltiplas camadas de proteção" data-en="Multiple layers of protection">Múltiplas camadas de proteção</span></li>
-                    <li>✅ <strong data-pt="Escalabilidade automática:" data-en="Automatic scalability:">Escalabilidade automática:</strong> <span data-pt="Adaptação automática à demanda" data-en="Automatic adaptation to demand">Adaptação automática à demanda</span></li>
-                    <li>✅ <strong data-pt="Isolamento completo:" data-en="Complete isolation:">Isolamento completo:</strong> <span data-pt="VPC com subnets segregadas" data-en="VPC with segregated subnets">VPC com subnets segregadas</span></li>
-                    <li>✅ <strong data-pt="Conformidade:" data-en="Compliance:">Conformidade:</strong> <span data-pt="Padrões de segurança corporativos" data-en="Corporate security standards">Padrões de segurança corporativos</span></li>
+                    <li><strong data-pt="Alta disponibilidade:" data-en="High availability:">Alta disponibilidade:</strong> <span data-pt="Múltiplas AZs para redundância" data-en="Multiple AZs for redundancy">Múltiplas AZs para redundância</span></li>
+                    <li><strong data-pt="Segurança enterprise-grade:" data-en="Enterprise-grade security:">Segurança enterprise-grade:</strong> <span data-pt="Múltiplas camadas de proteção" data-en="Multiple layers of protection">Múltiplas camadas de proteção</span></li>
+                    <li><strong data-pt="Escalabilidade automática:" data-en="Automatic scalability:">Escalabilidade automática:</strong> <span data-pt="Adaptação automática à demanda" data-en="Automatic adaptation to demand">Adaptação automática à demanda</span></li>
+                    <li><strong data-pt="Isolamento completo:" data-en="Complete isolation:">Isolamento completo:</strong> <span data-pt="VPC com subnets segregadas" data-en="VPC with segregated subnets">VPC com subnets segregadas</span></li>
+                    <li><strong data-pt="Conformidade:" data-en="Compliance:">Conformidade:</strong> <span data-pt="Padrões de segurança corporativos" data-en="Corporate security standards">Padrões de segurança corporativos</span></li>
                   </ul>
                 </div>
 
@@ -264,7 +270,6 @@
         </div>
       </div>
     </div>
-    </div>
     <script src="js/main.js"></script>
 
     <footer class="footer">
@@ -287,8 +292,8 @@
         <!-- Column 3: Contact -->
         <div class="contact" style="flex: 1;">
           <h3>Reach me</h3>
-        <div class="social-media">  
-              <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn"></a>
+        <div class="social-media">
+              <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
               <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
               </a>
               <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
@@ -305,7 +310,7 @@
               </a>
         </div>
         </div>
-    
+      </div>
     </footer>
     </body>
   </html>

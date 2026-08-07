@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CLR3SBXV90');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-pt="Infraestrutura Zero Trust Self-Hosted (Homelab) | Giullia Lazaro" data-en="Self-Hosted Zero Trust Infrastructure (Homelab) | Giullia Lazaro">Infraestrutura Zero Trust Self-Hosted (Homelab) | Giullia Lazaro</title>
+    <meta name="description" content="Homelab com VPN overlay Cloudflare Zero Trust, 14 serviços containerizados via Docker Compose e isolamento de rede com iptables." />
+    <link rel="canonical" href="https://giullialazaro.com/zero-trust-homelab.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Infraestrutura Zero Trust Self-Hosted (Homelab) | Giullia Lazaro" />
+    <meta property="og:description" content="Homelab com VPN overlay Cloudflare Zero Trust, 14 serviços containerizados via Docker Compose e isolamento de rede com iptables." />
+    <meta property="og:url" content="https://giullialazaro.com/zero-trust-homelab.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="home-button" title="Voltar para Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="buttons">
+        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
+      <p
+      data-pt="Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD."
+      data-en="DevOps Engineer specialized in Azure infrastructure, automation, and platform engineering, focused on Terraform, Bicep, Kubernetes, and CI/CD.">
+      Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD.
+      </p>
+      <div class="intro-links">
+        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
+        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
+        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="portfolio-container">
+        <div class="projeto-container">
+          <div class="instance-card__cnt">
+            <span class="status-badge status-badge--done" data-pt="Concluído" data-en="Completed">Concluído</span>
+            <h1 class="instance-card__name" data-pt="Infraestrutura Zero Trust Self-Hosted & Plataforma de Aplicações Privada (Homelab)" data-en="Self-Hosted Zero Trust Infrastructure & Private Application Platform (Homelab)">
+              Infraestrutura Zero Trust Self-Hosted &amp; Plataforma de Aplicações Privada (Homelab)
+            </h1>
+            <div class="instance-card-inf">
+              <div class="instance-card-inf__item"></div>
+              <div class="instance-card-inf__item">
+                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="Arquitetei uma VPN overlay Cloudflare Zero Trust (WARP + cloudflared) rodando em um Raspberry Pi 5, entregando acesso privado a aplicações sem exposição de DNS público e sem nenhuma porta de entrada aberta, atrás de Carrier-Grade NAT (CGNAT). Implantei e administro uma stack de 14 serviços containerizados via Docker Compose, com gerenciamento de configuração sem downtime."
+                  data-en="I architected a Cloudflare Zero Trust VPN overlay (WARP + cloudflared) running on a Raspberry Pi 5, delivering private, VPN-only application access with zero public DNS exposure and zero inbound ports open, behind Carrier-Grade NAT (CGNAT). I deployed and administer a 14-service containerized application stack via Docker Compose, with zero-downtime configuration management.">
+                    Arquitetei uma VPN overlay Cloudflare Zero Trust (WARP + cloudflared) rodando em um Raspberry Pi 5, entregando acesso privado a aplicações sem exposição de DNS público e sem nenhuma porta de entrada aberta, atrás de Carrier-Grade NAT (CGNAT). Implantei e administro uma stack de 14 serviços containerizados via Docker Compose, com gerenciamento de configuração sem downtime.
+                  </p>
+                </div>
+                <h3 class="instance-card-inf__txt" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="Construir e operar, de ponta a ponta, uma infraestrutura de acesso Zero Trust Network Access (ZTNA) sem depender de portas expostas ou VPNs tradicionais, desenvolvendo profundidade prática em redes seguras, containerização e resposta a incidentes de produção."
+                  data-en="Build and operate, end-to-end, a Zero Trust Network Access (ZTNA) infrastructure without relying on exposed ports or traditional VPNs - developing hands-on depth in secure networking, containerization, and production incident response.">
+                    Construir e operar, de ponta a ponta, uma infraestrutura de acesso Zero Trust Network Access (ZTNA) sem depender de portas expostas ou VPNs tradicionais, desenvolvendo profundidade prática em redes seguras, containerização e resposta a incidentes de produção.
+                  </p>
+                </div>
+
+                <div class="tech-stack">
+                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</h3>
+                  <span>Cloudflare Zero Trust</span>
+                  <span>WARP</span>
+                  <span>cloudflared</span>
+                  <span>Raspberry Pi 5</span>
+                  <span>Docker</span>
+                  <span>Docker Compose</span>
+                  <span>iptables</span>
+                  <span>Zero Trust Network Access</span>
+                  <span>DNS</span>
+                  <span>Linux</span>
+
+                  <div class="cards-container">
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="VPN Overlay Zero Trust" data-en="Zero Trust VPN Overlay">
+                          VPN Overlay Zero Trust
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Cloudflare WARP + cloudflared configurados em um Raspberry Pi 5, entregando acesso privado, somente via VPN, sem exposição de DNS público e zero portas de entrada abertas, mesmo atrás de CGNAT."
+                          data-en="Cloudflare WARP + cloudflared configured on a Raspberry Pi 5, delivering private, VPN-only access with zero public DNS exposure and zero open inbound ports, even behind Carrier-Grade NAT.">
+                          Cloudflare WARP + cloudflared configurados em um Raspberry Pi 5, entregando acesso privado, somente via VPN, sem exposição de DNS público e zero portas de entrada abertas, mesmo atrás de CGNAT.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Stack Containerizada" data-en="Containerized Stack">
+                          Stack Containerizada
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="14 serviços containerizados implantados e administrados via Docker Compose, com gerenciamento de configuração e atualizações sem downtime."
+                          data-en="14 containerized services deployed and administered via Docker Compose, with zero-downtime configuration management and updates.">
+                          14 serviços containerizados implantados e administrados via Docker Compose, com gerenciamento de configuração e atualizações sem downtime.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Isolamento de Rede" data-en="Network Isolation">
+                          Isolamento de Rede
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Isolamento de tráfego LAN implementado com regras customizadas de iptables e na chain DOCKER-USER do Docker, restringindo comunicação lateral entre serviços e a rede local."
+                          data-en="LAN traffic isolation implemented using custom iptables rules and Docker's DOCKER-USER chain, restricting lateral communication between services and the local network.">
+                          Isolamento de tráfego LAN implementado com regras customizadas de iptables e na chain DOCKER-USER do Docker, restringindo comunicação lateral entre serviços e a rede local.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Resposta a Incidentes & Documentação" data-en="Incident Response & Documentation">
+                          Resposta a Incidentes &amp; Documentação
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Diagnostiquei e resolvi 20+ incidentes de infraestrutura, documentando o processo em 35+ páginas de RCA (análise de causa raiz), runbooks e um playbook de deployment reutilizável."
+                          data-en="Diagnosed and resolved 20+ infrastructure incidents, documenting the process across 35+ pages of RCA ledgers, runbooks, and a reusable deployment playbook.">
+                          Diagnostiquei e resolvi 20+ incidentes de infraestrutura, documentando o processo em 35+ páginas de RCA (análise de causa raiz), runbooks e um playbook de deployment reutilizável.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div> <!-- cards-container -->
+                </div> <!-- tech-stack -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+    <footer class="footer">
+      <div class="footer-content">
+
+        <!-- Column 1: Playlist -->
+        <div class="playlist" style="flex: 1;">
+          <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Column 2: About -->
+        <div class="about" style="flex: 1;">
+          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
+          <p class="translatable"
+            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
+            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
+            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
+          </p>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="contact" style="flex: 1;">
+          <h3>Reach me</h3>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
+            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
+            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
+            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="mailto:giullialazaro@gmail.com" title="Email">
+            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CLR3SBXV90');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-pt="Plataforma Kubernetes Self-Hosted (kubeadm, ArgoCD, GitOps) | Giullia Lazaro" data-en="Self-Hosted Kubernetes Platform (kubeadm, ArgoCD, GitOps) | Giullia Lazaro">Plataforma Kubernetes Self-Hosted (kubeadm, ArgoCD, GitOps) | Giullia Lazaro</title>
+    <meta name="description" content="Plataforma Kubernetes multi-node self-hosted com kubeadm, GitOps via ArgoCD, ingress Traefik e observabilidade Prometheus/Grafana/Loki." />
+    <link rel="canonical" href="https://giullialazaro.com/kubernetes-platform-lab.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Plataforma Kubernetes Self-Hosted (kubeadm, ArgoCD, GitOps) - Giullia Lazaro" />
+    <meta property="og:description" content="Plataforma Kubernetes multi-node self-hosted com kubeadm, GitOps via ArgoCD, Traefik, Cert-Manager e observabilidade Prometheus/Grafana/Loki." />
+    <meta property="og:url" content="https://giullialazaro.com/kubernetes-platform-lab.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="home-button" title="Voltar para Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="buttons">
+        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
+      <p
+      data-pt="Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD."
+      data-en="DevOps Engineer specialized in Azure infrastructure, automation, and platform engineering, focused on Terraform, Bicep, Kubernetes, and CI/CD.">
+      Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD.
+      </p>
+      <div class="intro-links">
+        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
+        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
+        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="portfolio-container">
+        <div class="projeto-container">
+          <div class="instance-card__cnt">
+            <span class="status-badge status-badge--progress" data-pt="Em andamento" data-en="In Progress">Em andamento</span>
+            <h1 class="instance-card__name" data-pt="Plataforma Kubernetes Self-Hosted - Platform Engineering Lab" data-en="Self-Hosted Kubernetes Platform - Platform Engineering Lab">
+              Plataforma Kubernetes Self-Hosted - Platform Engineering Lab
+            </h1>
+            <div class="instance-card-inf">
+              <div class="instance-card-inf__item"></div>
+              <div class="instance-card-inf__item">
+                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="Estou arquitetando um cluster Kubernetes multi-node (kubeadm), separando o control plane (MacBook) dos worker nodes (Raspberry Pi 5), espelhando os padrões de design de clusters enterprise. Ao redor do cluster, construo uma stack completa de platform engineering: deploy declarativo via GitOps com ArgoCD, ingress com Traefik, automação de certificados TLS com Cert-Manager, armazenamento persistente com Longhorn e uma camada de observabilidade com Prometheus, Grafana e Loki."
+                  data-en="I'm architecting a multi-node Kubernetes cluster (kubeadm), separating the control plane (MacBook) from worker workloads (Raspberry Pi 5), mirroring enterprise cluster design patterns. Around the cluster, I'm building a full platform-engineering stack: declarative GitOps deployment via ArgoCD, Traefik ingress, automated TLS certificates via Cert-Manager, persistent storage with Longhorn, and a Prometheus, Grafana, and Loki observability layer.">
+                    Estou arquitetando um cluster Kubernetes multi-node (kubeadm), separando o control plane (MacBook) dos worker nodes (Raspberry Pi 5), espelhando os padrões de design de clusters enterprise. Ao redor do cluster, construo uma stack completa de platform engineering: deploy declarativo via GitOps com ArgoCD, ingress com Traefik, automação de certificados TLS com Cert-Manager, armazenamento persistente com Longhorn e uma camada de observabilidade com Prometheus, Grafana e Loki.
+                  </p>
+                </div>
+                <h3 class="instance-card-inf__txt" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="Aprofundar experiência prática em orquestração de containers e platform engineering, traduzindo deliberadamente cada componente self-hosted para seu equivalente em cloud gerenciada (ex.: MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline), como preparação direta para a certificação CKA e para atuar como DevOps/Platform Engineer em ambientes Kubernetes de produção."
+                  data-en="Deepen hands-on container-orchestration and platform-engineering experience by deliberately translating each self-hosted component to its managed-cloud equivalent (e.g. MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline), as direct preparation for the CKA certification and for working as a DevOps/Platform Engineer in production Kubernetes environments.">
+                    Aprofundar experiência prática em orquestração de containers e platform engineering, traduzindo deliberadamente cada componente self-hosted para seu equivalente em cloud gerenciada (ex.: MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline), como preparação direta para a certificação CKA e para atuar como DevOps/Platform Engineer em ambientes Kubernetes de produção.
+                  </p>
+                </div>
+
+                <div class="tech-stack">
+                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</h3>
+                  <span>Kubernetes</span>
+                  <span>kubeadm</span>
+                  <span>ArgoCD</span>
+                  <span>GitOps</span>
+                  <span>Traefik</span>
+                  <span>Cert-Manager</span>
+                  <span>Longhorn</span>
+                  <span>Prometheus</span>
+                  <span>Grafana</span>
+                  <span>Loki</span>
+                  <span>WireGuard</span>
+                  <span>Terraform</span>
+                  <span>Ansible</span>
+                  <span>Kubernetes RBAC</span>
+
+                  <div class="cards-container">
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Arquitetura do Cluster" data-en="Cluster Architecture">
+                          Arquitetura do Cluster
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Cluster Kubernetes multi-node provisionado com kubeadm, com control plane dedicado (MacBook) e worker nodes em Raspberry Pi 5 - replicando a separação de responsabilidades de clusters enterprise."
+                          data-en="Multi-node Kubernetes cluster provisioned with kubeadm, with a dedicated control plane (MacBook) and worker nodes on Raspberry Pi 5 - replicating the separation of concerns found in enterprise clusters.">
+                          Cluster Kubernetes multi-node provisionado com kubeadm, com control plane dedicado (MacBook) e worker nodes em Raspberry Pi 5 - replicando a separação de responsabilidades de clusters enterprise.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="GitOps com ArgoCD" data-en="GitOps with ArgoCD">
+                          GitOps com ArgoCD
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Deploy declarativo e reconciliação contínua do estado do cluster via ArgoCD, com manifestos Kubernetes versionados em Git como única fonte de verdade."
+                          data-en="Declarative deployment and continuous state reconciliation via ArgoCD, with version-controlled Kubernetes manifests as the single source of truth.">
+                          Deploy declarativo e reconciliação contínua do estado do cluster via ArgoCD, com manifestos Kubernetes versionados em Git como única fonte de verdade.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Ingress & TLS Automatizado" data-en="Ingress & Automated TLS">
+                          Ingress &amp; TLS Automatizado
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Roteamento de tráfego com Traefik como ingress controller, com renovação e emissão automática de certificados TLS via Cert-Manager."
+                          data-en="Traffic routing with Traefik as the ingress controller, with automated TLS certificate issuance and renewal via Cert-Manager.">
+                          Roteamento de tráfego com Traefik como ingress controller, com renovação e emissão automática de certificados TLS via Cert-Manager.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Armazenamento Persistente" data-en="Persistent Storage">
+                          Armazenamento Persistente
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Longhorn como camada de storage distribuído e replicado para volumes persistentes (PVCs), com snapshots e recuperação de falhas de nó."
+                          data-en="Longhorn as a distributed, replicated storage layer for persistent volumes (PVCs), with snapshots and node-failure recovery.">
+                          Longhorn como camada de storage distribuído e replicado para volumes persistentes (PVCs), com snapshots e recuperação de falhas de nó.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Observabilidade" data-en="Observability">
+                          Observabilidade
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Stack Prometheus + Grafana + Loki para métricas, dashboards e logs centralizados do cluster e das aplicações."
+                          data-en="Prometheus + Grafana + Loki stack for cluster and application metrics, dashboards, and centralized logging.">
+                          Stack Prometheus + Grafana + Loki para métricas, dashboards e logs centralizados do cluster e das aplicações.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Acesso Seguro" data-en="Secure Access">
+                          Acesso Seguro
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Acesso remoto de desenvolvimento planejado via gateway WireGuard, sem exposição de banco de dados ou API do Kubernetes à internet - extensão direta do modelo Zero Trust usado no homelab."
+                          data-en="Planned secure remote developer access via a WireGuard VPN gateway, with no database or Kubernetes API exposed to the internet - a direct extension of the Zero Trust access model used in the homelab.">
+                          Acesso remoto de desenvolvimento planejado via gateway WireGuard, sem exposição de banco de dados ou API do Kubernetes à internet - extensão direta do modelo Zero Trust usado no homelab.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Tradução Cloud-Native" data-en="Cloud-Native Translation">
+                          Tradução Cloud-Native
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Mapeamento deliberado de cada componente self-hosted para seu equivalente em cloud gerenciada: MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline."
+                          data-en="Deliberate mapping of each self-hosted component to its managed-cloud equivalent: MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline.">
+                          Mapeamento deliberado de cada componente self-hosted para seu equivalente em cloud gerenciada: MinIO ↔ S3, Prometheus ↔ CloudWatch, ArgoCD ↔ CodePipeline.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="instance-card-small">
+                      <div class="instance-card__cnt">
+                        <div class="instance-card__box" data-pt="Infraestrutura como Código" data-en="Infrastructure as Code">
+                          Infraestrutura como Código
+                        </div>
+                        <div class="instance-card-inf">
+                          <div class="instance-card-inf__title"
+                          data-pt="Todo o build mantido como IaC (Terraform, Ansible e manifestos Kubernetes) em repositório versionado, seguindo um plano de rollout documentado e faseado."
+                          data-en="The entire build is maintained as IaC (Terraform, Ansible, and Kubernetes manifests) in a version-controlled repository, following a documented, phased rollout plan.">
+                          Todo o build mantido como IaC (Terraform, Ansible e manifestos Kubernetes) em repositório versionado, seguindo um plano de rollout documentado e faseado.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div> <!-- cards-container -->
+                </div> <!-- tech-stack -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+    <footer class="footer">
+      <div class="footer-content">
+
+        <!-- Column 1: Playlist -->
+        <div class="playlist" style="flex: 1;">
+          <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Column 2: About -->
+        <div class="about" style="flex: 1;">
+          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
+          <p class="translatable"
+            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
+            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
+            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
+          </p>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="contact" style="flex: 1;">
+          <h3>Reach me</h3>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
+            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
+            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
+            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+            <a href="mailto:giullialazaro@gmail.com" title="Email">
+            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
