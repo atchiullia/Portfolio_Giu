@@ -2,38 +2,41 @@ name: CI - Code Check & Security Scan
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   security-scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
-    
-    - name: Run Trivy scan
-      uses: aquasecurity/trivy-action@master
-      with:
-        scan-type: 'fs'
-        scan-ref: '.'
-        format: table
-        output: 'trivy-portfolio-results.txt'
-        severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Trivy Summary
-      run: |
-          echo "### Vulnerability Report" >> $GITHUB_STEP_SUMMARY
-          echo "<details><summary>Expand</summary>" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [[ -s trivy-docker-results.txt ]]; then
-            cat trivy-docker-results.txt >> $GITHUB_STEP_SUMMARY
-          else
-            echo "No vulnerabilities found or the summary is empty" >> $GITHUB_STEP_SUMMARY
-          fi
-          echo "</details>"
-      
-    
+      - name: Run Trivy scan
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: table
+          output: 'trivy-portfolio-results.txt'
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+
+      - name: Trivy Summary
+        if: always()
+        run: |
+          {
+            echo "### Vulnerability Report"
+            echo "<details><summary>Expand</summary>"
+            echo
+            if [[ -s trivy-portfolio-results.txt ]]; then
+              cat trivy-portfolio-results.txt
+            else
+              echo "No vulnerabilities found or the report is empty"
+            fi
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"

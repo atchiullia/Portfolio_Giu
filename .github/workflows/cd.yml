@@ -1,41 +1,38 @@
-name: CD - Deploy Static Site to S3
+name: CD - Deploy to Raspberry Pi
 
 on:
   workflow_run:
     workflows: ["CI - Code Check & Security Scan"]
-    types:
-      - completed
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
+    if: >-
+      ${{ github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.event == 'push' &&
+          github.event.workflow_run.head_repository.full_name == github.repository }}
+    runs-on: [self-hosted, linux, ARM64, portfolio-pi]
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout the tested commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
-    - name: AWS Credentials Config
-      uses: aws-actions/configure-aws-credentials@v4.1.0
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-        
-    - name: Sync to S3
-      uses: jakejarvis/s3-sync-action@v0.5.1
-      with: 
-        args: --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        SOURCE_DIR: ./portfolio
+      - name: Sync site to the Pi
+        run: |
+          rsync -rlt --delete \
+            --chmod=D755,F644 \
+            --exclude '.DS_Store' \
+            portfolio/ /mnt/ssd/portfolio/site/
 
-    - name: Invalidate CloudFront Cache
-      uses: chetan/invalidate-cloudfront-action@v2
-      env:
-        DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: us-east-1
-        PATHS: "/*"
-
+      - name: Smoke check
+        run: test -s /mnt/ssd/portfolio/site/index.html && test -s /mnt/ssd/portfolio/site/404.html
