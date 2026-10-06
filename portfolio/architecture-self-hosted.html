@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CLR3SBXV90');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-pt="Portfólio Self-Hosted: do AWS para um Raspberry Pi | Giullia Lazaro" data-en="Self-Hosted Portfolio: From AWS to a Raspberry Pi | Giullia Lazaro">Portfólio Self-Hosted: do AWS para um Raspberry Pi | Giullia Lazaro</title>
+    <meta name="description" content="Arquitetura do portfólio giullialazaro.com hospedado em um Raspberry Pi 5: Cloudflare Tunnel, nginx em container somente leitura, CI com Trivy e deploy por runner self-hosted com privilégios mínimos." />
+    <link rel="canonical" href="https://giullialazaro.com/architecture-self-hosted.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Portfólio Self-Hosted: do AWS para um Raspberry Pi - Giullia Lazaro" />
+    <meta property="og:description" content="Como o portfólio saiu da AWS e passou a rodar em um Raspberry Pi 5, sem porta de entrada aberta, com CI/CD e runner de privilégio mínimo." />
+    <meta property="og:url" content="https://giullialazaro.com/architecture-self-hosted.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">  
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="home-button" title="Voltar para Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="buttons">
+        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
+      <p 
+      data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
+      data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
+      Engenheira DevOps apaixonada por automação e performance em pipelines. 
+      Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. 
+      Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. 
+      Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas.    
+    </p>
+        <div class="intro-links">
+        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
+        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
+        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
+        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="portfolio-container">
+        <div class="projeto-container">
+          <div class="instance-card__cnt">
+            <h1 class="instance-card__name" data-pt="Portfólio Self-Hosted: do AWS para um Raspberry Pi"
+            data-en="Self-Hosted Portfolio: From AWS to a Raspberry Pi">
+              Portfólio Self-Hosted: do AWS para um Raspberry Pi
+            </h1>
+
+            <div class="instance-card-inf">
+              <div class="instance-card-inf__item"></div>
+              <div class="instance-card-inf__item">
+
+                <div class="instance-card-inf__title" style="margin-bottom: 24px;" data-pt="<img src=&quot;images/self-hosted-architecture-pt.png&quot; alt=&quot;Arquitetura do portfólio self-hosted: git push, CI com Trivy, runner no Raspberry Pi, Cloudflare Tunnel e nginx&quot; style=&quot;width:100%;border-radius:12px;&quot; />" data-en="<img src=&quot;images/self-hosted-architecture-en.png&quot; alt=&quot;Self-hosted portfolio architecture: git push, CI with Trivy, runner on the Raspberry Pi, Cloudflare Tunnel and nginx&quot; style=&quot;width:100%;border-radius:12px;&quot; />"><img src="images/self-hosted-architecture-pt.png" alt="Arquitetura do portfólio self-hosted: git push, CI com Trivy, runner no Raspberry Pi, Cloudflare Tunnel e nginx" style="width:100%;border-radius:12px;" /></div>
+
+                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="O site giullialazaro.com saiu da AWS (S3, CloudFront, Route 53 e ACM) e passou a rodar em um Raspberry Pi 5, publicado pela Cloudflare por um tunnel. Nenhuma porta de entrada é aberta para o portfólio: o container cloudflared só faz conexões de saída. A entrega continua automática: um push na branch main passa pelo CI com Trivy e, se tudo estiver verde, um runner self-hosted no próprio Pi atualiza o site." data-en="The website giullialazaro.com moved off AWS (S3, CloudFront, Route 53 and ACM) and now runs on a Raspberry Pi 5, published by Cloudflare through a tunnel. No inbound port is opened for the portfolio: the cloudflared container only makes outbound connections. Delivery is still automatic: a push to the main branch goes through CI with Trivy and, if everything is green, a self-hosted runner on the Pi itself updates the site.">O site giullialazaro.com saiu da AWS (S3, CloudFront, Route 53 e ACM) e passou a rodar em um Raspberry Pi 5, publicado pela Cloudflare por um tunnel. Nenhuma porta de entrada é aberta para o portfólio: o container cloudflared só faz conexões de saída. A entrega continua automática: um push na branch main passa pelo CI com Trivy e, se tudo estiver verde, um runner self-hosted no próprio Pi atualiza o site.</p>
+                </div>
+
+                <h3 class="instance-card-inf__txt" data-pt="Componentes da Arquitetura" data-en="Architecture Components">Componentes da Arquitetura</h3>
+                <div class="instance-card-inf__title">
+                  <ul style="text-align: left; margin: 20px 0;">
+                    <li><strong data-pt="Cloudflare:" data-en="Cloudflare:">Cloudflare:</strong> <span data-pt="DNS, TLS gerenciado, cache e redirecionamento de www para o domínio principal" data-en="DNS, managed TLS, caching and the redirect from www to the main domain">DNS, TLS gerenciado, cache e redirecionamento de www para o domínio principal</span></li>
+                    <li><strong data-pt="Cloudflare Tunnel (cloudflared):" data-en="Cloudflare Tunnel (cloudflared):">Cloudflare Tunnel (cloudflared):</strong> <span data-pt="container que abre a conexão de saída até a Cloudflare, sem expor porta no roteador" data-en="container that opens the outbound connection to Cloudflare, with no port exposed on the router">container que abre a conexão de saída até a Cloudflare, sem expor porta no roteador</span></li>
+                    <li><strong data-pt="nginx:" data-en="nginx:">nginx:</strong> <span data-pt="container com sistema de arquivos somente leitura, arquivos do site montados como somente leitura, 404 reais, gzip e headers de segurança" data-en="container with a read-only filesystem, site files mounted read-only, real 404 responses, gzip and security headers">container com sistema de arquivos somente leitura, arquivos do site montados como somente leitura, 404 reais, gzip e headers de segurança</span></li>
+                    <li><strong data-pt="Docker Compose:" data-en="Docker Compose:">Docker Compose:</strong> <span data-pt="define os dois containers e uma rede privada entre eles, sem portas publicadas no host" data-en="defines the two containers and a private network between them, with no ports published on the host">define os dois containers e uma rede privada entre eles, sem portas publicadas no host</span></li>
+                    <li><strong data-pt="GitHub Actions + Trivy:" data-en="GitHub Actions + Trivy:">GitHub Actions + Trivy:</strong> <span data-pt="CI em runner hospedado pelo GitHub, com varredura de vulnerabilidades" data-en="CI on a GitHub-hosted runner, with vulnerability scanning">CI em runner hospedado pelo GitHub, com varredura de vulnerabilidades</span></li>
+                    <li><strong data-pt="Runner self-hosted:" data-en="Self-hosted runner:">Runner self-hosted:</strong> <span data-pt="faz o deploy no Pi, com um usuário sem privilégios" data-en="does the deploy on the Pi, as an unprivileged user">faz o deploy no Pi, com um usuário sem privilégios</span></li>
+                  </ul>
+                </div>
+
+                <h3 class="instance-card-inf__txt" data-pt="Decisões de Segurança" data-en="Security Decisions">Decisões de Segurança</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="O repositório é público, então o caminho de deploy é a parte que mais precisa de cuidado. O deploy só roda depois de um CI bem-sucedido, em um push na main do próprio repositório, nunca a partir de um fork. Pull requests de fora exigem aprovação antes de rodar qualquer workflow. O runner no Pi não tem acesso ao Docker nem a permissões de administrador e só consegue escrever na pasta do site; o serviço ainda roda com restrições do systemd. O segredo do tunnel fica fora do Git, em um arquivo com permissão restrita." 
+                  data-en="The repository is public, so the deploy path is the part that needs the most care. The deploy only runs after a successful CI, on a push to main of the same repository, never from a fork. Pull requests from outside need approval before any workflow runs. The runner on the Pi has no access to Docker or administrator rights and can only write to the site folder; the service also runs under systemd restrictions. The tunnel secret stays out of Git, in a file with restricted permissions.">
+                    O repositório é público, então o caminho de deploy é a parte que mais precisa de cuidado. O deploy só roda depois de um CI bem-sucedido, em um push na main do próprio repositório, nunca a partir de um fork. Pull requests de fora exigem aprovação antes de rodar qualquer workflow. O runner no Pi não tem acesso ao Docker nem a permissões de administrador e só consegue escrever na pasta do site; o serviço ainda roda com restrições do systemd. O segredo do tunnel fica fora do Git, em um arquivo com permissão restrita.
+                  </p>
+                </div>
+
+                <h3 class="instance-card-inf__txt" data-pt="O que mudou em relação à AWS" data-en="What Changed From AWS">O que mudou em relação à AWS</h3>
+                <div class="instance-card-inf__title">
+                  <ul style="text-align: left; margin: 20px 0;">
+                    <li><strong data-pt="Hospedagem:" data-en="Hosting:">Hospedagem:</strong> <span data-pt="de S3 e CloudFront para nginx em um Raspberry Pi 5" data-en="from S3 and CloudFront to nginx on a Raspberry Pi 5">de S3 e CloudFront para nginx em um Raspberry Pi 5</span></li>
+                    <li><strong data-pt="DNS e TLS:" data-en="DNS and TLS:">DNS e TLS:</strong> <span data-pt="de Route 53 e ACM para a Cloudflare" data-en="from Route 53 and ACM to Cloudflare">de Route 53 e ACM para a Cloudflare</span></li>
+                    <li><strong data-pt="Deploy:" data-en="Deploy:">Deploy:</strong> <span data-pt="de sync para o S3 e invalidação do CloudFront para rsync por um runner no Pi" data-en="from an S3 sync plus CloudFront invalidation to rsync by a runner on the Pi">de sync para o S3 e invalidação do CloudFront para rsync por um runner no Pi</span></li>
+                    <li><strong data-pt="Infraestrutura:" data-en="Infrastructure:">Infraestrutura:</strong> <span data-pt="de Terraform na AWS para Docker Compose no Pi" data-en="from Terraform on AWS to Docker Compose on the Pi">de Terraform na AWS para Docker Compose no Pi</span></li>
+                  </ul>
+                  <p data-pt="As páginas da versão AWS continuam no ar como histórico: <a href='architecture-aws.html'>arquitetura AWS</a> e <a href='terraform-aws-s3-cloudfront-deployment.html'>deploy com Terraform</a>." data-en="The pages for the AWS version stay up as history: <a href='architecture-aws.html'>AWS architecture</a> and <a href='terraform-aws-s3-cloudfront-deployment.html'>Terraform deployment</a>.">As páginas da versão AWS continuam no ar como histórico: <a href="architecture-aws.html">arquitetura AWS</a> e <a href="terraform-aws-s3-cloudfront-deployment.html">deploy com Terraform</a>.</p>
+                </div>
+
+                <h3 class="instance-card-inf__txt" data-pt="Key Takeaway" data-en="Key Takeaway">Key Takeaway</h3>
+                <div class="instance-card-inf__title">
+                  <p data-pt="Hospedar em casa não é só rodar um container: é decidir o que fica exposto, quem pode publicar e o que acontece se uma dessas peças for comprometida. Cada escolha acima parte dessa pergunta." data-en="Self-hosting is not just running a container: it is deciding what is exposed, who can publish, and what happens if one of those pieces is compromised. Each choice above starts from that question.">Hospedar em casa não é só rodar um container: é decidir o que fica exposto, quem pode publicar e o que acontece se uma dessas peças for comprometida. Cada escolha acima parte dessa pergunta.</p>
+                </div>
+
+                <div class="tech-stack">
+                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias" data-en="Technologies">Tecnologias</h3>
+                  <span>Raspberry Pi 5</span>
+                  <span>Cloudflare</span>
+                  <span>Cloudflare Tunnel</span>
+                  <span>Docker</span>
+                  <span>Docker Compose</span>
+                  <span>nginx</span>
+                  <span>GitHub Actions</span>
+                  <span>Trivy</span>
+                  <span>Self-hosted Runner</span>
+                  <span>systemd</span>
+                  <span>rsync</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+
+    <footer class="footer">
+      <div class="footer-content">
+  
+        <!-- Column 1: Playlist -->
+        <div class="playlist" style="flex: 1;">
+          <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+  
+          <!-- Column 2: About -->
+          <div class="about" style="flex: 1;">
+            <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
+            <p class="translatable"
+              data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
+              data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
+              Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
+            </p>
+          </div>
+        <!-- Column 3: Contact -->
+        <div class="contact" style="flex: 1;">
+          <h3>Reach me</h3>
+        <div class="social-media">
+              <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+              </a>
+              <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
+              <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+              </a>
+              <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
+              <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+              </a>
+              <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
+              <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+              </a>
+              <a href="mailto:giullialazaro@gmail.com" title="Email">
+              <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
+              </a>
+        </div>
+        </div>
+      </div>
+    </footer>
+    </body>
+  </html>
+  
