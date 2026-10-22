@@ -290,6 +290,7 @@ p { margin: 0; }
   border: var(--border) solid var(--ink); border-radius: 16px; background: var(--rose);
 }
 .project__cluster .pill { font-size: 11px; padding: 7px 14px; }
+.project__cluster-label { flex-basis: 100%; font-family: var(--font-mono); font-weight: 600; font-size: 11px; }
 .project__cursor { display: inline-block; width: 8px; height: 14px; background: var(--pink); vertical-align: -2px; animation: blink 1s steps(2) infinite; }
 @keyframes blink { to { opacity: 0; } }
 
