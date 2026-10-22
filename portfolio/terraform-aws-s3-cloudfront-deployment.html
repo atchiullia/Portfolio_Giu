@@ -1,269 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
-    <script>
+<html lang="pt-BR">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CLR3SBXV90');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-pt="Deploy de Site Estático com Terraform, AWS S3 e CloudFront | Giullia Lazaro" data-en="Static Site Deployment with Terraform, AWS S3 and CloudFront | Giullia Lazaro">Deploy de Site Estático com Terraform, AWS S3 e CloudFront | Giullia Lazaro</title>
-    <meta name="description" content="Infraestrutura como código com Terraform: site na AWS via S3, CloudFront, Route 53 e ACM, com CI/CD em GitHub Actions e scan de segurança Trivy." />
-    <link rel="canonical" href="https://giullialazaro.com/terraform-aws-s3-cloudfront-deployment.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Deploy de Site Estático com Terraform, AWS S3 e CloudFront - Giullia Lazaro" />
-    <meta property="og:description" content="Infraestrutura como código com Terraform para publicar um site na AWS via S3, CloudFront, Route 53, ACM e CI/CD via GitHub Actions." />
-    <meta property="og:url" content="https://giullialazaro.com/terraform-aws-s3-cloudfront-deployment.html" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">  
-  </head>
-  <body>
-    <header class="header">
-      <a href="index.html" class="home-button" title="Voltar para Home">
-        <i class="fas fa-home"></i>
-      </a>
-      <div class="buttons">
-        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
-      </div>
-    </header>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Static Site Deployment with Terraform, AWS S3 and CloudFront | Giullia Lazaro" data-pt="Deploy de Site Estático com Terraform, AWS S3 e CloudFront | Giullia Lazaro">Deploy de Site Estático com Terraform, AWS S3 e CloudFront | Giullia Lazaro</title>
+<meta content="Infraestrutura como código com Terraform: site na AWS via S3, CloudFront, Route 53 e ACM, com CI/CD em GitHub Actions e scan de segurança Trivy." name="description"/>
+<link href="https://giullialazaro.com/terraform-aws-s3-cloudfront-deployment.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Deploy de Site Estático com Terraform, AWS S3 e CloudFront - Giullia Lazaro" property="og:title"/>
+<meta content="Infraestrutura como código com Terraform para publicar um site na AWS via S3, CloudFront, Route 53, ACM e CI/CD via GitHub Actions." property="og:description"/>
+<meta content="https://giullialazaro.com/terraform-aws-s3-cloudfront-deployment.html" property="og:url"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="project.css" />
+<meta name="theme-color" content="#FBF1DE" />
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🦄&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
-    <div class="intro">
-      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
-      <p 
-      data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
-      data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
-      Engenheira DevOps apaixonada por automação e performance em pipelines. 
-      Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. 
-      Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. 
-      Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas.    
-    </p>
-        <div class="intro-links">
-        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
-        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
-        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
-        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-pt="pular para o conteúdo" data-en="skip to content">pular para o conteúdo</a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="pill nav__logo">giullia lazaro</a>
+      <nav aria-label="principal">
+        <ul class="nav__links">
+          <li><a href="index.html#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+          <li><a href="index.html#projetos" aria-current="page" data-pt="projetos" data-en="projects">projetos</a></li>
+          <li><a href="index.html#resultados" data-pt="resultados" data-en="results">resultados</a></li>
+          <li><a href="index.html#conteudo" data-pt="conteúdo" data-en="content">conteúdo</a></li>
+          <li><a href="index.html#contato" data-pt="contato" data-en="contact">contato</a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="idioma / language">
+          <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">pt</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">en</button>
+        </div>
+        <a href="index.html#contato" class="btn btn--pink btn--sm nav__cta" data-pt="fale comigo" data-en="get in touch">fale comigo</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" data-pt-aria="abrir menu" data-en-aria="open menu" aria-label="abrir menu"><span></span></button>
       </div>
     </div>
+  </header>
 
-
-    <div class="wrapper">
-      <div class="portfolio-container">
-        <div class="projeto-container">
-          <div class="instance-card__cnt">
-            <h1 class="instance-card__name" data-pt="Publicação de Site Estático com Terraform, AWS e GitHub Actions"
-            data-en="Static Website Deployment with Terraform, AWS, and GitHub Actions">
-              Publicação de Site Estático com Terraform, AWS e GitHub Actions
-          </h1>
-            <div class="instance-card-inf">
-              <div class="instance-card-inf__item"></div>
-              <div class="instance-card-inf__item">
-                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets." 
-                  data-en="I implemented the deployment of a static website with a custom domain (giullialazaro.com) using AWS, Terraform, and GitHub Actions, focusing on automation, security, and infrastructure as code. The entire process was automated via a CI/CD pipeline, ensuring continuous delivery with security validation via Trivy and secret management via GitHub Secrets.">
+  <main id="main">
+  <section class="section ph grid-bg">
+    <div class="wrap">
+      <a href="index.html#projetos" class="pill ph__back" data-pt="← projetos" data-en="← projects">← projetos</a>
+      <div class="ph__grid">
+        <div class="ph__copy">
+          <h1 class="ph__title" data-pt="Publicação de Site Estático com Terraform, AWS e GitHub Actions" data-en="Static Website Deployment with Terraform, AWS, and GitHub Actions">Publicação de Site Estático com Terraform, AWS e GitHub Actions</h1>
+          <div class="ph__tags"><span class="tag">Terraform</span><span class="tag">Amazon S3</span><span class="tag">CloudFront</span><span class="tag">AWS ACM</span><span class="tag">Route 53 + Squarespace</span><span class="tag">AWS CloudWatch</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Trivy</span><span class="tag">GitHub Secrets</span></div>
+          <div class="ph__actions"><a class="btn btn--ink" href="https://hub.docker.com/r/atchiullia/giullialazaro" target="_blank" rel="noopener" data-pt="DockerHub Repo" data-en="DockerHub Repo">DockerHub Repo</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section pbody">
+    <div class="wrap pbody">
+      <div class="ppair">
+        <div class="card pblock"><span class="pblock__label" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</span><p data-en="I implemented the deployment of a static website with a custom domain (giullialazaro.com) using AWS, Terraform, and GitHub Actions, focusing on automation, security, and infrastructure as code. The entire process was automated via a CI/CD pipeline, ensuring continuous delivery with security validation via Trivy and secret management via GitHub Secrets." data-pt="Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets.">
                     Implementei a publicação de um site estático com domínio personalizado (giullialazaro.com) utilizando AWS, Terraform e GitHub Actions, com foco em automação, segurança e infraestrutura como código. Todo o processo foi automatizado via pipeline CI/CD, garantindo entrega contínua com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets.                 
-                  </p>
-                </div>
-                <h3 class="instance-card-inf__txt" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado." 
-                  data-en="Apply DevOps and IaC (Infrastructure as Code) practices to create a scalable, secure, and monitored deployment process.">
+                  </p></div>
+        <div class="card pblock pblock--alt"><span class="pblock__label" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</span><p data-en="Apply DevOps and IaC (Infrastructure as Code) practices to create a scalable, secure, and monitored deployment process." data-pt="Aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado.">
                   Aplicar práticas DevOps e IaC (Infrastructure as Code) para criar um processo de deploy escalável, seguro e monitorado.
+                  </p></div>
+      </div>
+      <div class="pcards">
+        <div class="pcards__head"><h2 class="pcards__title" data-pt="como funciona" data-en="how it works">como funciona</h2><span class="pill" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</span></div>
+        <div class="pcards__grid">
+          <div class="card pcard"><span class="pill pcard__n">01</span><h3 class="pcard__title" data-pt="IaC" data-en="IaC">IaC</h3><p data-pt="Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch." data-en="Infrastructure as Code with Terraform: automated creation of S3, CloudFront, Route 53, ACM, and monitoring via CloudWatch.">Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">02</span><h3 class="pcard__title" data-pt="Pipeline CI/CD" data-en="Pipeline CI/CD">Pipeline CI/CD</h3><p data-pt="Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets." data-en="CI/CD pipeline with GitHub Actions: automatic build and deployment on each push, with security validation via Trivy and secret management via GitHub Secrets.">Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">03</span><h3 class="pcard__title" data-pt="Segurança" data-en="Segurança">Segurança</h3><p data-pt="Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy." data-en="Automated scan with Trivy + sensitive secret management with GitHub Secrets to protect credentials and sensitive data during the build and deployment process.">Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">04</span><h3 class="pcard__title" data-pt="Domínio Personalizado" data-en="Custom Domain">Domínio Personalizado</h3><p data-pt="Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace." data-en="Custom domain (giullialazaro.com) with management via Route 53 and Squarespace. SSL via AWS ACM and DNS mapping with CNAME validation on Squarespace.">Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">05</span><h3 class="pcard__title" data-pt="Monitoramento" data-en="Monitoring">Monitoramento</h3><p data-pt="Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos." data-en="Monitoring via AWS CloudWatch to ensure the availability and performance of the site, with alerts configured for critical events.">Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">06</span><h3 class="pcard__title" data-pt="Resultado" data-en="Outcome">Resultado</h3><p data-pt="Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado." data-en="Secure and fully automated deployment of a static website with replicable infrastructure, SSL, global CDN, and custom domain.">Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">07</span><h3 class="pcard__title" data-pt="Aprendizados" data-en="Lessons Learned">Aprendizados</h3><p data-pt="Integração prática de DevOps com IaC, segurança e deploy web" data-en="Practical integration of DevOps with IaC, security, and web deployment">Integração prática de DevOps com IaC, segurança e deploy web</p></div>
+        </div>
+      </div>
+      <div class="card pblock"><span class="pblock__label" data-pt="Publicação" data-en="Publication">Publicação</span><p data-en="I documented this architecture in the article “Infraestrutura Profissional por Centavos” (“Professional Infrastructure for Pennies”), published on Bosch Engineering's Medium, covering how to achieve under $2/month in operating cost with S3 + CloudFront." data-pt="Documentei essa arquitetura no artigo “Infraestrutura Profissional por Centavos”, publicado na Medium da Bosch Engineering, cobrindo como atingir menos de US$2/mês de custo operacional com S3 + CloudFront.">
+                    Documentei essa arquitetura no artigo “Infraestrutura Profissional por Centavos”, publicado na Medium da Bosch Engineering, cobrindo como atingir menos de US$2/mês de custo operacional com S3 + CloudFront.
                   </p>
-                </div> 
-                <div class="instance-card-inf__github">
-                  <a href="https://hub.docker.com/r/atchiullia/giullialazaro" target="_blank" class="intro-btn">DockerHub Repo</a>
-                </div> 
-
-                
-                <div class="tech-stack">
-                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</h3>
-                  <span>Terraform</span> 
-                  <span>Amazon S3</span> 
-                  <span>CloudFront</span> 
-                  <span>AWS ACM</span> 
-                  <span>Route 53 + Squarespace</span> 
-                  <span>AWS CloudWatch</span> 
-                  <span>GitHub Actions</span> 
-                  <span>CI/CD</span> 
-                  <span>Trivy</span> 
-                  <span>GitHub Secrets</span>
-
-                  <div class="cards-container">
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="IaC" 
-                          data-en="IaC">IaC</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p 
-                          data-pt="Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch."
-                          data-en="Infrastructure as Code with Terraform: automated creation of S3, CloudFront, Route 53, ACM, and monitoring via CloudWatch.">
-                          Infraestrutura como Código com Terraform: criação automatizada de S3, CloudFront, Route 53, ACM e monitoramento via CloudWatch.
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Pipeline CI/CD" data-en="Pipeline CI/CD">Pipeline CI/CD</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p 
-                          data-pt="Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets."
-                          data-en="CI/CD pipeline with GitHub Actions: automatic build and deployment on each push, with security validation via Trivy and secret management via GitHub Secrets.">
-                          Pipeline CI/CD com GitHub Actions: build e deploy automáticos a cada push, com validação de segurança via Trivy e gerenciamento de segredos via GitHub Secrets. 
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Segurança" 
-                          data-en="Segurança">
-                          Segurança</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy."
-                          data-en="Automated scan with Trivy + sensitive secret management with GitHub Secrets to protect credentials and sensitive data during the build and deployment process.">
-                          Scan automatizado com Trivy + gestão de segredos sensíveis com GitHub Secrets para proteger credenciais e dados sensíveis durante o processo de build e deploy.
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Domínio Personalizado" 
-                          data-en="Custom Domain">Domínio Personalizado</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace."
-                          data-en="Custom domain (giullialazaro.com) with management via Route 53 and Squarespace. SSL via AWS ACM and DNS mapping with CNAME validation on Squarespace.">
-                          Domínio personalizado (giullialazaro.com) com gerenciamento via Route 53 e Squarespace. SSL via AWS ACM e mapeamento de DNS com validação de CNAME no Squarespace.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Monitoramento" 
-                          data-en="Monitoring">Monitoramento</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos."
-                          data-en="Monitoring via AWS CloudWatch to ensure the availability and performance of the site, with alerts configured for critical events.">
-                          Monitoramento via AWS CloudWatch para garantir a disponibilidade e performance do site, com alertas configurados para eventos críticos.
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Resultado" data-en="Outcome">Resultado</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p 
-                          data-pt="Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado."
-                          data-en="Secure and fully automated deployment of a static website with replicable infrastructure, SSL, global CDN, and custom domain.">
-                          Deploy seguro e 100% automatizado de um site estático com infraestrutura replicável, SSL, CDN global e domínio customizado.
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Aprendizados" data-en="Lessons Learned">Aprendizados</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p 
-                          data-pt="Integração prática de DevOps com IaC, segurança e deploy web"
-                          data-en="Practical integration of DevOps with IaC, security, and web deployment">
-                          Integração prática de DevOps com IaC, segurança e deploy web
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- cards-container -->
-                </div> <!-- tech-stack -->
-
-                <h3 class="instance-card-inf__txt" data-pt="Publicação" data-en="Publication">Publicação</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Documentei essa arquitetura no artigo &ldquo;Infraestrutura Profissional por Centavos&rdquo;, publicado na Medium da Bosch Engineering, cobrindo como atingir menos de US$2/mês de custo operacional com S3 + CloudFront."
-                  data-en="I documented this architecture in the article &ldquo;Infraestrutura Profissional por Centavos&rdquo; (&ldquo;Professional Infrastructure for Pennies&rdquo;), published on Bosch Engineering's Medium, covering how to achieve under $2/month in operating cost with S3 + CloudFront.">
-                    Documentei essa arquitetura no artigo &ldquo;Infraestrutura Profissional por Centavos&rdquo;, publicado na Medium da Bosch Engineering, cobrindo como atingir menos de US$2/mês de custo operacional com S3 + CloudFront.
-                  </p>
-                  <p>
-                    <a href="https://medium.com/@boschtechbr/escrito-por-giullia-gonçalves-a1f77cb5fa1e" target="_blank" data-pt="Ler no Medium →" data-en="Read on Medium →">Ler no Medium →</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+<p>
+<a data-en="Read on Medium →" data-pt="Ler no Medium →" href="https://medium.com/@boschtechbr/escrito-por-giullia-gonçalves-a1f77cb5fa1e" rel="noopener" target="_blank">Ler no Medium →</a>
+</p></div>
+      <nav class="pnav" aria-label="outros projetos">
+        <a href="pipeline-ci-cd-macos-unreal-engine.html" class="btn"><span><span class="pnav__label" data-pt="anterior" data-en="previous">anterior</span>UltiMage</span></a>
+        <a href="index.html#projetos" class="btn btn--ink" data-pt="todos os projetos" data-en="all projects">todos os projetos</a>
+        <a href="architecture-aws.html" class="btn"><span><span class="pnav__label" data-pt="próximo" data-en="next">próximo</span>Arquitetura AWS Enterprise-Grade com Segurança em Camadas</span></a>
+      </nav>
+    </div>
+  </section>
+  <section class="section pcontact">
+    <div class="wrap">
+      <div class="card pcontact__card">
+        <h2 class="pcontact__title" data-pt="vamos construir algo que não cai?" data-en="let's build something that stays up?">vamos construir algo que não cai?</h2>
+        <div class="pcontact__actions">
+          <a href="mailto:giullialazaro@gmail.com" class="btn btn--ink">giullialazaro@gmail.com</a>
+          <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="btn">linkedin</a>
         </div>
       </div>
     </div>
-
-    <script src="js/main.js"></script>
-
+  </section>
+  </main>
   <footer class="footer">
-    <div class="footer-content">
-
-      <!-- Column 1: Playlist -->
-      <div class="playlist" style="flex: 1;">
-        <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-
-        <!-- Column 2: About -->
-        <div class="about" style="flex: 1;">
-          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
-          <p class="translatable"
-            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
-            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
-            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
-          </p>
-        </div>
-      <!-- Column 3: Contact -->
-      <div class="contact" style="flex: 1;">
-        <h3>Reach me</h3>
-      <div class="social-media">  
-            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
-            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
-            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
-            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="mailto:giullialazaro@gmail.com" title="Email">
-            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-      </div>
-      </div>
+    <div class="wrap footer__inner">
+      <span class="mono">© 2026 giullia lazaro · @pterodatchiulha</span>
+      <span class="mono" data-pt="self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas" data-en="self-hosted on a raspberry pi 5 · read-only nginx · zero open ports">self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas</span>
+      <a class="mono" href="https://github.com/atchiullia" target="_blank" rel="noopener" data-pt="código no github" data-en="source on github">código no github</a>
     </div>
-  </footer> 
-  </body>
+  </footer>
+  <script src="js/home.js"></script>
+</body>
 </html>

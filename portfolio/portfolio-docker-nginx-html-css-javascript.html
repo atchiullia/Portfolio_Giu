@@ -1,209 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
-    <script>
+<html lang="pt-BR">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CLR3SBXV90');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-pt="Portfólio com Docker e Nginx | Giullia Lazaro" data-en="Portfolio with Docker and Nginx | Giullia Lazaro">Portfólio com Docker e Nginx | Giullia Lazaro</title>
-    <meta name="description" content="Portfólio web empacotado em container Docker com Nginx, demonstrando build de imagens customizadas e deploy de aplicações estáticas." />
-    <link rel="canonical" href="https://giullialazaro.com/portfolio-docker-nginx-html-css-javascript.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Portfólio com Docker e Nginx - Giullia Lazaro" />
-    <meta property="og:description" content="Projeto DevOps que empacota um portfólio web em container Docker com Nginx, demonstrando build de imagens customizadas com Docker." />
-    <meta property="og:url" content="https://giullialazaro.com/portfolio-docker-nginx-html-css-javascript.html" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
-  </head>
-  <body>
-    <header class="header">
-      <a href="index.html" class="home-button" title="Voltar para Home">
-        <i class="fas fa-home"></i>
-      </a>
-      <div class="buttons">
-        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
-      </div>
-    </header>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Portfolio with Docker and Nginx | Giullia Lazaro" data-pt="Portfólio com Docker e Nginx | Giullia Lazaro">Portfólio com Docker e Nginx | Giullia Lazaro</title>
+<meta content="Portfólio web empacotado em container Docker com Nginx, demonstrando build de imagens customizadas e deploy de aplicações estáticas." name="description"/>
+<link href="https://giullialazaro.com/portfolio-docker-nginx-html-css-javascript.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Portfólio com Docker e Nginx - Giullia Lazaro" property="og:title"/>
+<meta content="Projeto DevOps que empacota um portfólio web em container Docker com Nginx, demonstrando build de imagens customizadas com Docker." property="og:description"/>
+<meta content="https://giullialazaro.com/portfolio-docker-nginx-html-css-javascript.html" property="og:url"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="project.css" />
+<meta name="theme-color" content="#FBF1DE" />
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🦄&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
-    <div class="intro">
-      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
-      <p 
-      data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
-      data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
-      Engenheira DevOps apaixonada por automação e performance em pipelines. 
-      Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. 
-      Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. 
-      Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas.    
-    </p>
-        <div class="intro-links">
-        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
-        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>        
-        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
-        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-pt="pular para o conteúdo" data-en="skip to content">pular para o conteúdo</a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="pill nav__logo">giullia lazaro</a>
+      <nav aria-label="principal">
+        <ul class="nav__links">
+          <li><a href="index.html#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+          <li><a href="index.html#projetos" aria-current="page" data-pt="projetos" data-en="projects">projetos</a></li>
+          <li><a href="index.html#resultados" data-pt="resultados" data-en="results">resultados</a></li>
+          <li><a href="index.html#conteudo" data-pt="conteúdo" data-en="content">conteúdo</a></li>
+          <li><a href="index.html#contato" data-pt="contato" data-en="contact">contato</a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="idioma / language">
+          <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">pt</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">en</button>
+        </div>
+        <a href="index.html#contato" class="btn btn--pink btn--sm nav__cta" data-pt="fale comigo" data-en="get in touch">fale comigo</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" data-pt-aria="abrir menu" data-en-aria="open menu" aria-label="abrir menu"><span></span></button>
       </div>
     </div>
+  </header>
 
-    <div class="carousel">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="images/dockerfile_portfolio.png" alt="dockerfile_portfolio" />
-          <img src="images/docker_desktop.png" alt="docker_desktop" />
+  <main id="main">
+  <section class="section ph grid-bg">
+    <div class="wrap">
+      <a href="index.html#projetos" class="pill ph__back" data-pt="← projetos" data-en="← projects">← projetos</a>
+      <div class="ph__grid">
+        <div class="ph__copy">
+          <h1 class="ph__title" data-pt="Portfolio com Docker + Nginx" data-en="Portfolio with Docker + Nginx">Portfolio com Docker + Nginx</h1>
+          <div class="ph__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub</span><span class="tag">Docker</span><span class="tag">Nginx</span></div>
+          <div class="ph__actions"><a class="btn btn--ink" href="https://hub.docker.com/r/atchiullia/giullialazaro" target="_blank" rel="noopener" data-pt="DockerHub Repo" data-en="DockerHub Repo">DockerHub Repo</a><a class="btn btn--ink" href="https://hub.docker.com/r/atchiullia/crystal-landing" target="_blank" rel="noopener" data-pt="DockerHub Repo 2" data-en="DockerHub Repo 2">DockerHub Repo 2</a></div>
         </div>
       </div>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-
-    <div class="wrapper">
-      <div class="portfolio-container">
-        <div class="projeto-container">
-          <div class="instance-card__cnt">
-            <h1 class="instance-card__name" data-pt="Portfolio com Docker + Nginx" data-en="Portfolio with Docker + Nginx">
-              Portfolio com Docker + Nginx
-            </h1>
-            <div class="instance-card-inf">
-              <div class="instance-card-inf__item"></div>
-              <div class="instance-card-inf__item">
-                <h3 class="instance-card-inf__txt" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Projeto com foco em introdução prática ao Docker, no qual empacotei meu portfólio web (HTML e CSS) em um container Docker utilizando Nginx como servidor web. A aplicação é executada em um ambiente isolado, podendo ser distribuída ou implantada em qualquer máquina com Docker instalado." data-en="Project focused on a practical introduction to Docker, where I packaged my web portfolio (HTML and CSS) into a Docker container using Nginx as a web server. The application runs in an isolated environment and can be deployed on any machine with Docker installed.">
+  </section>
+  <section class="section pbody">
+    <div class="wrap pbody">
+      <div class="pgallery"><img src="images/dockerfile_portfolio.png" alt="" loading="lazy"><img src="images/docker_desktop.png" alt="" loading="lazy"></div>
+      <div class="ppair">
+        <div class="card pblock"><span class="pblock__label" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</span><p data-en="Project focused on a practical introduction to Docker, where I packaged my web portfolio (HTML and CSS) into a Docker container using Nginx as a web server. The application runs in an isolated environment and can be deployed on any machine with Docker installed." data-pt="Projeto com foco em introdução prática ao Docker, no qual empacotei meu portfólio web (HTML e CSS) em um container Docker utilizando Nginx como servidor web. A aplicação é executada em um ambiente isolado, podendo ser distribuída ou implantada em qualquer máquina com Docker instalado.">
                     Projeto com foco em introdução prática ao Docker, no qual empacotei meu portfólio web (HTML e CSS) em um container Docker utilizando Nginx como servidor web. A aplicação é executada em um ambiente isolado, podendo ser distribuída ou implantada em qualquer máquina com Docker instalado.
-                  </p>
-                </div>
-                <h3 class="instance-card-inf__txt" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Demonstrar conhecimento em containers, imagens customizadas e execução de aplicações estáticas com Docker." data-en="Demonstrate knowledge in containers, custom images, and running static applications with Docker.">
+                  </p></div>
+        <div class="card pblock pblock--alt"><span class="pblock__label" data-pt="Objetivo do Projeto" data-en="Project Goal">Objetivo do Projeto</span><p data-en="Demonstrate knowledge in containers, custom images, and running static applications with Docker." data-pt="Demonstrar conhecimento em containers, imagens customizadas e execução de aplicações estáticas com Docker.">
                     Demonstrar conhecimento em containers, imagens customizadas e execução de aplicações estáticas com Docker.
-                  </p>
-                </div>
-                <div class="instance-card-inf__github">
-                  <a href="https://hub.docker.com/r/atchiullia/giullialazaro" target="_blank" class="intro-btn">DockerHub Repo</a></div> 
-                  <div class="instance-card-inf__github">
-                    <a href="https://hub.docker.com/r/atchiullia/crystal-landing" target="_blank" class="intro-btn">DockerHub Repo 2</a></div>             
-  
-                  
-                <div class="tech-stack">
-                  <h3 class="instance-card-inf__txt" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</h3>
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>GitHub</span>
-                  <span>Docker</span>
-                  <span>Nginx</span>
-
-                  <div class="cards-container">
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Criação do Dockerfile" data-en="Creating the Dockerfile">Criação do Dockerfile</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Usando nginx:latest como imagem base." data-en="Using nginx:latest as base image.">Usando nginx:latest como imagem base.</p>
-                          <p data-pt="Copiando os arquivos do portfólio para /usr/share/nginx/html" data-en="Copying portfolio files to /usr/share/nginx/html">Copiando os arquivos do portfólio para /usr/share/nginx/html</p>
-                          <div class="code-block">FROM nginx:latest <br /> COPY . /usr/share/nginx/html</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Build da imagem Docker" data-en="Docker Image Build">Build da imagem Docker</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <div class="code-block">docker build -t portfolio .</div>
-                          <p data-pt="Execução do container:" data-en="Container execution:">Execução do container:</p>
-                          <div class="code-block">docker run -d -p 8080:80 --name meu-portfolio portfolio</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Resultado" data-en="Outcome">Resultado</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="O portfólio é acessado via" data-en="The portfolio is accessed via">O portfólio é acessado via</p>
-                          <div class="code-block">http://localhost:8080</div>
-                          <p data-pt="sendo servido por um servidor Nginx dentro de um container Docker." data-en="being served by an Nginx server inside a Docker container.">sendo servido por um servidor Nginx dentro de um container Docker.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box">
-                          <h3 data-pt="Aprendizados" data-en="Outcome">Aprendizados</h3>
-                        </div>
-                        <div class="instance-card-inf">
-                          <p data-pt="Criação e execução de containers Docker" data-en="Creating and running Docker containers">Criação e execução de containers Docker</p>
-                          <p data-pt="Uso do Nginx para servir aplicações estáticas" data-en="Using Nginx to serve static applications">Uso do Nginx para servir aplicações estáticas</p>
-                          <p data-pt="Mapeamento de portas e gerenciamento de containers via terminal" data-en="Port mapping and container management via terminal">Mapeamento de portas e gerenciamento de containers via terminal</p>
-                          <p data-pt="Boas práticas para estruturar e versionar projetos com Docker" data-en="Best practices for structuring and versioning projects with Docker">Boas práticas para estruturar e versionar projetos com Docker</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- cards-container -->
-                </div> <!-- tech-stack -->
-              </div>
-            </div>
-          </div>
+                  </p></div>
+      </div>
+      <div class="pcards">
+        <div class="pcards__head"><h2 class="pcards__title" data-pt="como funciona" data-en="how it works">como funciona</h2><span class="pill" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</span></div>
+        <div class="pcards__grid">
+          <div class="card pcard"><span class="pill pcard__n">01</span><h3 class="pcard__title" data-pt="Criação do Dockerfile" data-en="Creating the Dockerfile">Criação do Dockerfile</h3><p data-pt="Usando nginx:latest como imagem base." data-en="Using nginx:latest as base image.">Usando nginx:latest como imagem base.</p><p data-pt="Copiando os arquivos do portfólio para /usr/share/nginx/html" data-en="Copying portfolio files to /usr/share/nginx/html">Copiando os arquivos do portfólio para /usr/share/nginx/html</p><pre><code>FROM nginx:latest
+COPY . /usr/share/nginx/html</code></pre></div>
+          <div class="card pcard"><span class="pill pcard__n">02</span><h3 class="pcard__title" data-pt="Build da imagem Docker" data-en="Docker Image Build">Build da imagem Docker</h3><pre><code>docker build -t portfolio .</code></pre><p data-pt="Execução do container:" data-en="Container execution:">Execução do container:</p><pre><code>docker run -d -p 8080:80 --name meu-portfolio portfolio</code></pre></div>
+          <div class="card pcard"><span class="pill pcard__n">03</span><h3 class="pcard__title" data-pt="Resultado" data-en="Outcome">Resultado</h3><p data-pt="O portfólio é acessado via" data-en="The portfolio is accessed via">O portfólio é acessado via</p><pre><code>http://localhost:8080</code></pre><p data-pt="sendo servido por um servidor Nginx dentro de um container Docker." data-en="being served by an Nginx server inside a Docker container.">sendo servido por um servidor Nginx dentro de um container Docker.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">04</span><h3 class="pcard__title" data-pt="Aprendizados" data-en="Outcome">Aprendizados</h3><p data-pt="Criação e execução de containers Docker" data-en="Creating and running Docker containers">Criação e execução de containers Docker</p><p data-pt="Uso do Nginx para servir aplicações estáticas" data-en="Using Nginx to serve static applications">Uso do Nginx para servir aplicações estáticas</p><p data-pt="Mapeamento de portas e gerenciamento de containers via terminal" data-en="Port mapping and container management via terminal">Mapeamento de portas e gerenciamento de containers via terminal</p><p data-pt="Boas práticas para estruturar e versionar projetos com Docker" data-en="Best practices for structuring and versioning projects with Docker">Boas práticas para estruturar e versionar projetos com Docker</p></div>
+        </div>
+      </div>
+      <nav class="pnav" aria-label="outros projetos">
+        <a href="automacao-openssh.html" class="btn"><span><span class="pnav__label" data-pt="anterior" data-en="previous">anterior</span>Automação de Configuração de Chave SSH no Windows</span></a>
+        <a href="index.html#projetos" class="btn btn--ink" data-pt="todos os projetos" data-en="all projects">todos os projetos</a>
+        <a href="kubernetes-platform-lab.html" class="btn"><span><span class="pnav__label" data-pt="próximo" data-en="next">próximo</span>Plataforma Kubernetes Self-Hosted</span></a>
+      </nav>
+    </div>
+  </section>
+  <section class="section pcontact">
+    <div class="wrap">
+      <div class="card pcontact__card">
+        <h2 class="pcontact__title" data-pt="vamos construir algo que não cai?" data-en="let's build something that stays up?">vamos construir algo que não cai?</h2>
+        <div class="pcontact__actions">
+          <a href="mailto:giullialazaro@gmail.com" class="btn btn--ink">giullialazaro@gmail.com</a>
+          <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="btn">linkedin</a>
         </div>
       </div>
     </div>
-
-    <script src="js/main.js"></script>
-
+  </section>
+  </main>
   <footer class="footer">
-    <div class="footer-content">
-
-      <!-- Column 1: Playlist -->
-      <div class="playlist" style="flex: 1;">
-        <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-
-        <!-- Column 2: About -->
-        <div class="about" style="flex: 1;">
-          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
-          <p class="translatable"
-            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
-            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
-            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
-          </p>
-        </div>
-      <!-- Column 3: Contact -->
-      <div class="contact" style="flex: 1;">
-        <h3>Reach me</h3>
-      <div class="social-media">  
-            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
-            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
-            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
-            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="mailto:giullialazaro@gmail.com" title="Email">
-            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-      </div>
-      </div>
+    <div class="wrap footer__inner">
+      <span class="mono">© 2026 giullia lazaro · @pterodatchiulha</span>
+      <span class="mono" data-pt="self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas" data-en="self-hosted on a raspberry pi 5 · read-only nginx · zero open ports">self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas</span>
+      <a class="mono" href="https://github.com/atchiullia" target="_blank" rel="noopener" data-pt="código no github" data-en="source on github">código no github</a>
     </div>
   </footer>
-  </body>
+  <script src="js/home.js"></script>
+</body>
 </html>

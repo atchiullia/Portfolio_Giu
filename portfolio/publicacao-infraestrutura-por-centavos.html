@@ -1,210 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
-    <script>
+<html lang="pt-BR">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CLR3SBXV90');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-pt="Infraestrutura Profissional por Centavos (Medium) | Giullia Lazaro" data-en="Infraestrutura Profissional por Centavos (Medium Article) | Giullia Lazaro">Infraestrutura Profissional por Centavos (Medium) | Giullia Lazaro</title>
-    <meta name="description" content="Artigo na Medium da Bosch Engineering: arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform por menos de US$2/mês." />
-    <link rel="canonical" href="https://giullialazaro.com/publicacao-infraestrutura-por-centavos.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Infraestrutura Profissional por Centavos - Giullia Lazaro" />
-    <meta property="og:description" content="Como montar uma arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform e GitHub Actions por menos de US$2/mês." />
-    <meta property="og:url" content="https://giullialazaro.com/publicacao-infraestrutura-por-centavos.html" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
-  </head>
-  <body>
-    <header class="header">
-      <a href="index.html" class="home-button" title="Voltar para Home">
-        <i class="fas fa-home"></i>
-      </a>
-      <div class="buttons">
-        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
-      </div>
-    </header>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Infraestrutura Profissional por Centavos (Medium Article) | Giullia Lazaro" data-pt="Infraestrutura Profissional por Centavos (Medium) | Giullia Lazaro">Infraestrutura Profissional por Centavos (Medium) | Giullia Lazaro</title>
+<meta content="Artigo na Medium da Bosch Engineering: arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform por menos de US$2/mês." name="description"/>
+<link href="https://giullialazaro.com/publicacao-infraestrutura-por-centavos.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Infraestrutura Profissional por Centavos - Giullia Lazaro" property="og:title"/>
+<meta content="Como montar uma arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform e GitHub Actions por menos de US$2/mês." property="og:description"/>
+<meta content="https://giullialazaro.com/publicacao-infraestrutura-por-centavos.html" property="og:url"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="project.css" />
+<meta name="theme-color" content="#FBF1DE" />
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🦄&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
-    <div class="intro">
-      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
-      <p
-      data-pt="Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD."
-      data-en="DevOps Engineer specialized in Azure infrastructure, automation, and platform engineering, focused on Terraform, Bicep, Kubernetes, and CI/CD.">
-      Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering, com foco em Terraform, Bicep, Kubernetes e CI/CD.
-      </p>
-      <div class="intro-links">
-        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
-        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
-        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-pt="pular para o conteúdo" data-en="skip to content">pular para o conteúdo</a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="pill nav__logo">giullia lazaro</a>
+      <nav aria-label="principal">
+        <ul class="nav__links">
+          <li><a href="index.html#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+          <li><a href="index.html#projetos" aria-current="page" data-pt="projetos" data-en="projects">projetos</a></li>
+          <li><a href="index.html#resultados" data-pt="resultados" data-en="results">resultados</a></li>
+          <li><a href="index.html#conteudo" data-pt="conteúdo" data-en="content">conteúdo</a></li>
+          <li><a href="index.html#contato" data-pt="contato" data-en="contact">contato</a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="idioma / language">
+          <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">pt</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">en</button>
+        </div>
+        <a href="index.html#contato" class="btn btn--pink btn--sm nav__cta" data-pt="fale comigo" data-en="get in touch">fale comigo</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" data-pt-aria="abrir menu" data-en-aria="open menu" aria-label="abrir menu"><span></span></button>
       </div>
     </div>
+  </header>
 
-    <div class="wrapper">
-      <div class="portfolio-container">
-        <div class="projeto-container">
-          <div class="instance-card__cnt">
-            <span class="status-badge status-badge--done" data-pt="Publicado" data-en="Published">Publicado</span>
-            <h1 class="instance-card__name" data-pt="Infraestrutura Profissional por Centavos" data-en="Infraestrutura Profissional por Centavos (Professional Infrastructure for Pennies)">
-              Infraestrutura Profissional por Centavos
-            </h1>
-            <div class="instance-card-inf">
-              <div class="instance-card-inf__item"></div>
-              <div class="instance-card-inf__item">
-                <h3 class="instance-card-inf__txt" data-pt="Sobre o Artigo" data-en="About the Article">Sobre o Artigo</h3>
-                <div class="instance-card-inf__title">
-                  <p data-pt="Artigo publicado na Medium da Bosch Engineering documentando como projetei e implantei uma arquitetura AWS profissional para hospedar um site estático com domínio próprio, SSL e CDN global, mantendo o custo operacional abaixo de US$2/mês. O texto detalha as escolhas técnicas por trás do projeto de publicação deste portfólio (S3 + CloudFront + Terraform + GitHub Actions), mostrando que infraestrutura de nível enterprise não precisa de orçamento enterprise."
-                  data-en="Article published on Bosch Engineering's Medium documenting how I designed and deployed a professional AWS architecture to host a static site with a custom domain, SSL, and a global CDN, keeping operating cost under $2/month. It breaks down the technical decisions behind this portfolio's own deployment project (S3 + CloudFront + Terraform + GitHub Actions), showing that enterprise-grade infrastructure doesn't require an enterprise-sized budget.">
+  <main id="main">
+  <section class="section ph grid-bg">
+    <div class="wrap">
+      <a href="index.html#projetos" class="pill ph__back" data-pt="← projetos" data-en="← projects">← projetos</a>
+      <div class="ph__grid">
+        <div class="ph__copy">
+          <div class="ph__status"><span class="pill pill--red" data-pt="Publicado" data-en="Published">Publicado</span></div>
+          <h1 class="ph__title" data-pt="Infraestrutura Profissional por Centavos" data-en="Infraestrutura Profissional por Centavos (Professional Infrastructure for Pennies)">Infraestrutura Profissional por Centavos</h1>
+          <div class="ph__tags"><span class="tag">AWS</span><span class="tag">Amazon S3</span><span class="tag">CloudFront</span><span class="tag">Route 53</span><span class="tag">AWS ACM</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span><span class="tag">Otimização de Custos</span></div>
+          <div class="ph__actions"><a class="btn btn--ink" href="https://medium.com/@boschtechbr/escrito-por-giullia-gonçalves-a1f77cb5fa1e" target="_blank" rel="noopener" data-pt="Ler no Medium →" data-en="Read on Medium →">Ler no Medium →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section pbody">
+    <div class="wrap pbody">
+      <div class="card pblock"><span class="pblock__label" data-pt="Sobre o Artigo" data-en="About the Article">Sobre o Artigo</span><p data-en="Article published on Bosch Engineering's Medium documenting how I designed and deployed a professional AWS architecture to host a static site with a custom domain, SSL, and a global CDN, keeping operating cost under $2/month. It breaks down the technical decisions behind this portfolio's own deployment project (S3 + CloudFront + Terraform + GitHub Actions), showing that enterprise-grade infrastructure doesn't require an enterprise-sized budget." data-pt="Artigo publicado na Medium da Bosch Engineering documentando como projetei e implantei uma arquitetura AWS profissional para hospedar um site estático com domínio próprio, SSL e CDN global, mantendo o custo operacional abaixo de US$2/mês. O texto detalha as escolhas técnicas por trás do projeto de publicação deste portfólio (S3 + CloudFront + Terraform + GitHub Actions), mostrando que infraestrutura de nível enterprise não precisa de orçamento enterprise.">
                     Artigo publicado na Medium da Bosch Engineering documentando como projetei e implantei uma arquitetura AWS profissional para hospedar um site estático com domínio próprio, SSL e CDN global, mantendo o custo operacional abaixo de US$2/mês. O texto detalha as escolhas técnicas por trás do projeto de publicação deste portfólio (S3 + CloudFront + Terraform + GitHub Actions), mostrando que infraestrutura de nível enterprise não precisa de orçamento enterprise.
-                  </p>
-                </div>
-
-                <div class="instance-card-inf__github">
-                  <a href="https://medium.com/@boschtechbr/escrito-por-giullia-gonçalves-a1f77cb5fa1e" target="_blank" class="intro-btn" data-pt="Ler no Medium →" data-en="Read on Medium →">Ler no Medium →</a>
-                </div>
-
-                <div class="tech-stack">
-                  <h3 class="instance-card-inf__txt" data-pt="Temas Abordados" data-en="Topics Covered">Temas Abordados</h3>
-                  <span>AWS</span>
-                  <span>Amazon S3</span>
-                  <span>CloudFront</span>
-                  <span>Route 53</span>
-                  <span>AWS ACM</span>
-                  <span>Terraform</span>
-                  <span>GitHub Actions</span>
-                  <span>Otimização de Custos</span>
-
-                  <div class="cards-container">
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box" data-pt="O Desafio" data-en="The Challenge">
-                          O Desafio
-                        </div>
-                        <div class="instance-card-inf">
-                          <div class="instance-card-inf__title"
-                          data-pt="Como hospedar um site estático com padrão profissional - domínio próprio, SSL, CDN global e alta disponibilidade - sem os custos típicos de uma infraestrutura enterprise."
-                          data-en="How to host a static site to a professional standard - custom domain, SSL, global CDN, and high availability - without the typical costs of enterprise infrastructure.">
-                          Como hospedar um site estático com padrão profissional - domínio próprio, SSL, CDN global e alta disponibilidade - sem os custos típicos de uma infraestrutura enterprise.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box" data-pt="A Arquitetura" data-en="The Architecture">
-                          A Arquitetura
-                        </div>
-                        <div class="instance-card-inf">
-                          <div class="instance-card-inf__title"
-                          data-pt="Amazon S3 como origem de armazenamento, CloudFront como CDN global, Route 53 para DNS e AWS ACM para SSL gratuito, tudo provisionado via Terraform e publicado com CI/CD no GitHub Actions."
-                          data-en="Amazon S3 as the storage origin, CloudFront as the global CDN, Route 53 for DNS, and AWS ACM for free SSL, all provisioned via Terraform and deployed with GitHub Actions CI/CD.">
-                          Amazon S3 como origem de armazenamento, CloudFront como CDN global, Route 53 para DNS e AWS ACM para SSL gratuito, tudo provisionado via Terraform e publicado com CI/CD no GitHub Actions.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box" data-pt="O Resultado" data-en="The Result">
-                          O Resultado
-                        </div>
-                        <div class="instance-card-inf">
-                          <div class="instance-card-inf__title"
-                          data-pt="Custo operacional abaixo de US$2/mês, com infraestrutura como código totalmente versionada, replicável e alinhada a boas práticas de segurança e DevOps."
-                          data-en="Operating cost under $2/month, with fully version-controlled, replicable infrastructure as code aligned with DevOps and security best practices.">
-                          Custo operacional abaixo de US$2/mês, com infraestrutura como código totalmente versionada, replicável e alinhada a boas práticas de segurança e DevOps.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="instance-card-small">
-                      <div class="instance-card__cnt">
-                        <div class="instance-card__box" data-pt="Onde Foi Publicado" data-en="Where It Was Published">
-                          Onde Foi Publicado
-                        </div>
-                        <div class="instance-card-inf">
-                          <div class="instance-card-inf__title"
-                          data-pt="Publicado na Medium oficial da Bosch Engineering (Bosch Tech Brasil), como parte da divulgação técnica de projetos internos de tecnologia da empresa."
-                          data-en="Published on Bosch Engineering's official Medium (Bosch Tech Brasil), as part of the company's technical content sharing initiative.">
-                          Publicado na Medium oficial da Bosch Engineering (Bosch Tech Brasil), como parte da divulgação técnica de projetos internos de tecnologia da empresa.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div> <!-- cards-container -->
-                </div> <!-- tech-stack -->
-
-                <h3 class="instance-card-inf__txt" data-pt="Ver Também" data-en="See Also">Ver Também</h3>
-                <div class="instance-card-inf__title">
-                  <p>
-                    <span data-pt="O projeto técnico completo por trás deste artigo está documentado em detalhe em " data-en="The full technical project behind this article is documented in detail in ">O projeto técnico completo por trás deste artigo está documentado em detalhe em </span><a href="terraform-aws-s3-cloudfront-deployment.html" data-pt="Publicação de Site Estático com AWS, Terraform e GitHub Actions" data-en="Static Site Deployment with AWS, Terraform and GitHub Actions">Publicação de Site Estático com AWS, Terraform e GitHub Actions</a>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </p></div>
+      <div class="pcards">
+        <div class="pcards__head"><h2 class="pcards__title" data-pt="como funciona" data-en="how it works">como funciona</h2><span class="pill" data-pt="Temas Abordados" data-en="Topics Covered">Temas Abordados</span></div>
+        <div class="pcards__grid">
+          <div class="card pcard"><span class="pill pcard__n">01</span><h3 class="pcard__title" data-pt="O Desafio" data-en="The Challenge">O Desafio</h3><p data-pt="Como hospedar um site estático com padrão profissional - domínio próprio, SSL, CDN global e alta disponibilidade - sem os custos típicos de uma infraestrutura enterprise." data-en="How to host a static site to a professional standard - custom domain, SSL, global CDN, and high availability - without the typical costs of enterprise infrastructure.">Como hospedar um site estático com padrão profissional - domínio próprio, SSL, CDN global e alta disponibilidade - sem os custos típicos de uma infraestrutura enterprise.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">02</span><h3 class="pcard__title" data-pt="A Arquitetura" data-en="The Architecture">A Arquitetura</h3><p data-pt="Amazon S3 como origem de armazenamento, CloudFront como CDN global, Route 53 para DNS e AWS ACM para SSL gratuito, tudo provisionado via Terraform e publicado com CI/CD no GitHub Actions." data-en="Amazon S3 as the storage origin, CloudFront as the global CDN, Route 53 for DNS, and AWS ACM for free SSL, all provisioned via Terraform and deployed with GitHub Actions CI/CD.">Amazon S3 como origem de armazenamento, CloudFront como CDN global, Route 53 para DNS e AWS ACM para SSL gratuito, tudo provisionado via Terraform e publicado com CI/CD no GitHub Actions.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">03</span><h3 class="pcard__title" data-pt="O Resultado" data-en="The Result">O Resultado</h3><p data-pt="Custo operacional abaixo de US$2/mês, com infraestrutura como código totalmente versionada, replicável e alinhada a boas práticas de segurança e DevOps." data-en="Operating cost under $2/month, with fully version-controlled, replicable infrastructure as code aligned with DevOps and security best practices.">Custo operacional abaixo de US$2/mês, com infraestrutura como código totalmente versionada, replicável e alinhada a boas práticas de segurança e DevOps.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">04</span><h3 class="pcard__title" data-pt="Onde Foi Publicado" data-en="Where It Was Published">Onde Foi Publicado</h3><p data-pt="Publicado na Medium oficial da Bosch Engineering (Bosch Tech Brasil), como parte da divulgação técnica de projetos internos de tecnologia da empresa." data-en="Published on Bosch Engineering&#x27;s official Medium (Bosch Tech Brasil), as part of the company&#x27;s technical content sharing initiative.">Publicado na Medium oficial da Bosch Engineering (Bosch Tech Brasil), como parte da divulgação técnica de projetos internos de tecnologia da empresa.</p></div>
+        </div>
+      </div>
+      <div class="card pblock"><span class="pblock__label" data-pt="Ver Também" data-en="See Also">Ver Também</span><p>
+<span data-en="The full technical project behind this article is documented in detail in " data-pt="O projeto técnico completo por trás deste artigo está documentado em detalhe em ">O projeto técnico completo por trás deste artigo está documentado em detalhe em </span><a data-en="Static Site Deployment with AWS, Terraform and GitHub Actions" data-pt="Publicação de Site Estático com AWS, Terraform e GitHub Actions" href="terraform-aws-s3-cloudfront-deployment.html">Publicação de Site Estático com AWS, Terraform e GitHub Actions</a>.
+                  </p></div>
+      <nav class="pnav" aria-label="outros projetos">
+        <a href="bosch-devops-highlights.html" class="btn"><span><span class="pnav__label" data-pt="anterior" data-en="previous">anterior</span>Resultados em Produção</span></a>
+        <a href="index.html#projetos" class="btn btn--ink" data-pt="todos os projetos" data-en="all projects">todos os projetos</a>
+        <a href="monitoramento-kubernetes-prometheus-grafana.html" class="btn"><span><span class="pnav__label" data-pt="próximo" data-en="next">próximo</span>Monitoramento em Kubernetes com Prometheus e Grafana</span></a>
+      </nav>
+    </div>
+  </section>
+  <section class="section pcontact">
+    <div class="wrap">
+      <div class="card pcontact__card">
+        <h2 class="pcontact__title" data-pt="vamos construir algo que não cai?" data-en="let's build something that stays up?">vamos construir algo que não cai?</h2>
+        <div class="pcontact__actions">
+          <a href="mailto:giullialazaro@gmail.com" class="btn btn--ink">giullialazaro@gmail.com</a>
+          <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="btn">linkedin</a>
         </div>
       </div>
     </div>
-
-    <script src="js/main.js"></script>
-
-    <footer class="footer">
-      <div class="footer-content">
-
-        <!-- Column 1: Playlist -->
-        <div class="playlist" style="flex: 1;">
-          <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-
-        <!-- Column 2: About -->
-        <div class="about" style="flex: 1;">
-          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
-          <p class="translatable"
-            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
-            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
-            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
-          </p>
-        </div>
-
-        <!-- Column 3: Contact -->
-        <div class="contact" style="flex: 1;">
-          <h3>Reach me</h3>
-          <div class="social-media">
-            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
-            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
-            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
-            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="mailto:giullialazaro@gmail.com" title="Email">
-            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="mono">© 2026 giullia lazaro · @pterodatchiulha</span>
+      <span class="mono" data-pt="self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas" data-en="self-hosted on a raspberry pi 5 · read-only nginx · zero open ports">self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas</span>
+      <a class="mono" href="https://github.com/atchiullia" target="_blank" rel="noopener" data-pt="código no github" data-en="source on github">código no github</a>
+    </div>
+  </footer>
+  <script src="js/home.js"></script>
+</body>
 </html>
