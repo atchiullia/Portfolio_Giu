@@ -9,7 +9,7 @@
 .ph__copy { display: flex; flex-direction: column; gap: 20px; }
 .ph__status { display: flex; gap: 10px; flex-wrap: wrap; }
 .ph__title { font-size: clamp(36px, 5vw, 72px); }
-.ph__tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.ph__tags { display: flex; gap: 10px 10px; flex-wrap: wrap; }
 .ph__actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .ph__fig { margin: 0; justify-self: center; width: 100%; }
 .ph__fig img {

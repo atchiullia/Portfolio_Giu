@@ -78,7 +78,7 @@ p { margin: 0; }
 .tag {
   display: inline-flex; align-items: center;
   border: 2px solid var(--ink); border-radius: 8px;
-  padding: 3px 9px; background: var(--white);
+  padding: 4px 10px; background: var(--white);
   font-family: var(--font-mono); font-weight: 600; font-size: 11px; line-height: 1.3;
 }
 
@@ -269,7 +269,7 @@ p { margin: 0; }
 .project--featured .project__title { font-size: clamp(28px, 3.2vw, 42px); }
 .project--third .project__title { font-size: 24px; }
 .project__desc { font-size: 15px; line-height: 1.45; }
-.project__tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.project__tags { display: flex; gap: 10px 10px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
 .project.is-hidden { display: none; }
 
 .project__term {
@@ -286,10 +286,10 @@ p { margin: 0; }
 .project__term--lg { aspect-ratio: auto; flex: 1 1 auto; min-height: 280px; }
 .project__term--lg code { font-size: clamp(12px, 1.1vw, 15px); line-height: 1.7; padding: 16px 20px; }
 .project__cluster {
-  display: flex; flex-wrap: wrap; gap: 8px; padding: 18px;
+  display: flex; flex-wrap: wrap; gap: 12px; padding: 20px;
   border: var(--border) solid var(--ink); border-radius: 16px; background: var(--rose);
 }
-.project__cluster .pill { font-size: 11px; padding: 6px 12px; }
+.project__cluster .pill { font-size: 11px; padding: 7px 14px; }
 .project__cursor { display: inline-block; width: 8px; height: 14px; background: var(--pink); vertical-align: -2px; animation: blink 1s steps(2) infinite; }
 @keyframes blink { to { opacity: 0; } }
 
