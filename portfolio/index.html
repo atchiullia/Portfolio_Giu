@@ -190,31 +190,44 @@
       </div>
 
       <div class="bento">
-        <a href="kubernetes-platform-lab.html" class="card project project--featured" data-cat="kubernetes homelab cicd">
+        <a href="https://linuxplayground.giullialazaro.com/" target="_blank" rel="noopener" class="card project project--featured" data-cat="linux azure">
+          <div class="project__top">
+            <span class="pill pill--pink" data-pt="no ar" data-en="live">no ar</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="project__term project__term--lg" aria-hidden="true">
+            <span class="project__term-bar"><i></i><i></i><i></i><em>aluno@playground</em></span>
+            <code>aluno@playground:~$ whoami
+aluno
+aluno@playground:~$ pwd
+/home/aluno
+aluno@playground:~$ ls -la
+drwxr-xr-x  3 aluno aluno 4096 arco-01
+-rw-r--r--  1 aluno aluno  212 licao-01.md
+aluno@playground:~$ cat licao-01.md
+# whoami: quem sou eu neste sistema?
+assista o vídeo, leia o resumo, pratique aqui.
+aluno@playground:~$ chmod 644 licao-01.md
+aluno@playground:~$ <span class="project__cursor"></span></code>
+          </div>
+          <h3 class="project__title" data-pt="linux playground: aprenda linux no terminal de verdade" data-en="linux playground: learn linux in a real terminal">linux playground: aprenda linux no terminal de verdade</h3>
+          <p class="project__desc" data-pt="curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. cada vídeo da série do youtube vira uma lição: assista, leia e pratique." data-en="free course with a real linux terminal in the browser, 7 arcs and 53 lessons, plus a chmod calculator, crontab generator, cheatsheets and quizzes. every video of the youtube series becomes a lesson: watch, read and practice.">curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. cada vídeo da série do youtube vira uma lição: assista, leia e pratique.</p>
+          <div class="project__tags"><span class="tag">astro</span><span class="tag">go</span><span class="tag">k3s</span><span class="tag">gVisor</span><span class="tag">azure</span><span class="tag">terraform</span></div>
+        </a>
+
+        <a href="kubernetes-platform-lab.html" class="card project project--half" data-cat="kubernetes homelab cicd">
           <div class="project__top">
             <span class="pill pill--pink" data-pt="em andamento" data-en="in progress">em andamento</span>
             <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </div>
-          <div class="project__img"><img src="images/grafana.png" alt="" loading="lazy" width="1600" height="900"></div>
+          <div class="project__cluster" aria-hidden="true">
+            <span class="pill pill--ink">control-plane</span><span class="pill">worker-01</span><span class="pill">worker-02</span><span class="pill pill--pink">argocd</span><span class="pill">traefik</span><span class="pill">longhorn</span><span class="pill pill--red">wireguard</span>
+          </div>
           <h3 class="project__title" data-pt="plataforma kubernetes self-hosted" data-en="self-hosted kubernetes platform">plataforma kubernetes self-hosted</h3>
           <p class="project__desc"
              data-pt="cluster multi-node com kubeadm, gitops com argocd, ingress com traefik, TLS automático, storage persistente com longhorn e acesso zero trust por wireguard."
              data-en="multi-node cluster with kubeadm, gitops with argocd, traefik ingress, automatic TLS, persistent storage with longhorn and zero trust access over wireguard.">cluster multi-node com kubeadm, gitops com argocd, ingress com traefik, TLS automático, storage persistente com longhorn e acesso zero trust por wireguard.</p>
           <div class="project__tags"><span class="tag">kubeadm</span><span class="tag">argocd</span><span class="tag">traefik</span><span class="tag">cert-manager</span><span class="tag">longhorn</span><span class="tag">wireguard</span><span class="tag">terraform</span><span class="tag">ansible</span></div>
-        </a>
-
-        <a href="https://linuxplayground.giullialazaro.com/" target="_blank" rel="noopener" class="card project project--half" data-cat="linux azure">
-          <div class="project__top">
-            <span class="pill pill--pink" data-pt="no ar" data-en="live">no ar</span>
-            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-          </div>
-          <div class="project__term" aria-hidden="true">
-            <span class="project__term-bar"><i></i><i></i><i></i></span>
-            <code>aluno@playground:~$ whoami<br>aluno<br>aluno@playground:~$ <span class="project__cursor"></span></code>
-          </div>
-          <h3 class="project__title" data-pt="linux playground: aprenda linux no terminal de verdade" data-en="linux playground: learn linux in a real terminal">linux playground: aprenda linux no terminal de verdade</h3>
-          <p class="project__desc" data-pt="curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. companheiro da série do youtube." data-en="free course with a real linux terminal in the browser, 7 arcs and 53 lessons, plus a chmod calculator, crontab generator, cheatsheets and quizzes. companion to the youtube series.">curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. companheiro da série do youtube.</p>
-          <div class="project__tags"><span class="tag">astro</span><span class="tag">go</span><span class="tag">k3s</span><span class="tag">gVisor</span><span class="tag">azure</span><span class="tag">terraform</span></div>
         </a>
 
         <a href="architecture-self-hosted.html" class="card project project--half" data-cat="homelab cicd">
