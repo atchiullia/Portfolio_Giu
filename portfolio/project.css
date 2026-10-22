@@ -58,6 +58,15 @@
 .pgallery img:nth-child(odd) { transform: rotate(-1deg); }
 .pgallery img:nth-child(even) { transform: rotate(1deg); }
 
+/* certificações */
+.cert { gap: 12px; }
+.cert--featured { grid-column: 1 / -1; background: var(--rose); }
+.cert--featured .pcard__title { font-size: clamp(28px, 3vw, 40px); }
+.cert__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cert__id { font-family: var(--font-mono); font-size: 11px; font-weight: 600; word-break: break-all; opacity: .8; margin-top: auto; }
+.cert__btn { align-self: flex-start; }
+.cert__honors { display: inline-block; background: var(--pink); border: 2px solid var(--ink); border-radius: 8px; padding: 0 8px; font-size: 14px; vertical-align: middle; }
+
 .pband {
   background: var(--pink); border-top: var(--border) solid var(--ink); border-bottom: var(--border) solid var(--ink);
   padding-block: clamp(40px, 5vw, 64px); margin-bottom: clamp(28px, 3.5vw, 48px);
