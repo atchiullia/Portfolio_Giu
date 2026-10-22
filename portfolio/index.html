@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
@@ -7,12 +7,11 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CLR3SBXV90');
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giullia Lazaro | DevOps Engineer - Azure, Kubernetes &amp; Automation</title>
+    <title data-pt="Giullia Lazaro | DevOps Engineer - Azure, Kubernetes &amp; Automation" data-en="Giullia Lazaro | DevOps Engineer - Azure, Kubernetes &amp; Automation">Giullia Lazaro | DevOps Engineer - Azure, Kubernetes &amp; Automation</title>
     <meta name="description" content="Portfólio de Giullia Lazaro, Engenheira DevOps especializada em Azure, Kubernetes, Terraform e GitOps. Projetos de CI/CD, observabilidade e Zero Trust networking." />
     <link rel="canonical" href="https://giullialazaro.com/" />
     <meta property="og:type" content="website" />
@@ -21,557 +20,375 @@
     <meta property="og:url" content="https://giullialazaro.com/" />
     <meta property="og:locale" content="pt_BR" />
     <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="theme-color" content="#FBF1DE" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
   </head>
 <body>
-  <header class="header">
-    <a href="index.html" class="home-button" title="Voltar para Home">
-      <i class="fas fa-home"></i>
-    </a>
-   <div class="buttons">
-    <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
-  </div>
+  <a class="skip-link" href="#main" data-pt="pular para o conteúdo" data-en="skip to content">pular para o conteúdo</a>
+
+  <!-- 01 · nav -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="#top" class="pill nav__logo">giullia lazaro</a>
+
+      <nav aria-label="principal">
+        <ul class="nav__links">
+          <li><a href="#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+          <li><a href="#projetos" data-pt="projetos" data-en="projects">projetos</a></li>
+          <li><a href="#resultados" data-pt="resultados" data-en="results">resultados</a></li>
+          <li><a href="#conteudo" data-pt="conteúdo" data-en="content">conteúdo</a></li>
+          <li><a href="#contato" data-pt="contato" data-en="contact">contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="idioma / language">
+          <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">pt</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">en</button>
+        </div>
+        <a href="#contato" class="btn btn--pink btn--sm nav__cta" data-pt="fale comigo" data-en="get in touch">fale comigo</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" data-pt-aria="abrir menu" data-en-aria="open menu" aria-label="abrir menu"><span></span></button>
+      </div>
+    </div>
   </header>
 
-  <div class="intro">
-    <h1 data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</h1>
-    <p class="intro-role"
-    data-pt="Engenheira DevOps | Infraestrutura Azure, Automação &amp; Platform Engineering"
-    data-en="DevOps Engineer | Azure Infrastructure, Automation &amp; Platform Engineering">
-    Engenheira DevOps | Infraestrutura Azure, Automação &amp; Platform Engineering
-    </p>
-    <p
-    data-pt="Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering. Projeto e opero ambientes cloud com Terraform, Bicep, Python, Bash e PowerShell em pipelines CI/CD baseadas em Git (Azure DevOps, GitHub Actions). Já resolvi mais de 6 incidentes de produção com RTO abaixo de 15 minutos através de análise sistemática de causa raiz, e mantenho stacks completas de observabilidade com Application Insights, Log Analytics, Prometheus e Grafana. Atualmente construo uma plataforma Kubernetes multi-node self-managed - com GitOps, ingress, automação de TLS, armazenamento persistente e acesso via VPN Zero Trust - aprofundando minha experiência em orquestração de containers, identidade (Microsoft Entra ID, Keycloak, OAuth2/OIDC) e redes seguras. AWS Certified Cloud Practitioner. Inglês C2."
-    data-en="DevOps Engineer specialized in Azure infrastructure, automation, and platform engineering. I provision and operate cloud environments using Terraform, Bicep, Python, Bash, and PowerShell across Git-based CI/CD pipelines (Azure DevOps, GitHub Actions). I've resolved 6+ production incidents to sub-15-minute RTOs through systematic root-cause analysis, and run full observability stacks with Application Insights, Log Analytics, Prometheus, and Grafana. I'm currently building a self-managed, multi-node Kubernetes platform - with GitOps, ingress, TLS automation, persistent storage, and Zero Trust VPN access - deepening my container-orchestration, identity (Microsoft Entra ID, Keycloak, OAuth2/OIDC), and secure-networking expertise. AWS Certified Cloud Practitioner. English C2.">
-    Engenheira DevOps especializada em infraestrutura Azure, automação e platform engineering. Projeto e opero ambientes cloud com Terraform, Bicep, Python, Bash e PowerShell em pipelines CI/CD baseadas em Git (Azure DevOps, GitHub Actions). Já resolvi mais de 6 incidentes de produção com RTO abaixo de 15 minutos através de análise sistemática de causa raiz, e mantenho stacks completas de observabilidade com Application Insights, Log Analytics, Prometheus e Grafana. Atualmente construo uma plataforma Kubernetes multi-node self-managed - com GitOps, ingress, automação de TLS, armazenamento persistente e acesso via VPN Zero Trust - aprofundando minha experiência em orquestração de containers, identidade (Microsoft Entra ID, Keycloak, OAuth2/OIDC) e redes seguras. AWS Certified Cloud Practitioner. Inglês C2.
-  </p>
-      <div class="intro-links">
-      <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
-      <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
-      <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
-      <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
+  <main id="main">
+
+  <!-- 02 · hero -->
+  <section id="top" class="hero grid-bg">
+    <div class="wrap">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <div class="hero__pills">
+            <span class="pill" data-pt="devops · ex-marinha · cinema" data-en="devops · ex-navy · film school">devops · ex-marinha · cinema</span>
+            <span class="pill pill--pink" data-pt="rio de janeiro → europa" data-en="rio de janeiro → europe">rio de janeiro → europa</span>
+          </div>
+          <h1 class="hero__title"
+              data-pt="olá, sou a giullia.<br><span class=&quot;kw&quot;>devops</span> engineer"
+              data-en="hi, i'm giullia.<br><span class=&quot;kw&quot;>devops</span> engineer">olá, sou a giullia.<br><span class="kw">devops</span> engineer</h1>
+          <p class="hero__lead"
+             data-pt="azure, terraform e kubernetes em produção na bosch. construo plataformas que não caem e automatizo o que ninguém quer fazer na mão."
+             data-en="azure, terraform and kubernetes in production at bosch. i build platforms that stay up and automate what nobody wants to do by hand.">azure, terraform e kubernetes em produção na bosch. construo plataformas que não caem e automatizo o que ninguém quer fazer na mão.</p>
+          <div class="hero__actions">
+            <a href="#projetos" class="btn btn--ink" data-pt="ver projetos →" data-en="see projects →">ver projetos →</a>
+            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="btn">linkedin</a>
+          </div>
+          <span class="sticker st-sparkle" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 4 C56 34 66 44 96 50 C66 56 56 66 50 96 C44 66 34 56 4 50 C34 44 44 34 50 4Z" fill="#FF2D8A" stroke="#18130E" stroke-width="5" stroke-linejoin="round"/></svg></span>
+          <span class="sticker st-cloud" aria-hidden="true"><svg viewBox="0 0 120 80"><path d="M30 68 C14 68 8 56 14 46 C8 34 20 24 32 30 C36 14 60 10 70 24 C84 16 104 26 98 42 C112 46 110 68 94 68Z" fill="#FFFFFF" stroke="#18130E" stroke-width="5" stroke-linejoin="round"/></svg></span>
+        </div>
+
+        <div class="hero__photo">
+          <div class="hero__frame" role="img" aria-label="foto de giullia lazaro">
+            <span class="hero__frame-hint" data-pt="images/giu.jpg" data-en="images/giu.jpg">images/giu.jpg</span>
+          </div>
+          <span class="pill pill--ink hero__handle">@pterodatchiulha</span>
+          <span class="sticker st-thumb" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M22 46 H36 V88 H22 Z" fill="#FFFFFF" stroke="#18130E" stroke-width="5" stroke-linejoin="round"/><path d="M36 50 L52 14 C60 12 66 18 62 30 L58 44 H82 C90 44 92 54 86 58 C92 64 88 72 82 72 C86 78 82 86 74 86 H44 L36 82Z" fill="#E8232A" stroke="#18130E" stroke-width="5" stroke-linejoin="round"/></svg></span>
+          <span class="sticker st-clover" aria-hidden="true"><svg viewBox="0 0 100 100"><g fill="#FF2D8A" stroke="#18130E" stroke-width="5" stroke-linejoin="round"><circle cx="34" cy="34" r="20"/><circle cx="66" cy="34" r="20"/><circle cx="34" cy="66" r="20"/><circle cx="66" cy="66" r="20"/></g><circle cx="50" cy="50" r="10" fill="#FBF1DE" stroke="#18130E" stroke-width="5"/></svg></span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="card stat">
+          <span class="stat__n">6+</span>
+          <span class="stat__l" data-pt="incidentes de produção resolvidos" data-en="production incidents resolved">incidentes de produção resolvidos</span>
+        </div>
+        <div class="card stat">
+          <span class="stat__n">&lt;15 min</span>
+          <span class="stat__l" data-pt="RTO em todos eles" data-en="RTO on every one of them">RTO em todos eles</span>
+        </div>
+        <div class="card stat">
+          <span class="stat__n">91,7%</span>
+          <span class="stat__l" data-pt="mais rápido para provisionar azure com bicep" data-en="faster azure provisioning with bicep">mais rápido para provisionar azure com bicep</span>
+        </div>
+        <div class="card stat">
+          <span class="stat__n">US$ 1.774</span>
+          <span class="stat__l" data-pt="por ano de desperdício em cloud eliminado" data-en="per year of cloud waste eliminated">por ano de desperdício em cloud eliminado</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="wrapper">
-    <div class="portfolio-container">
-
-      <!-- Projeto: Portfólio Self-Hosted -->
-      <div class="instance-card">
-        <a href="architecture-self-hosted.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name"
-              data-pt="Portfólio Self-Hosted: do AWS para um Raspberry Pi"
-              data-en="Self-Hosted Portfolio: From AWS to a Raspberry Pi">
-              Portfólio Self-Hosted: do AWS para um Raspberry Pi
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Tecnologias"
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Raspberry Pi 5</span>
-                <span>Cloudflare Tunnel</span>
-                <span>Docker Compose</span>
-                <span>nginx</span>
-                <span>GitHub Actions</span>
-                <span>Trivy</span>
-                <span>Self-hosted Runner</span>
-              </div>
-            </div>
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Descrição"
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Migração do site giullialazaro.com da AWS para um Raspberry Pi 5 publicado por Cloudflare Tunnel, sem porta de entrada aberta, com nginx em container somente leitura, CI com Trivy e deploy por um runner self-hosted de privilégio mínimo."
-                   data-en="Migration of giullialazaro.com from AWS to a Raspberry Pi 5 published through a Cloudflare Tunnel, with no inbound port open, a read-only nginx container, CI with Trivy and deploys by a least-privilege self-hosted runner.">
-                Migração do site giullialazaro.com da AWS para um Raspberry Pi 5 publicado por Cloudflare Tunnel, sem porta de entrada aberta, com nginx em container somente leitura, CI com Trivy e deploy por um runner self-hosted de privilégio mínimo.
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- 03 · marquee -->
+  <div class="marquee" aria-label="stack">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">azure</span><span class="marquee__item">terraform</span><span class="marquee__item">kubernetes</span><span class="marquee__item">bicep</span><span class="marquee__item">github actions</span><span class="marquee__item">docker</span><span class="marquee__item">keycloak</span><span class="marquee__item">argocd</span><span class="marquee__item">entra ID</span><span class="marquee__item">prometheus</span><span class="marquee__item">grafana</span><span class="marquee__item">powershell</span>
       </div>
-
-      <!-- Projeto: Home Server Kubernetes Platform -->
-      <div class="instance-card">
-        <a href="kubernetes-platform-lab.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <span class="status-badge status-badge--progress" data-pt="Em andamento" data-en="In Progress">Em andamento</span>
-          <h3 class="instance-card__name"
-              data-pt="Plataforma Kubernetes Self-Hosted - Platform Engineering Lab"
-              data-en="Self-Hosted Kubernetes Platform - Platform Engineering Lab">
-              Plataforma Kubernetes Self-Hosted - Platform Engineering Lab
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Tecnologias"
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Kubernetes</span>
-                <span>kubeadm</span>
-                <span>ArgoCD</span>
-                <span>GitOps</span>
-                <span>Traefik</span>
-                <span>Cert-Manager</span>
-                <span>Longhorn</span>
-                <span>Prometheus</span>
-                <span>Grafana</span>
-                <span>WireGuard</span>
-                <span>Terraform</span>
-                <span>Ansible</span>
-              </div>
-            </div>
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Descrição"
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Cluster Kubernetes multi-node (kubeadm) com deploy GitOps via ArgoCD, ingress Traefik, TLS automatizado com Cert-Manager, armazenamento persistente com Longhorn e observabilidade Prometheus/Grafana/Loki. Acesso remoto seguro via gateway WireGuard, sem exposição da API do Kubernetes à internet."
-                   data-en="Multi-node Kubernetes cluster (kubeadm) with GitOps deployment via ArgoCD, Traefik ingress, automated TLS via Cert-Manager, persistent storage with Longhorn, and a Prometheus/Grafana/Loki observability layer. Secure remote access through a WireGuard gateway, with no Kubernetes API exposed to the internet.">
-                Cluster Kubernetes multi-node (kubeadm) com deploy GitOps via ArgoCD, ingress Traefik, TLS automatizado com Cert-Manager, armazenamento persistente com Longhorn e observabilidade Prometheus/Grafana/Loki. Acesso remoto seguro via gateway WireGuard, sem exposição da API do Kubernetes à internet.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto: Zero Trust Homelab -->
-      <div class="instance-card">
-        <a href="zero-trust-homelab.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <span class="status-badge status-badge--done" data-pt="Concluído" data-en="Completed">Concluído</span>
-          <h3 class="instance-card__name"
-              data-pt="Infraestrutura Zero Trust Self-Hosted (Homelab)"
-              data-en="Self-Hosted Zero Trust Infrastructure (Homelab)">
-              Infraestrutura Zero Trust Self-Hosted (Homelab)
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Tecnologias"
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Cloudflare Zero Trust</span>
-                <span>WARP</span>
-                <span>cloudflared</span>
-                <span>Raspberry Pi 5</span>
-                <span>Docker Compose</span>
-                <span>iptables</span>
-                <span>Zero Trust Network Access</span>
-              </div>
-            </div>
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Descrição"
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="VPN overlay Zero Trust (Cloudflare WARP + cloudflared) em um Raspberry Pi 5, com acesso privado a aplicações sem exposição de DNS público e zero portas de entrada abertas, atrás de CGNAT. Stack de 14 serviços containerizados com Docker Compose e isolamento de tráfego LAN via iptables."
-                   data-en="Zero Trust VPN overlay (Cloudflare WARP + cloudflared) on a Raspberry Pi 5, delivering private application access with zero public DNS exposure and zero open inbound ports, behind Carrier-Grade NAT. A 14-service containerized stack via Docker Compose with iptables-based LAN traffic isolation.">
-                VPN overlay Zero Trust (Cloudflare WARP + cloudflared) em um Raspberry Pi 5, com acesso privado a aplicações sem exposição de DNS público e zero portas de entrada abertas, atrás de CGNAT. Stack de 14 serviços containerizados com Docker Compose e isolamento de tráfego LAN via iptables.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto: Bosch / Crystal Realms Highlights -->
-      <div class="instance-card">
-        <a href="bosch-devops-highlights.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name"
-              data-pt="Resultados em Produção - DevOps na Bosch"
-              data-en="Production Impact - DevOps at Bosch">
-              Resultados em Produção - DevOps na Bosch
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Tecnologias"
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Azure</span>
-                <span>Bicep</span>
-                <span>Azure DevOps</span>
-                <span>Key Vault</span>
-                <span>Application Gateway</span>
-                <span>Microsoft Entra ID</span>
-                <span>Keycloak</span>
-                <span>SCIM 2.0</span>
-                <span>PowerShell</span>
-              </div>
-            </div>
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Descrição"
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Resultados mensuráveis como DevOps Engineer: provisionamento de infraestrutura Azure 91,7% mais rápido com Bicep, 6+ incidentes de produção resolvidos com RTO abaixo de 15 minutos, ~US$1.774/ano em desperdício cloud eliminados e migração de identidade Keycloak → Microsoft Entra ID."
-                   data-en="Measurable results as a DevOps Engineer: Azure infrastructure provisioning 91.7% faster with Bicep, 6+ production incidents resolved to sub-15-minute RTOs, ~$1,774/yr in cloud waste eliminated, and a Keycloak → Microsoft Entra ID identity migration.">
-                Resultados mensuráveis como DevOps Engineer: provisionamento de infraestrutura Azure 91,7% mais rápido com Bicep, 6+ incidentes de produção resolvidos com RTO abaixo de 15 minutos, ~US$1.774/ano em desperdício cloud eliminados e migração de identidade Keycloak → Microsoft Entra ID.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto: Publicação Medium -->
-      <div class="instance-card">
-        <a href="publicacao-infraestrutura-por-centavos.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <span class="status-badge status-badge--done" data-pt="Publicado" data-en="Published">Publicado</span>
-          <h3 class="instance-card__name"
-              data-pt="Infraestrutura Profissional por Centavos"
-              data-en="Infraestrutura Profissional por Centavos (Medium Article)">
-              Infraestrutura Profissional por Centavos
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Tecnologias"
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>AWS</span>
-                <span>Amazon S3</span>
-                <span>CloudFront</span>
-                <span>Terraform</span>
-                <span>GitHub Actions</span>
-              </div>
-            </div>
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt"
-                   data-pt="Descrição"
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Artigo publicado na Medium da Bosch Engineering sobre como montei uma arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform e GitHub Actions, mantendo o custo operacional abaixo de US$2/mês."
-                   data-en="Article published on Bosch Engineering's Medium about how I built a professional AWS architecture (S3, CloudFront, Route 53, ACM) with Terraform and GitHub Actions, keeping operating cost under $2/month.">
-                Artigo publicado na Medium da Bosch Engineering sobre como montei uma arquitetura AWS profissional (S3, CloudFront, Route 53, ACM) com Terraform e GitHub Actions, mantendo o custo operacional abaixo de US$2/mês.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Primeiro Projeto -->
-      <div class="instance-card">
-        <a href="monitoramento-kubernetes-prometheus-grafana.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-              data-pt="Monitoramento em Kubernetes com Prometheus e Grafana" 
-              data-en="Monitoring in Kubernetes with Prometheus and Grafana">
-              Monitoramento em Kubernetes com Prometheus e Grafana
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Tecnologias" 
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>GitHub Actions</span>
-                <span>Prometheus</span>
-                <span>Grafana</span>
-                <span>Helm</span>
-                <span>Java</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Descrição" 
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Projeto DevOps que configura uma aplicação em Java no Kubernetes com pipelines de CI/CD, monitoramento via Prometheus e dashboards com Grafana. Solução completa para observabilidade e automação de deploy." 
-                   data-en="DevOps project that configures a Java application in Kubernetes with CI/CD pipelines, monitoring via Prometheus, and dashboards with Grafana. A complete solution for observability and deployment automation.">
-                Projeto DevOps que configura uma aplicação em Java no Kubernetes com pipelines de CI/CD, monitoramento via Prometheus e dashboards com Grafana. Solução completa para observabilidade e automação de deploy.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Segundo Projeto -->
-      <div class="instance-card">
-        <a href="portfolio-docker-nginx-html-css-javascript.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-               data-pt="Portfólio com Docker + Nginx" 
-               data-en="Portfolio with Docker + Nginx">
-               Portfólio com Docker + Nginx
-        </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Tecnologias" 
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>GitHub</span>
-                <span>Docker</span>
-                <span>Nginx</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Descrição" 
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Projeto DevOps que empacota um portfólio web com HTML e CSS em um container Docker, configurado com Nginx como servidor web. A aplicação é executada localmente com um simples docker run, demonstrando na prática como criar, executar e gerenciar containers de forma eficiente." 
-                   data-en="DevOps project that packages a web portfolio using HTML and CSS into a Docker container, configured with Nginx as the web server. The application runs locally with a simple docker run, demonstrating how to build, run and manage containers efficiently.">
-                Projeto DevOps que empacota um portfólio web com HTML e CSS em um container Docker, configurado com Nginx como servidor web. A aplicação é executada localmente com um simples docker run, demonstrando na prática como criar, executar e gerenciar containers de forma eficiente.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Terceiro Projeto -->
-      <div class="instance-card">
-        <a href="automacao-openssh.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-               data-pt="Automação de Configuração de Chave SSH no Windows" 
-               data-en="SSH Key Configuration Automation on Windows">
-               Automação de Configuração de Chave SSH no Windows
-        </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Tecnologias" 
-                   data-en="Technologies">
-                   Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Powershell</span>
-                <span>Windows</span>
-                <span>OpenSSH</span>
-                <span>GitHub</span>
-                <span>Git</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                   data-pt="Descrição" 
-                   data-en="Description">
-                   Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                   data-pt="Projeto DevOps que automatiza todo o processo de configuração de chave SSH no Windows utilizando PowerShell. O script cria chaves SSH, configura o OpenSSH, e adiciona as chaves ao agente SSH, simplificando o processo de autenticação segura para repositórios Git e servidores remotos." 
-                   data-en="DevOps project that automates the entire SSH key configuration process on Windows using PowerShell. The script creates SSH keys, configures OpenSSH, and adds the keys to the SSH agent, simplifying the secure authentication process for Git repositories and remote servers.">
-                  Projeto DevOps que automatiza todo o processo de configuração de chave SSH no Windows utilizando PowerShell. O script cria chaves SSH, configura o OpenSSH, e adiciona as chaves ao agente SSH, simplificando o processo de autenticação segura para repositórios Git e servidores remotos.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-            <!-- Quarto Projeto -->
-      <div class="instance-card">
-        <a href="pipeline-ci-cd-macos-unreal-engine.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-              data-pt="UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine" 
-              data-en="UltiMage – CI/CD Build Pipeline on macOS with Unreal Engine">
-              UltiMage – Pipeline de Build CI/CD no macOS com Unreal Engine
-        </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Tecnologias" 
-                  data-en="Technologies">
-                  Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Unreal Engine 5</span>
-                <span>GitHub Actions</span>
-                <span>CI/CD</span>
-                <span>macOS</span>
-                <span>RunUAT</span>
-                <span>Self-hosted Runners</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Descrição" 
-                  data-en="Description">
-                  Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                  data-pt="Automatização do processo de build no macOS para o jogo UltiMage, desenvolvido pela Crystal Realms Entertainment. A pipeline CI/CD foi configurada com GitHub Actions e um runner auto-hospedado, garantindo maior estabilidade e redução de erros manuais no desenvolvimento do jogo." 
-                  data-en="Automation of the build process on macOS for the game UltiMage, developed by Crystal Realms Entertainment. The CI/CD pipeline was configured with GitHub Actions and a self-hosted runner, ensuring greater stability and reducing manual errors in game development.">
-                  Automatização do processo de build no macOS para o jogo UltiMage, desenvolvido pela Crystal Realms Entertainment. A pipeline CI/CD foi configurada com GitHub Actions e um runner auto-hospedado, garantindo maior estabilidade e redução de erros manuais no desenvolvimento do jogo.        </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quinto Projeto -->
-      <div class="instance-card">
-        <a href="terraform-aws-s3-cloudfront-deployment.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-              data-pt="Publicação de Site Estático com AWS, Terraform e GitHub Actions"
-              data-en="Static Site Deployment with AWS, Terraform and GitHub Actions">
-              Publicação de Site Estático com AWS, Terraform e GitHub Actions 
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Tecnologias" 
-                  data-en="Technologies">
-                  Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Terraform</span>
-                <span>Amazon S3</span>
-                <span>CloudFront</span>
-                <span>AWS ACM</span>
-                <span>AWS CloudWatch</span>
-                <span>Route 53 + Squarespace</span>
-                <span>GitHub Actions</span>
-                <span>CI/CD</span>
-                <span>Trivy</span>
-                <span>GitHub Secrets</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Descrição" 
-                  data-en="Description">
-                  Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                  data-pt="Publicação automatizada do site giullialazaro.com com infraestrutura como código via Terraform. O deploy foi realizado com S3, CloudFront, Route 53 e GitHub Actions, incluindo SSL com ACM, CI/CD, monitoramento com CloudWatch e escaneamento de segurança com Trivy." 
-                  data-en="Automated deployment of the website giullialazaro.com with infrastructure as code using Terraform. The deployment was done with S3, CloudFront, Route 53, and GitHub Actions, including SSL with ACM, CI/CD, monitoring with CloudWatch, and security scanning with Trivy.">
-                  Publicação automatizada do site giullialazaro.com com infraestrutura como código via Terraform. O deploy foi realizado com S3, CloudFront, Route 53 e GitHub Actions, incluindo SSL com ACM, CI/CD, monitoramento com CloudWatch e escaneamento de segurança com Trivy.            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <!-- Sexto Projeto -->
-      <div class="instance-card">
-        <a href="architecture-aws.html" class="card-link"></a>
-        <div class="instance-card__cnt">
-          <h3 class="instance-card__name" 
-              data-pt="Arquitetura AWS Enterprise-Grade com Segurança em Camadas"
-              data-en="Enterprise-Grade AWS Architecture with Layered Security">
-              Arquitetura AWS Enterprise-Grade com Segurança em Camadas
-          </h3>
-          <div class="instance-card-inf">
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Tecnologias" 
-                  data-en="Technologies">
-                  Tecnologias
-              </div>
-              <div class="tech-stack">
-                <span>Route 53</span>
-                <span>AWS WAF</span>
-                <span>Application Load Balancer</span>
-                <span>EC2</span>
-                <span>VPC</span>
-                <span>NAT Gateway</span>
-                <span>Security Groups</span>
-                <span>Subnets</span>
-                <span>Internet Gateway</span>
-                <span>Auto Scaling</span>
-              </div>
-            </div>     
-            <div class="instance-card-inf__item">
-              <div class="instance-card-inf__txt" 
-                  data-pt="Descrição" 
-                  data-en="Description">
-                  Descrição
-              </div>
-              <div class="instance-card-inf__title"
-                  data-pt="Design de uma arquitetura AWS enterprise-grade seguindo as melhores práticas de segurança e escalabilidade. A arquitetura implementa segurança em camadas com WAF, ALB, subnets isoladas, NAT Gateway e Security Groups para isolamento completo e conformidade corporativa." 
-                  data-en="Design of an enterprise-grade AWS architecture following best practices for security and scalability. The architecture implements layered security with WAF, ALB, isolated subnets, NAT Gateway, and Security Groups for complete isolation and corporate compliance.">
-                  Design de uma arquitetura AWS enterprise-grade seguindo as melhores práticas de segurança e escalabilidade. A arquitetura implementa segurança em camadas com WAF, ALB, subnets isoladas, NAT Gateway e Security Groups para isolamento completo e conformidade corporativa.
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="marquee__group" aria-hidden="true">
+        <span class="marquee__item">azure</span><span class="marquee__item">terraform</span><span class="marquee__item">kubernetes</span><span class="marquee__item">bicep</span><span class="marquee__item">github actions</span><span class="marquee__item">docker</span><span class="marquee__item">keycloak</span><span class="marquee__item">argocd</span><span class="marquee__item">entra ID</span><span class="marquee__item">prometheus</span><span class="marquee__item">grafana</span><span class="marquee__item">powershell</span>
       </div>
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <!-- 04 · sobre -->
+  <section id="sobre" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title" data-pt="sobre" data-en="about">sobre</h2>
+        <span class="pill">alt girl in corporate</span>
+      </div>
+      <div class="about">
+        <div class="card about__text">
+          <p data-pt="seis anos na marinha do brasil, uma faculdade de cinema e um pivô para devops. hoje opero infraestrutura azure na bosch service solutions, no taxcalendar, uma plataforma global de compliance que roda em oito regiões."
+             data-en="six years in the brazilian navy, a film degree and a pivot into devops. today i run azure infrastructure at bosch service solutions, on taxcalendar, a global compliance platform spanning eight regions.">seis anos na marinha do brasil, uma faculdade de cinema e um pivô para devops. hoje opero infraestrutura azure na bosch service solutions, no taxcalendar, uma plataforma global de compliance que roda em oito regiões.</p>
+          <p data-pt="meu dia é infra como código (terraform e bicep), pipelines no azure devops e github actions, identidade (entra ID, keycloak, OAuth2/OIDC, SCIM 2.0) e observabilidade com application insights, log analytics, prometheus e grafana."
+             data-en="my day is infrastructure as code (terraform and bicep), pipelines on azure devops and github actions, identity (entra ID, keycloak, OAuth2/OIDC, SCIM 2.0) and observability with application insights, log analytics, prometheus and grafana.">meu dia é infra como código (terraform e bicep), pipelines no azure devops e github actions, identidade (entra ID, keycloak, OAuth2/OIDC, SCIM 2.0) e observabilidade com application insights, log analytics, prometheus e grafana.</p>
+          <p data-pt="fora do expediente mantenho um cluster kubernetes em casa, gravo vídeos sobre linux e escrevo sobre o que aprendo."
+             data-en="after hours i run a kubernetes cluster at home, record videos about linux and write about what i learn.">fora do expediente mantenho um cluster kubernetes em casa, gravo vídeos sobre linux e escrevo sobre o que aprendo.</p>
+          <div class="about__tags">
+            <span class="tag">AWS cloud practitioner</span>
+            <span class="tag" data-pt="inglês C2" data-en="english C2">inglês C2</span>
+            <span class="tag" data-pt="pós em business intelligence" data-en="postgrad in business intelligence">pós em business intelligence</span>
+            <span class="tag" data-pt="pós em arquitetura de software e IA · em andamento" data-en="postgrad in software architecture and AI · in progress">pós em arquitetura de software e IA · em andamento</span>
+          </div>
+        </div>
+
+        <div class="card about__path">
+          <h3 class="about__path-title" data-pt="trajetória" data-en="path">trajetória</h3>
+          <div class="step">
+            <span class="pill step__n">01</span>
+            <div><strong data-pt="marinha do brasil" data-en="brazilian navy">marinha do brasil</strong><span class="mono">2019 → 2025</span></div>
+          </div>
+          <div class="step">
+            <span class="pill step__n">02</span>
+            <div><strong data-pt="cinema e audiovisual · ESPM" data-en="film and audiovisual · ESPM">cinema e audiovisual · ESPM</strong><span class="mono" data-pt="prêmio especial do júri, festival oscarito" data-en="special jury prize, oscarito festival">prêmio especial do júri, festival oscarito</span></div>
+          </div>
+          <div class="step">
+            <span class="pill step__n">03</span>
+            <div><strong data-pt="bosch digital · devops intern" data-en="bosch digital · devops intern">bosch digital · devops intern</strong><span class="mono">askbosch · keycloak · ACME/TLS</span></div>
+          </div>
+          <div class="step step--now">
+            <span class="pill step__n">04</span>
+            <div><strong data-pt="bosch service solutions · devops engineer" data-en="bosch service solutions · devops engineer">bosch service solutions · devops engineer</strong><span class="mono" data-pt="taxcalendar · 8 regiões · agora" data-en="taxcalendar · 8 regions · now">taxcalendar · 8 regiões · agora</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · projetos -->
+  <section id="projetos" class="section grid-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-pt="projetos" data-en="projects">projetos</h2>
+          <p class="section-lead" data-pt="o que eu construo quando ninguém está pedindo. tudo self-hosted, tudo no github." data-en="what i build when nobody is asking. all self-hosted, all on github.">o que eu construo quando ninguém está pedindo. tudo self-hosted, tudo no github.</p>
+        </div>
+        <div class="filters" role="group" aria-label="filtrar projetos">
+          <button type="button" class="pill" data-filter="all" aria-pressed="true" data-pt="todos" data-en="all">todos</button>
+          <button type="button" class="pill" data-filter="kubernetes" aria-pressed="false">kubernetes</button>
+          <button type="button" class="pill" data-filter="azure" aria-pressed="false">azure</button>
+          <button type="button" class="pill" data-filter="aws" aria-pressed="false">aws</button>
+          <button type="button" class="pill" data-filter="cicd" aria-pressed="false">ci/cd</button>
+          <button type="button" class="pill" data-filter="homelab" aria-pressed="false">homelab</button>
+          <button type="button" class="pill" data-filter="linux" aria-pressed="false">linux</button>
+        </div>
+      </div>
+
+      <div class="bento">
+        <a href="kubernetes-platform-lab.html" class="card project project--featured" data-cat="kubernetes homelab cicd">
+          <div class="project__top">
+            <span class="pill pill--pink" data-pt="em andamento" data-en="in progress">em andamento</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="project__img"><img src="images/grafana.png" alt="" loading="lazy" width="1600" height="900"></div>
+          <h3 class="project__title" data-pt="plataforma kubernetes self-hosted" data-en="self-hosted kubernetes platform">plataforma kubernetes self-hosted</h3>
+          <p class="project__desc"
+             data-pt="cluster multi-node com kubeadm, gitops com argocd, ingress com traefik, TLS automático, storage persistente com longhorn e acesso zero trust por wireguard."
+             data-en="multi-node cluster with kubeadm, gitops with argocd, traefik ingress, automatic TLS, persistent storage with longhorn and zero trust access over wireguard.">cluster multi-node com kubeadm, gitops com argocd, ingress com traefik, TLS automático, storage persistente com longhorn e acesso zero trust por wireguard.</p>
+          <div class="project__tags"><span class="tag">kubeadm</span><span class="tag">argocd</span><span class="tag">traefik</span><span class="tag">cert-manager</span><span class="tag">longhorn</span><span class="tag">wireguard</span><span class="tag">terraform</span><span class="tag">ansible</span></div>
+        </a>
+
+        <a href="https://linuxplayground.giullialazaro.com/" target="_blank" rel="noopener" class="card project project--half" data-cat="linux azure">
+          <div class="project__top">
+            <span class="pill pill--pink" data-pt="no ar" data-en="live">no ar</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="project__term" aria-hidden="true">
+            <span class="project__term-bar"><i></i><i></i><i></i></span>
+            <code>aluno@playground:~$ whoami<br>aluno<br>aluno@playground:~$ <span class="project__cursor"></span></code>
+          </div>
+          <h3 class="project__title" data-pt="linux playground: aprenda linux no terminal de verdade" data-en="linux playground: learn linux in a real terminal">linux playground: aprenda linux no terminal de verdade</h3>
+          <p class="project__desc" data-pt="curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. companheiro da série do youtube." data-en="free course with a real linux terminal in the browser, 7 arcs and 53 lessons, plus a chmod calculator, crontab generator, cheatsheets and quizzes. companion to the youtube series.">curso gratuito com terminal linux real no navegador, 7 arcos e 53 lições, mais calculadora de chmod, gerador de crontab, cheatsheets e quizzes. companheiro da série do youtube.</p>
+          <div class="project__tags"><span class="tag">astro</span><span class="tag">go</span><span class="tag">k3s</span><span class="tag">gVisor</span><span class="tag">azure</span><span class="tag">terraform</span></div>
+        </a>
+
+        <a href="architecture-self-hosted.html" class="card project project--half" data-cat="homelab cicd">
+          <div class="project__top">
+            <span class="pill" data-pt="concluído" data-en="completed">concluído</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="project__img project__img--sm"><img src="images/self-hosted-architecture-pt.png" alt="" loading="lazy" width="1600" height="700"></div>
+          <h3 class="project__title" data-pt="portfólio self-hosted: da AWS para um raspberry pi" data-en="self-hosted portfolio: from AWS to a raspberry pi">portfólio self-hosted: da AWS para um raspberry pi</h3>
+          <div class="project__tags"><span class="tag">raspberry pi 5</span><span class="tag">cloudflare tunnel</span><span class="tag">docker compose</span><span class="tag">trivy</span><span class="tag">self-hosted runner</span></div>
+        </a>
+
+        <a href="zero-trust-homelab.html" class="card project project--third" data-cat="homelab">
+          <div class="project__top">
+            <span class="pill" data-pt="concluído" data-en="completed">concluído</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <h3 class="project__title" data-pt="zero trust homelab: 14 serviços atrás de CGNAT" data-en="zero trust homelab: 14 services behind CGNAT">zero trust homelab: 14 serviços atrás de CGNAT</h3>
+          <p class="project__desc" data-pt="VPN overlay com cloudflare zero trust, sem DNS público e isolamento de rede com iptables." data-en="VPN overlay with cloudflare zero trust, no public DNS and network isolation with iptables.">VPN overlay com cloudflare zero trust, sem DNS público e isolamento de rede com iptables.</p>
+          <div class="project__tags"><span class="tag">cloudflare zero trust</span><span class="tag">warp</span><span class="tag">cloudflared</span><span class="tag">iptables</span></div>
+        </a>
+
+        <a href="bosch-devops-highlights.html" class="card project project--third" data-cat="azure cicd">
+          <div class="project__top">
+            <span class="pill pill--red" data-pt="produção" data-en="production">produção</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <h3 class="project__title" data-pt="resultados em produção na bosch" data-en="production results at bosch">resultados em produção na bosch</h3>
+          <p class="project__desc" data-pt="bicep, azure devops, key vault, application gateway e a migração keycloak → entra ID." data-en="bicep, azure devops, key vault, application gateway and the keycloak → entra ID migration.">bicep, azure devops, key vault, application gateway e a migração keycloak → entra ID.</p>
+          <div class="project__tags"><span class="tag">azure bicep</span><span class="tag">entra ID</span><span class="tag">SCIM 2.0</span><span class="tag">powershell</span></div>
+        </a>
+
+        <a href="publicacao-infraestrutura-por-centavos.html" class="card project project--third" data-cat="aws cicd">
+          <div class="project__top">
+            <span class="pill" data-pt="publicado" data-en="published">publicado</span>
+            <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <h3 class="project__title" data-pt="infra profissional por centavos" data-en="professional infrastructure for cents">infra profissional por centavos</h3>
+          <p class="project__desc" data-pt="artigo no medium da bosch engineering: AWS com S3 e cloudfront por menos de US$ 2 por mês." data-en="article on bosch engineering's medium: AWS with S3 and cloudfront for under US$ 2 a month.">artigo no medium da bosch engineering: AWS com S3 e cloudfront por menos de US$ 2 por mês.</p>
+          <div class="project__tags"><span class="tag">S3</span><span class="tag">cloudfront</span><span class="tag">terraform</span><span class="tag">github actions</span></div>
+        </a>
+
+      </div>
+
+      <div class="more">
+        <h3 class="more__title" data-pt="mais projetos" data-en="more projects">mais projetos</h3>
+        <ul class="more__list">
+          <li><a href="monitoramento-kubernetes-prometheus-grafana.html"><span class="pill step__n">07</span><span class="more__name" data-pt="monitoramento em kubernetes com prometheus e grafana" data-en="monitoring in kubernetes with prometheus and grafana">monitoramento em kubernetes com prometheus e grafana</span><span class="more__stack">prometheus · grafana · helm · java · github actions</span></a></li>
+          <li><a href="pipeline-ci-cd-macos-unreal-engine.html"><span class="pill step__n">08</span><span class="more__name" data-pt="ultimage: pipeline de build macOS com unreal engine" data-en="ultimage: macOS build pipeline with unreal engine">ultimage: pipeline de build macOS com unreal engine</span><span class="more__stack">unreal 5 · github actions · RunUAT · self-hosted runners</span></a></li>
+          <li><a href="terraform-aws-s3-cloudfront-deployment.html"><span class="pill step__n">09</span><span class="more__name" data-pt="site estático com AWS, terraform e github actions" data-en="static site with AWS, terraform and github actions">site estático com AWS, terraform e github actions</span><span class="more__stack">terraform · S3 · cloudfront · ACM · route 53 · trivy</span></a></li>
+          <li><a href="architecture-aws.html"><span class="pill step__n">10</span><span class="more__name" data-pt="arquitetura AWS com segurança em camadas" data-en="enterprise-grade AWS architecture with layered security">arquitetura AWS com segurança em camadas</span><span class="more__stack">route 53 · WAF · ALB · EC2 · VPC · auto scaling</span></a></li>
+          <li><a href="automacao-openssh.html"><span class="pill step__n">11</span><span class="more__name" data-pt="automação de chaves SSH no windows" data-en="SSH key setup automation on windows">automação de chaves SSH no windows</span><span class="more__stack">powershell · windows openSSH · git</span></a></li>
+          <li><a href="portfolio-docker-nginx-html-css-javascript.html"><span class="pill step__n">12</span><span class="more__name" data-pt="portfólio com docker + nginx" data-en="portfolio with docker + nginx">portfólio com docker + nginx</span><span class="more__stack">HTML · CSS · docker · nginx</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · resultados -->
+  <section id="resultados" class="section results">
+    <div class="wrap">
+      <h2 class="results__title"
+          data-pt="em produção na <span class=&quot;kw&quot;>bosch</span>, não em slide: o que mudou com infra como código e identidade centralizada"
+          data-en="in production at <span class=&quot;kw&quot;>bosch</span>, not on a slide: what changed with infrastructure as code and centralized identity">em produção na <span class="kw">bosch</span>, não em slide: o que mudou com infra como código e identidade centralizada</h2>
+      <div class="results__grid">
+        <div class="card result">
+          <span class="result__n">91,7%</span>
+          <strong data-pt="provisionamento azure mais rápido" data-en="faster azure provisioning">provisionamento azure mais rápido</strong>
+          <span class="mono">bicep + azure devops</span>
+        </div>
+        <div class="card result">
+          <span class="result__n">6+</span>
+          <strong data-pt="incidentes resolvidos com RTO abaixo de 15 min" data-en="incidents resolved with sub-15-minute RTO">incidentes resolvidos com RTO abaixo de 15 min</strong>
+          <span class="mono">application insights · log analytics</span>
+        </div>
+        <div class="card result">
+          <span class="result__n">1.774</span>
+          <strong data-pt="US$ por ano de desperdício em cloud eliminados" data-en="US$ per year of cloud waste eliminated">US$ por ano de desperdício em cloud eliminados</strong>
+          <span class="mono">finops · rightsizing</span>
+        </div>
+        <div class="card result">
+          <span class="result__n">SSO</span>
+          <strong data-pt="migração de identidade keycloak → entra ID" data-en="keycloak → entra ID identity migration">migração de identidade keycloak → entra ID</strong>
+          <span class="mono">OAuth2 · OIDC · SCIM 2.0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · conteúdo -->
+  <section id="conteudo" class="section grid-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-pt="conteúdo" data-en="content">conteúdo</h2>
+          <p class="section-lead" data-pt="o que eu aprendo vira vídeo, artigo ou post. um comando por vez." data-en="what i learn becomes a video, an article or a post. one command at a time.">o que eu aprendo vira vídeo, artigo ou post. um comando por vez.</p>
+        </div>
+        <a href="https://www.youtube.com/@pterodatchiulha" target="_blank" rel="noopener" class="pill">@pterodatchiulha</a>
+      </div>
+      <div class="content">
+        <a href="https://www.youtube.com/@pterodatchiulha" target="_blank" rel="noopener" class="media">
+          <div class="media__thumb" aria-hidden="true">linux,<br>um comando<br>por vez</div>
+          <div class="card media__body">
+            <span class="tag">youtube</span>
+            <h3 class="media__title" data-pt="linux, um comando por vez" data-en="linux, one command at a time">linux, um comando por vez</h3>
+            <p data-pt="episódios curtos em quatro camadas: tl;dr, iniciante, intermediário e avançado." data-en="short episodes in four layers: tl;dr, beginner, intermediate and advanced.">episódios curtos em quatro camadas: tl;dr, iniciante, intermediário e avançado.</p>
+            <span class="btn btn--sm btn--red" data-pt="assistir →" data-en="watch →">assistir →</span>
+          </div>
+        </a>
+        <a href="https://linuxplayground.giullialazaro.com/" target="_blank" rel="noopener" class="media">
+          <div class="media__thumb media__thumb--term" aria-hidden="true">aluno@playground:~$ _</div>
+          <div class="card media__body">
+            <span class="tag">linux playground</span>
+            <h3 class="media__title" data-pt="pratique no terminal de verdade" data-en="practice in a real terminal">pratique no terminal de verdade</h3>
+            <p data-pt="cada vídeo vira uma lição: assista, leia e pratique. arcos 1 e 2 gratuitos, sem conta." data-en="every video becomes a lesson: watch, read and practice. arcs 1 and 2 free, no account.">cada vídeo vira uma lição: assista, leia e pratique. arcos 1 e 2 gratuitos, sem conta.</p>
+            <span class="btn btn--sm btn--ink" data-pt="praticar →" data-en="practice →">praticar →</span>
+          </div>
+        </a>
+        <a href="publicacao-infraestrutura-por-centavos.html" class="media">
+          <div class="media__thumb" aria-hidden="true">US$ 2<br>/ mês</div>
+          <div class="card media__body">
+            <span class="tag">medium</span>
+            <h3 class="media__title" data-pt="infra profissional por centavos" data-en="professional infrastructure for cents">infra profissional por centavos</h3>
+            <p data-pt="publicado no blog da bosch engineering." data-en="published on the bosch engineering blog.">publicado no blog da bosch engineering.</p>
+            <span class="btn btn--sm" data-pt="ler →" data-en="read →">ler →</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="media">
+          <div class="media__thumb" aria-hidden="true">devops,<br>sem mito</div>
+          <div class="card media__body">
+            <span class="tag">linkedin</span>
+            <h3 class="media__title" data-pt="mitos de devops, um por post" data-en="devops myths, one per post">mitos de devops, um por post</h3>
+            <p data-pt="em minúsculas, com detalhe técnico e sem frase de LinkedIn." data-en="lowercase, technically specific and free of LinkedIn clichés.">em minúsculas, com detalhe técnico e sem frase de LinkedIn.</p>
+            <span class="btn btn--sm btn--pink" data-pt="seguir →" data-en="follow →">seguir →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · contato -->
+  <section id="contato" class="section contact">
+    <div class="wrap">
+      <div class="card contact__card">
+        <h2 class="contact__title" data-pt="vamos construir algo que não cai?" data-en="let's build something that stays up?">vamos construir algo que não cai?</h2>
+        <p class="contact__lead" data-pt="aberta a vagas de devops, platform e cloud engineering na europa. relocation planejada." data-en="open to devops, platform and cloud engineering roles in europe. relocation planned.">aberta a vagas de devops, platform e cloud engineering na europa. relocation planejada.</p>
+        <div class="contact__actions">
+          <a href="mailto:giullialazaro@gmail.com" class="btn btn--ink contact__email">giullialazaro@gmail.com</a>
+          <button type="button" id="copy-email" class="btn" data-email="giullialazaro@gmail.com" data-pt="copiar e-mail" data-en="copy e-mail">copiar e-mail</button>
+        </div>
+        <div class="contact__social">
+          <a href="https://github.com/atchiullia" target="_blank" rel="noopener" class="pill">github</a>
+          <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="pill">linkedin</a>
+          <a href="https://www.youtube.com/@pterodatchiulha" target="_blank" rel="noopener" class="pill">youtube</a>
+          <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" rel="noopener" class="pill">dockerhub</a>
+          <a href="https://giullialazaro.notion.site" target="_blank" rel="noopener" class="pill">blog</a>
+          <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" rel="noopener" class="pill">spotify</a>
+        </div>
+        <span id="copied" class="pill pill--ink copied" hidden role="status" data-pt="copiado." data-en="copied.">copiado.</span>
+        <span class="sticker st-smiley" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FBF1DE" stroke="#18130E" stroke-width="5"/><circle cx="36" cy="40" r="5" fill="#18130E"/><circle cx="64" cy="40" r="5" fill="#18130E"/><path d="M30 60 C38 74 62 74 70 60" fill="none" stroke="#18130E" stroke-width="5" stroke-linecap="round"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  </main>
 
   <footer class="footer">
-    <div class="footer-content">
-
-      <!-- Column 1: Playlist -->
-      <div class="playlist" style="flex: 1;">
-        <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-
-        <!-- Column 2: About -->
-        <div class="about" style="flex: 1;">
-          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
-          <p class="translatable"
-            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
-            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
-            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
-          </p>
-        </div>
-
-      <!-- Column 3: Contact -->
-      <div class="contact" style="flex: 1;">
-        <h3>Reach me</h3>
-      <div class="social-media">
-            <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
-            <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
-            <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
-            <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-            <a href="mailto:giullialazaro@gmail.com" title="Email">
-            <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-            </a>
-      </div>
-      </div>
+    <div class="wrap footer__inner">
+      <span class="mono">© 2026 giullia lazaro · @pterodatchiulha</span>
+      <span class="mono" data-pt="self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas" data-en="self-hosted on a raspberry pi 5 · read-only nginx · zero open ports">self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas</span>
+      <a class="mono" href="https://github.com/atchiullia" target="_blank" rel="noopener" data-pt="código no github" data-en="source on github">código no github</a>
     </div>
   </footer>
+
+  <script src="js/home.js"></script>
 </body>
 </html>
