@@ -1,258 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
-    <script>
+<html lang="pt-BR">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CLR3SBXV90"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CLR3SBXV90');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-pt="Monitoramento Kubernetes com Prometheus e Grafana | Giullia Lazaro" data-en="Kubernetes Monitoring with Prometheus and Grafana | Giullia Lazaro">Monitoramento Kubernetes com Prometheus e Grafana | Giullia Lazaro</title>
-    <meta name="description" content="Monitoramento Kubernetes com Prometheus, Grafana, Helm e CI/CD via GitHub Actions, com observabilidade completa e dashboards em tempo real." />
-    <link rel="canonical" href="https://giullialazaro.com/monitoramento-kubernetes-prometheus-grafana.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Monitoramento Kubernetes com Prometheus e Grafana - Giullia Lazaro" />
-    <meta property="og:description" content="Projeto DevOps de monitoramento Kubernetes com Prometheus, Grafana, Helm e CI/CD via GitHub Actions, com observabilidade completa e dashboards em tempo real." />
-    <meta property="og:url" content="https://giullialazaro.com/monitoramento-kubernetes-prometheus-grafana.html" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>">
-  
-  </head>
-  <body>
-    <header class="header">
-      <a href="index.html" class="home-button" title="Voltar para Home">
-        <i class="fas fa-home"></i>
-      </a>
-      <div class="buttons">
-        <button id="toggle-lang" class="toggle-lang">🇺🇸</button>
-      </div>
-    </header>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-en="Kubernetes Monitoring with Prometheus and Grafana | Giullia Lazaro" data-pt="Monitoramento Kubernetes com Prometheus e Grafana | Giullia Lazaro">Monitoramento Kubernetes com Prometheus e Grafana | Giullia Lazaro</title>
+<meta content="Monitoramento Kubernetes com Prometheus, Grafana, Helm e CI/CD via GitHub Actions, com observabilidade completa e dashboards em tempo real." name="description"/>
+<link href="https://giullialazaro.com/monitoramento-kubernetes-prometheus-grafana.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Monitoramento Kubernetes com Prometheus e Grafana - Giullia Lazaro" property="og:title"/>
+<meta content="Projeto DevOps de monitoramento Kubernetes com Prometheus, Grafana, Helm e CI/CD via GitHub Actions, com observabilidade completa e dashboards em tempo real." property="og:description"/>
+<meta content="https://giullialazaro.com/monitoramento-kubernetes-prometheus-grafana.html" property="og:url"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="project.css" />
+<meta name="theme-color" content="#FBF1DE" />
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🦄&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
 
-    <div class="intro">
-      <p class="intro-name" data-pt="Olá, sou a Giullia" data-en="Hello, I'm Giullia">Olá, sou a Giullia</p>
-      <p data-pt="Engenheira DevOps apaixonada por automação e performance em pipelines. Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas." 
-      data-en="DevOps engineer passionate about automation and performance in pipelines. I have experience in configuring and scaling CI/CD processes, focusing on efficiency, stability, and continuous delivery. In my recent projects, I automated everything from generating SSH keys to facilitate developer onboarding to complex build pipelines for games in Unreal Engine 5, using GitHub Actions, dedicated runners, and command-line tools on macOS. I always strive to reduce the time between development and delivery, providing scalable, secure, and well-documented solutions.">
-      Engenheira DevOps apaixonada por automação e performance em pipelines. 
-      Tenho experiência em configurar e escalar processos de CI/CD, com foco em eficiência, estabilidade e entrega contínua. 
-      Em meus projetos recentes, automatizei desde a geração de chaves SSH para facilitar o onboarding de desenvolvedores, até pipelines complexas de build para jogos em Unreal Engine 5, usando GitHub Actions, runners dedicados e ferramentas de linha de comando no macOS. 
-      Busco sempre reduzir o tempo entre desenvolvimento e entrega, entregando soluções escaláveis, seguras e bem documentadas.    
-      </p>
-      <div class="intro-links">
-        <a href="https://github.com/atchiullia" target="_blank" class="intro-btn">GitHub</a>
-        <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" class="intro-btn">DockerHub</a>
-        <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" class="intro-btn">LinkedIn</a>
-        <a href="https://giullialazaro.notion.site" target="_blank" class="intro-btn">Blog</a>
-
+</head>
+<body>
+  <a class="skip-link" href="#main" data-pt="pular para o conteúdo" data-en="skip to content">pular para o conteúdo</a>
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="pill nav__logo">giullia lazaro</a>
+      <nav aria-label="principal">
+        <ul class="nav__links">
+          <li><a href="index.html#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+          <li><a href="index.html#projetos" aria-current="page" data-pt="projetos" data-en="projects">projetos</a></li>
+          <li><a href="index.html#resultados" data-pt="resultados" data-en="results">resultados</a></li>
+          <li><a href="index.html#conteudo" data-pt="conteúdo" data-en="content">conteúdo</a></li>
+          <li><a href="index.html#contato" data-pt="contato" data-en="contact">contato</a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="idioma / language">
+          <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">pt</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">en</button>
+        </div>
+        <a href="index.html#contato" class="btn btn--pink btn--sm nav__cta" data-pt="fale comigo" data-en="get in touch">fale comigo</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="menu" data-pt-aria="abrir menu" data-en-aria="open menu" aria-label="abrir menu"><span></span></button>
       </div>
     </div>
+  </header>
 
-    <div class="carousel">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="images/grafana.png" alt="Grafana_Kubernetes_Deployment" />
+  <main id="main">
+  <section class="section ph grid-bg">
+    <div class="wrap">
+      <a href="index.html#projetos" class="pill ph__back" data-pt="← projetos" data-en="← projects">← projetos</a>
+      <div class="ph__grid ph__grid--img">
+        <div class="ph__copy">
+          <h1 class="ph__title" data-pt="Monitoramento em Kubernetes com Prometheus e Grafana" data-en="Monitoring in Kubernetes with Prometheus and Grafana">Monitoramento em Kubernetes com Prometheus e Grafana</h1>
+          <div class="ph__tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Helm</span><span class="tag">Java</span></div>
+          <div class="ph__actions"><a class="btn btn--ink" href="https://github.com/atchiullia/DevOpsRepo" target="_blank" rel="noopener" data-pt="GitHub Repo" data-en="GitHub Repo">GitHub Repo</a></div>
+        </div>
+        <figure class="ph__fig"><img src="images/grafana.png" alt="" width="1600" height="1000"></figure>
+      </div>
+    </div>
+  </section>
+  <section class="section pbody">
+    <div class="wrap pbody">
+      <div class="card pblock"><span class="pblock__label" data-pt="Descrição do Projeto" data-en="Project Description">Descrição do Projeto</span>Este projeto configura e monitora uma aplicação Java em um cluster Kubernetes. Utiliza Prometheus para coleta de métricas e Grafana para visualização dos dados em tempo real. Integra pipelines CI/CD com GitHub Actions para automação de build, testes e deploy.</div>
+      <div class="pcards">
+        <div class="pcards__head"><h2 class="pcards__title" data-pt="como funciona" data-en="how it works">como funciona</h2><span class="pill" data-pt="Tecnologias Utilizadas" data-en="Tech Stack">Tecnologias Utilizadas</span></div>
+        <div class="pcards__grid">
+          <div class="card pcard"><span class="pill pcard__n">01</span><h3 class="pcard__title" data-pt="Containerização com Docker" data-en="Containerization with Docker">Containerização com Docker</h3><p data-pt="Criação do Dockerfile para empacotar a aplicação Java." data-en="Created the Dockerfile to package the Java application.">Criação do Dockerfile para empacotar a aplicação Java.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">02</span><h3 class="pcard__title" data-pt="Implantação com Kubernetes" data-en="Deployment with Kubernetes">Implantação com Kubernetes</h3><p data-pt="Criação do deployment.yaml para configurar pods e serviços." data-en="Created the deployment.yaml to configure pods and services.">Criação do deployment.yaml para configurar pods e serviços.</p><p data-pt="Deployment da aplicação no cluster Kubernetes." data-en="Deployed the application to the Kubernetes cluster.">Deployment da aplicação no cluster Kubernetes.</p></div>
+          <div class="card pcard"><span class="pill pcard__n">03</span><h3 class="pcard__title" data-pt="CI/CD com GitHub Actions" data-en="CI/CD with GitHub Actions">CI/CD com GitHub Actions</h3><p data-pt="Pipeline em YAML automatizada para:" data-en="Automated YAML pipeline for:">Pipeline em YAML automatizada para:</p><p data-pt="Clonar repositório" data-en="Clone repository">Clonar repositório</p><p data-pt="Configurar Docker Buildx" data-en="Set up Docker Buildx">Configurar Docker Buildx</p><p data-pt="Gerar imagem Docker" data-en="Generate Docker image">Gerar imagem Docker</p><p data-pt="Rodar testes automatizados" data-en="Run automated tests">Rodar testes automatizados</p><p data-pt="Fazer push da imagem para o registry" data-en="Push image to registry">Fazer push da imagem para o registry</p></div>
+          <div class="card pcard"><span class="pill pcard__n">04</span><h3 class="pcard__title" data-pt="Monitoramento com Prometheus e Grafana" data-en="Monitoring with Prometheus and Grafana">Monitoramento com Prometheus e Grafana</h3><p data-pt="Instalação do Prometheus e Grafana via Helm" data-en="Installation of Prometheus and Grafana via Helm">Instalação do Prometheus e Grafana via Helm</p><p data-pt="Coleta de métricas em tempo real da aplicação" data-en="Real-time metrics collection from the application">Coleta de métricas em tempo real da aplicação</p><p data-pt="Visualização das métricas em dashboards no Grafana" data-en="Metrics visualization in Grafana dashboards">Visualização das métricas em dashboards no Grafana</p></div>
         </div>
       </div>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      <nav class="pnav" aria-label="outros projetos">
+        <a href="publicacao-infraestrutura-por-centavos.html" class="btn"><span><span class="pnav__label" data-pt="anterior" data-en="previous">anterior</span>Infraestrutura Profissional por Centavos</span></a>
+        <a href="index.html#projetos" class="btn btn--ink" data-pt="todos os projetos" data-en="all projects">todos os projetos</a>
+        <a href="pipeline-ci-cd-macos-unreal-engine.html" class="btn"><span><span class="pnav__label" data-pt="próximo" data-en="next">próximo</span>UltiMage</span></a>
+      </nav>
     </div>
-
-    <div class="wrapper">
-      <div class="portfolio-container">
-        <div class="projeto-container">
-
-          <!-- Primeiro Projeto -->
-          <div class="instance-card__cnt">
-            <h1 class="instance-card__name"
-                data-pt="Monitoramento em Kubernetes com Prometheus e Grafana"
-                data-en="Monitoring in Kubernetes with Prometheus and Grafana">
-                Monitoramento em Kubernetes com Prometheus e Grafana
-            </h1>
-
-            <div class="instance-card-inf">
-              <div class="instance-card-inf__item"></div>
-              <div class="instance-card-inf__item">
-                <h3 class="instance-card-inf__txt"
-                    data-pt="Descrição do Projeto"
-                    data-en="Project Description">
-                    Descrição do Projeto
-                </h3>
-                <div class="instance-card-inf__title"
-                     data-pt="Este projeto configura e monitora uma aplicação Java em um cluster Kubernetes. Utiliza Prometheus para coleta de métricas e Grafana para visualização dos dados em tempo real. Integra pipelines CI/CD com GitHub Actions para automação de build, testes e deploy."
-                     data-en="This project configures and monitors a Java application in a Kubernetes cluster. It uses Prometheus for metric collection and Grafana for real-time data visualization. It integrates CI/CD pipelines with GitHub Actions for build, test, and deployment automation.">
-                  Este projeto configura e monitora uma aplicação Java em um cluster Kubernetes. Utiliza Prometheus para coleta de métricas e Grafana para visualização dos dados em tempo real. Integra pipelines CI/CD com GitHub Actions para automação de build, testes e deploy.
-                </div>
-              </div>
-
-              <div class="instance-card-inf__github">
-                <a href="https://github.com/atchiullia/DevOpsRepo" target="_blank" class="intro-btn">GitHub Repo</a>
-              </div>
-
-              <div class="tech-stack">
-                <h3 class="instance-card-inf__txt"
-                     data-pt="Tecnologias Utilizadas"
-                     data-en="Tech Stack">
-                  Tecnologias Utilizadas
-                </h3>
-                <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>GitHub Actions</span>
-                <span>Prometheus</span>
-                <span>Grafana</span>
-                <span>Helm</span>
-                <span>Java</span>
-              </div>
-            </div>
-
-            <!-- INÍCIO DOS CARDS -->
-            <div class="cards-container">
-
-
-            <!-- Card 2 -->
-            <div class="instance-card-small">
-              <div class="instance-card__cnt">
-                <div class="instance-card__box" 
-                data-pt="Containerização com Docker" 
-                data-en="Containerization with Docker">
-                  Containerização com Docker
-                </div>
-                <div class="instance-card-inf">
-                  <div class="instance-card-inf__title"
-                  data-pt='Criação do Dockerfile para empacotar a aplicação Java.'
-                  data-en='Created the Dockerfile to package the Java application.'>
-                  Criação do Dockerfile para empacotar a aplicação Java.
-                </div>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- Card 2 -->
-            <div class="instance-card-small">
-              <div class="instance-card__cnt">
-                <div class="instance-card__box" data-pt="Implantação com Kubernetes" data-en="Deployment with Kubernetes">
-                  Implantação com Kubernetes
-                </div>
-                <div class="instance-card-inf">
-                  <div class="instance-card-inf__title"
-                      data-pt='Criação do deployment.yaml para configurar pods e serviços.'
-                      data-en='Created the deployment.yaml to configure pods and services.'>
-                    Criação do deployment.yaml para configurar pods e serviços.
-                  </div>
-                  <div class="instance-card-inf__title"
-                      data-pt="Deployment da aplicação no cluster Kubernetes."
-                      data-en="Deployed the application to the Kubernetes cluster.">
-                    Deployment da aplicação no cluster Kubernetes.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="instance-card-small">
-              <div class="instance-card__cnt">
-                <div class="instance-card__box" data-pt="CI/CD com GitHub Actions" data-en="CI/CD with GitHub Actions">
-                  CI/CD com GitHub Actions
-                </div>
-                <div class="instance-card-inf">
-                  <div class="instance-card-inf__title" data-pt="Pipeline em YAML automatizada para:" data-en="Automated YAML pipeline for:">
-                    Pipeline em YAML automatizada para:
-                  </div>
-                  <div class="instance-card-inf__title" data-pt="Clonar repositório" data-en="Clone repository">Clonar repositório</div>
-                  <div class="instance-card-inf__title" data-pt="Configurar Docker Buildx" data-en="Set up Docker Buildx">Configurar Docker Buildx</div>
-                  <div class="instance-card-inf__title" data-pt="Gerar imagem Docker" data-en="Generate Docker image">Gerar imagem Docker</div>
-                  <div class="instance-card-inf__title" data-pt="Rodar testes automatizados" data-en="Run automated tests">Rodar testes automatizados</div>
-                  <div class="instance-card-inf__title" data-pt="Fazer push da imagem para o registry" data-en="Push image to registry">Fazer push da imagem para o registry</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="instance-card-small">
-              <div class="instance-card__cnt">
-                <div class="instance-card__box"
-                    data-pt="Monitoramento com Prometheus e Grafana"
-                    data-en="Monitoring with Prometheus and Grafana">
-                    Monitoramento com Prometheus e Grafana
-                </div>
-                <div class="instance-card-inf">
-                  <div class="instance-card-inf__title"
-                      data-pt="Instalação do Prometheus e Grafana via Helm"
-                      data-en="Installation of Prometheus and Grafana via Helm">
-                    Instalação do Prometheus e Grafana via Helm
-                  </div>
-                  <div class="instance-card-inf__title"
-                      data-pt="Coleta de métricas em tempo real da aplicação"
-                      data-en="Real-time metrics collection from the application">
-                    Coleta de métricas em tempo real da aplicação
-                  </div>
-                  <div class="instance-card-inf__title"
-                      data-pt="Visualização das métricas em dashboards no Grafana"
-                      data-en="Metrics visualization in Grafana dashboards">
-                    Visualização das métricas em dashboards no Grafana
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-            <!-- FIM DOS CARDS -->
-          </div>
+  </section>
+  <section class="section pcontact">
+    <div class="wrap">
+      <div class="card pcontact__card">
+        <h2 class="pcontact__title" data-pt="vamos construir algo que não cai?" data-en="let's build something that stays up?">vamos construir algo que não cai?</h2>
+        <div class="pcontact__actions">
+          <a href="mailto:giullialazaro@gmail.com" class="btn btn--ink">giullialazaro@gmail.com</a>
+          <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" rel="noopener" class="btn">linkedin</a>
         </div>
       </div>
     </div>
-
-    <script src="js/main.js"></script>
-
-  
-    <footer class="footer">
-      <div class="footer-content">
-  
-        <!-- Column 1: Playlist -->
-        <div class="playlist" style="flex: 1;">
-          <iframe style="border-radius:12px; width: 100%; height: 352px;" src="https://open.spotify.com/embed/playlist/3udXzBdKfiGS0MEVQbdU37?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-  
-        <!-- Column 2: About -->
-        <div class="about" style="flex: 1;">
-          <h3 class="translatable" data-pt="Sobre" data-en="About">Sobre</h3>
-          <p class="translatable"
-            data-pt="Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento."
-            data-en="This portfolio was created to share projects and learnings in the field of DevOps and development.">
-            Este portfólio foi criado para compartilhar projetos e aprendizados na área de DevOps e desenvolvimento.
-          </p>
-        </div>
-
-  
-        <!-- Column 3: Contact -->
-        <div class="contact" style="flex: 1;">
-          <h3>Reach me</h3>
-        <div class="social-media">  
-              <a href="https://www.linkedin.com/in/giullialazaro/" target="_blank" title="LinkedIn">
-              <i class="fab fa-linkedin" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-              </a>
-              <a href="https://github.com/atchiullia" target="_blank" title="GitHub">
-              <i class="fab fa-github" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-              </a>
-              <a href="https://hub.docker.com/repositories/atchiullia" target="_blank" title="DockerHub">
-              <i class="fab fa-docker" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-              </a>
-              <a href="https://open.spotify.com/playlist/3udXzBdKfiGS0MEVQbdU37" target="_blank" title="Spotify">
-              <i class="fab fa-spotify" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-              </a>
-              <a href="mailto:giullialazaro@gmail.com" title="Email">
-              <i class="fas fa-envelope" style="font-size: 40px; color: rgb(255, 255, 255);"></i>
-              </a>
-        </div>
-        </div>
-      </div>
-    </footer>
-    </body>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="mono">© 2026 giullia lazaro · @pterodatchiulha</span>
+      <span class="mono" data-pt="self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas" data-en="self-hosted on a raspberry pi 5 · read-only nginx · zero open ports">self-hosted em um raspberry pi 5 · nginx read-only · zero portas abertas</span>
+      <a class="mono" href="https://github.com/atchiullia" target="_blank" rel="noopener" data-pt="código no github" data-en="source on github">código no github</a>
+    </div>
+  </footer>
+  <script src="js/home.js"></script>
+</body>
 </html>
