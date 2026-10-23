@@ -26,10 +26,11 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
 
       - name: Sync site to the Pi
         run: |
-          rsync -rlt --delete \
+          rsync -rlt --safe-links --delete \
             --chmod=D755,F644 \
             --exclude '.DS_Store' \
             portfolio/ /mnt/ssd/portfolio/site/
