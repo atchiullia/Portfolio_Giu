@@ -26,13 +26,15 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
 
       - name: Sync site to the Pi
         run: |
-          rsync -rlt --delete \
+          : "${PORTFOLIO_SITE_DIR:?PORTFOLIO_SITE_DIR not set on the runner}"
+          rsync -rlt --safe-links --delete \
             --chmod=D755,F644 \
             --exclude '.DS_Store' \
-            portfolio/ /mnt/ssd/portfolio/site/
+            portfolio/ "$PORTFOLIO_SITE_DIR"/
 
       - name: Smoke check
-        run: test -s /mnt/ssd/portfolio/site/index.html && test -s /mnt/ssd/portfolio/site/404.html
+        run: test -s "$PORTFOLIO_SITE_DIR/index.html" && test -s "$PORTFOLIO_SITE_DIR/404.html"
